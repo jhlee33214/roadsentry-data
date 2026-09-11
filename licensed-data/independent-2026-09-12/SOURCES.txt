@@ -1,0 +1,42 @@
+# Source attribution and original terms
+
+OpenStreetMap contributors, obtained via Geofabrik South Korea:
+https://download.geofabrik.de/asia/south-korea.html
+© OpenStreetMap contributors — https://www.openstreetmap.org/copyright
+Database: ODbL 1.0; individual contents: DbCL 1.0.
+
+Public camera-source contents retain the following original terms:
+
+전국무인교통단속카메라표준데이터.csv
+https://www.data.go.kr/data/15028200/standard.do
+Original terms: Korea Open Government License Type 1
+https://www.kogl.or.kr/info/licenseType1.do
+
+전남광주통합특별시_구례군_무인교통단속카메라
+https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003700039&fileDetailSn=1&dataNm=%EC%A0%84%EB%82%A8%EA%B4%91%EC%A3%BC%ED%86%B5%ED%95%A9%ED%8A%B9%EB%B3%84%EC%8B%9C_%EA%B5%AC%EB%A1%80%EA%B5%B0_%EB%AC%B4%EC%9D%B8%EA%B5%90%ED%86%B5%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC
+Original terms: 이용허락범위 제한 없음
+https://www.data.go.kr/ugs/selectPortalPolicyView.do
+
+경기도_부천시_무인교통단속카메라
+https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003700291&fileDetailSn=1&dataNm=%EA%B2%BD%EA%B8%B0%EB%8F%84_%EB%B6%80%EC%B2%9C%EC%8B%9C_%EB%AC%B4%EC%9D%B8%EA%B5%90%ED%86%B5%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC
+Original terms: 이용허락범위 제한 없음
+https://www.data.go.kr/ugs/selectPortalPolicyView.do
+
+서울특별시_중랑구_무인교통단속카메라
+https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003704454&fileDetailSn=1&dataNm=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A4%91%EB%9E%91%EA%B5%AC_%EB%AC%B4%EC%9D%B8%EA%B5%90%ED%86%B5%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC
+Original terms: 이용허락범위 제한 없음
+https://www.data.go.kr/ugs/selectPortalPolicyView.do
+
+경상북도_청송군_무인교통단속카메라
+https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003695234&fileDetailSn=1&dataNm=%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84_%EC%B2%AD%EC%86%A1%EA%B5%B0_%EB%AC%B4%EC%9D%B8%EA%B5%90%ED%86%B5%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC
+Original terms: 이용허락범위 제한 없음
+https://www.data.go.kr/ugs/selectPortalPolicyView.do
+
+경기도_안성시_무인교통단속카메라
+https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003703670&fileDetailSn=1&dataNm=%EA%B2%BD%EA%B8%B0%EB%8F%84_%EC%95%88%EC%84%B1%EC%8B%9C_%EB%AC%B4%EC%9D%B8%EA%B5%90%ED%86%B5%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC
+Original terms: 이용허락범위 제한 없음
+https://www.data.go.kr/ugs/selectPortalPolicyView.do
+
+The camera database combines public records with OSM camera records and OSM
+road metadata. Source selection, normalization and metadata enrichment are
+RoadSentry adaptations. No original provider endorses these adaptations.

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "release": "independent-data-2026-09-12",
+  "offer_type": "complete_adapted_databases_odbl_4_6_a",
+  "database_license": "ODbL-1.0",
+  "osm_contents_license": "DbCL-1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "source_notice": "SOURCES.txt",
+  "cameras": {
+    "download": {
+      "filename": "cameras-a1053e0c1027.json.gz",
+      "bytes": 403970,
+      "sha256": "b6990c224face8754501f74fa9e5824531ec2d8986c5b57a7f1a4e6c55d9ea9d"
+    },
+    "uncompressed": {
+      "filename": "cameras.json",
+      "bytes": 1948133,
+      "rows": 29357,
+      "sha256": "a1053e0c1027862d4c8cf3de8f84abb9aaacba62de97b44c7bff581c101c681c"
+    }
+  },
+  "roads": {
+    "download": {
+      "filename": "roads-d7e4cebe2c14.bin.gz",
+      "bytes": 18761724,
+      "sha256": "a449ffc422b118334f84c6169451b61415de88e8250edc39adb9660f8eaf904a"
+    },
+    "uncompressed": {
+      "filename": "roads.bin",
+      "bytes": 28308500,
+      "sha256": "d7e4cebe2c1466b56d8b3424a5a292c61bc0fed7fd4f297608fa5ec41b1261b5"
+    },
+    "records": 1093748
+  },
+  "source_evidence_sha256": {
+    "camera_offer_manifest": "2dcdc75ba999f3e0523834def0a564210428cee9ddc7deeb9b26398e1a51e383",
+    "road_offer_manifest": "f967bc852b9a5a6da1a47a9a0ec88448f3558f1e8031aad419df115bf3003541"
+  },
+  "files": {
+    "CAMERA-SCHEMA.md": {
+      "bytes": 1937,
+      "sha256": "d449bf5ac73168c45caa4289d00e11e55d5646b4a3a8ead83bf763dcde547ec2"
+    },
+    "DbCL-1.0.txt": {
+      "bytes": 2374,
+      "sha256": "3cbfa990f26df856c6a7d3fff3d1f236e3b0165b1e8257ca0d00f15758754f81"
+    },
+    "NOTICE.txt": {
+      "bytes": 1697,
+      "sha256": "574f8bb1a056719679d59e04a0499d3d402c695c1cb756145ff1c23ef3c32801"
+    },
+    "ODbL-1.0.txt": {
+      "bytes": 25278,
+      "sha256": "607680718977f6f6c9607972afd98f208573f19251315ed1362a8589b51beaf5"
+    },
+    "READER-LICENSE.txt": {
+      "bytes": 1080,
+      "sha256": "96ea77760be87128a1f82f2a3632a1c6a8abde0c7c475525ea06d772ec634275"
+    },
+    "ROAD-SCHEMA.md": {
+      "bytes": 3516,
+      "sha256": "7123e7b8c0cb5aa09cb08e2f6786ff12b97dd104220510fb11831b4c2a59fdf1"
+    },
+    "SOURCES.txt": {
+      "bytes": 2833,
+      "sha256": "063c144067573155a9bd69670624f47f21f61f398d86490b0395f6e2dae5bb18"
+    },
+    "cameras-a1053e0c1027.json.gz": {
+      "bytes": 403970,
+      "sha256": "b6990c224face8754501f74fa9e5824531ec2d8986c5b57a7f1a4e6c55d9ea9d"
+    },
+    "read_roads.py": {
+      "bytes": 3389,
+      "sha256": "6103e5850aaffa14074cf4473743109530a532441958912e4cdf51b058878ae6"
+    },
+    "roads-d7e4cebe2c14.bin.gz": {
+      "bytes": 18761724,
+      "sha256": "a449ffc422b118334f84c6169451b61415de88e8250edc39adb9660f8eaf904a"
+    }
+  }
+}

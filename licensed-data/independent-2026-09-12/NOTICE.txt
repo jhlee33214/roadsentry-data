@@ -1,0 +1,29 @@
+RoadSentry adapted camera and road databases — 2026-09-12
+
+© OpenStreetMap contributors — https://www.openstreetmap.org/copyright
+
+The complete adapted camera database (the uncompressed contents of cameras-a1053e0c1027.json.gz) and complete adapted road
+database (the uncompressed contents of roads-d7e4cebe2c14.bin.gz) are made
+available under the Open Database License 1.0 (ODbL):
+https://opendatacommons.org/licenses/odbl/1-0/
+This is an offer of the entire adapted databases under ODbL section 4.6(a).
+No account, payment, RoadSentry app or proprietary software is required.
+
+The OSM individual contents are available under the Database Contents License
+1.0 (DbCL). The full ODbL and DbCL texts accompany this offer. Government
+source contents retain their original terms and attribution as detailed in
+SOURCES.txt; this notice does not relicense their underlying rights.
+RoadSentry's rights, if any, in the adapted databases are offered under ODbL.
+
+Source camera records were selected, combined and supplemented with OSM road
+metadata. Source road geometry and metadata were extracted and simplified.
+These are adapted data, not unmodified official source products; original
+providers do not endorse RoadSentry or warrant its changes.
+
+The download contains database copies, format documentation and an optional
+standalone MIT-licensed road reader. The reader's license is READER-LICENSE.txt.
+It contains no RoadSentry application source, detection algorithm, user trip
+records, Tesla vehicle observations or extracted Kakao SDK data.
+
+The databases are provided without warranties, as stated in the licenses.
+Keep the attribution, license and source notices with redistributed copies.

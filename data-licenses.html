@@ -1,17 +1,34 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RoadSentry 도로 데이터 · 라이선스</title>
-<style>body{font-family:-apple-system,system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 20px;line-height:1.7;color:#222}h1{font-size:1.5em}h2{font-size:1.1em;margin-top:1.6em}code,a{overflow-wrap:anywhere}</style></head><body>
-<h1>RoadSentry 도로 데이터</h1>
-<p>도로 정보 <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>.
-이 도로 데이터베이스는 <a href="licensed-data/roads-2026-09-11/ODbL-1.0.txt">ODbL 1.0</a>, 개별 내용에 대한 권리는 <a href="licensed-data/roads-2026-09-11/DbCL-1.0.txt">DbCL 1.0</a>에 따라 제공합니다.</p>
-<h2>2026-09-11 제공본</h2>
-<p>앱에 포함된 도로 데이터의 동일한 사본입니다. 도로 선형과 도로 속성만 포함하며 별도의 카메라 데이터는 포함하지 않습니다. 원자료는 <a href="https://download.geofabrik.de/asia/south-korea.html">Geofabrik의 대한민국 OpenStreetMap 추출본</a>(기준 시각 2026-09-01 20:20:50 UTC)입니다.</p>
-<p><a href="licensed-data/roads-2026-09-11/roads-9b6368d0b51f.bin.gz" download>도로 데이터 다운로드 (.bin.gz, 12,199,034바이트)</a><br>압축 해제 후 18,128,901바이트 · 도로 레코드 708,957개</p>
-<p>압축 파일 SHA-256<br><code>9e460a58d8314f0e0b75f295de67ac31958a2f17284f48bb9678bfc5edd4ecd0</code></p>
-<p>압축 해제한 roads.bin SHA-256<br><code>9b6368d0b51f1bae12ac8a5b01f499031fa00278cc88e91ca2343cfd75a8104a</code></p>
-<ul><li><a href="licensed-data/roads-2026-09-11/NOTICE.txt">출처·이용 고지</a></li>
-<li><a href="licensed-data/roads-2026-09-11/SCHEMA.md">데이터 형식과 읽는 방법</a> · <a href="licensed-data/roads-2026-09-11/read_roads.py" download>Python 리더</a> · <a href="licensed-data/roads-2026-09-11/READER-LICENSE.txt">리더 이용조건</a></li>
-<li><a href="licensed-data/roads-2026-09-11/manifest.json">원자료·파일 정보</a> · <a href="licensed-data/roads-2026-09-11/SHA256SUMS">체크섬</a></li></ul>
-<p>가입이나 비용 없이 내려받아 이용할 수 있습니다. 사용·수정·재배포 시 해당 라이선스를 따라 주세요.</p>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RoadSentry OSM 기반 데이터 · 라이선스</title>
+<style>body{font-family:-apple-system,system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 20px;line-height:1.7;color:#222}h1{font-size:1.5em}h2{font-size:1.1em;margin-top:1.6em}code,a{overflow-wrap:anywhere}summary{cursor:pointer}li{margin:.4em 0}.download{display:inline-block;padding:10px 14px;border:1px solid #bbb;border-radius:8px;margin-bottom:8px}small{color:#555}</style></head><body>
+<h1>RoadSentry OSM 기반 데이터</h1>
+<p><a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>.
+이 페이지에서 제공하는 도로·카메라 가공 데이터베이스는 <a href="licensed-data/independent-2026-09-12/ODbL-1.0.txt">ODbL 1.0</a>에 따라 이용할 수 있습니다.
+OSM 개별 내용에는 <a href="licensed-data/independent-2026-09-12/DbCL-1.0.txt">DbCL 1.0</a>이 적용되며, 공공데이터 원자료의 출처·이용조건도 유지됩니다.</p>
+<h2>2026-09-12 제공본</h2>
+<p>현재 개발본에 포함된 도로·카메라 데이터의 완전한 사본입니다. 아래 두 파일을 가입이나 비용 없이 내려받을 수 있습니다. 앱 버전에 따라 포함된 데이터는 다를 수 있으므로 파일의 SHA-256으로 구분할 수 있습니다.</p>
+<p><a class="download" href="licensed-data/independent-2026-09-12/roads-d7e4cebe2c14.bin.gz" download>도로 데이터 다운로드 · .bin.gz</a><br>
+<small>압축 해제 후 28,308,500바이트 · 도로 레코드 1,093,748개</small><br>
+<code>d7e4cebe2c1466b56d8b3424a5a292c61bc0fed7fd4f297608fa5ec41b1261b5</code></p>
+<p><a class="download" href="licensed-data/independent-2026-09-12/cameras-a1053e0c1027.json.gz" download>카메라 데이터 다운로드 · .json.gz</a><br>
+<small>압축 해제 후 1,948,133바이트 · 카메라 레코드 29,357개</small><br>
+<code>a1053e0c1027862d4c8cf3de8f84abb9aaacba62de97b44c7bff581c101c681c</code></p>
+<p>위 해시는 압축을 해제한 데이터의 값입니다. 압축 파일의 해시는 아래 체크섬에서 확인할 수 있습니다.</p>
+<ul>
+<li><a href="licensed-data/independent-2026-09-12/NOTICE.txt">출처·이용 고지</a> · <a href="licensed-data/independent-2026-09-12/SOURCES.txt">공공·OSM 원자료 출처</a></li>
+<li><a href="licensed-data/independent-2026-09-12/ROAD-SCHEMA.md">도로 데이터 형식</a> · <a href="licensed-data/independent-2026-09-12/CAMERA-SCHEMA.md">카메라 데이터 형식</a></li>
+<li><a href="licensed-data/independent-2026-09-12/read_roads.py" download>도로 데이터 읽기 도구</a> · <a href="licensed-data/independent-2026-09-12/READER-LICENSE.txt">도구 이용조건</a></li>
+<li><a href="licensed-data/independent-2026-09-12/manifest.json">파일·원자료 정보</a> · <a href="licensed-data/independent-2026-09-12/SHA256SUMS">체크섬</a></li>
+</ul>
+<p>원자료: <a href="https://download.geofabrik.de/asia/south-korea.html">OpenStreetMap 대한민국 추출본(Geofabrik)</a>, <a href="https://www.data.go.kr/data/15028200/standard.do">전국무인교통단속카메라 표준데이터</a>(<a href="https://www.kogl.or.kr/info/licenseType1.do">공공누리 제1유형</a>), 구례군·부천시·중랑구·청송군·안성시 공개 데이터. 원자료를 결합하고 도로 속성을 보완했으며 도로 선형을 단순화했습니다. 상세 출처는 위 고지에 있습니다.</p>
+<p>이 제공본은 데이터 라이선스에 따른 사본 제공이며, 정보의 정확성이나 완전성을 보증하지 않습니다.</p>
+<details><summary>이전 도로 데이터 제공본 · 2026-09-11</summary>
+<p>이전 버전에 포함됐던 도로 데이터 사본입니다. 위의 최신 제공본과 다릅니다.</p>
+<ul>
+<li><a href="licensed-data/roads-2026-09-11/roads-9b6368d0b51f.bin.gz" download>이전 도로 데이터 다운로드</a></li>
+<li><a href="licensed-data/roads-2026-09-11/NOTICE.txt">출처·이용 고지</a> · <a href="licensed-data/roads-2026-09-11/SCHEMA.md">형식</a></li>
+<li><a href="licensed-data/roads-2026-09-11/manifest.json">파일 정보</a> · <a href="licensed-data/roads-2026-09-11/SHA256SUMS">체크섬</a></li>
+<li><a href="licensed-data/roads-2026-09-11/ODbL-1.0.txt">ODbL 1.0</a> · <a href="licensed-data/roads-2026-09-11/DbCL-1.0.txt">DbCL 1.0</a></li>
+</ul></details>
 <p><a href="support.html">지원</a> · <a href="privacy.html">개인정보 처리방침</a></p>
 </body></html>
