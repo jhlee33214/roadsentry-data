@@ -1,0 +1,35 @@
+RoadSentry road database — roads-2026-09-11
+
+© OpenStreetMap contributors
+https://www.openstreetmap.org/copyright
+
+This OSM-derived road database is made available under the Open Database
+License (ODbL) 1.0: https://opendatacommons.org/licenses/odbl/1-0/
+Any rights in its individual contents are licensed under the Database
+Contents License (DbCL) 1.0: https://opendatacommons.org/licenses/dbcl/1-0/
+License texts are included beside this notice. Preserve the attribution
+and comply with those licenses when using or redistributing the data.
+
+Source: Geofabrik South Korea OpenStreetMap extract.
+Source replication timestamp: 2026-09-01T20:20:50Z.
+Source page: https://download.geofabrik.de/asia/south-korea.html
+This is an adapted road subset with simplified, integer-encoded geometry
+and road metadata; it is not a complete copy of the source OSM extract.
+Lower-class local roads were selected partly by proximity to a camera-location
+mask available during generation. The exact mask version and hash were not
+retained, so reproduction from the source PBF alone is not claimed. No camera
+coordinates or camera records are included in this package.
+The available file is a complete byte-for-byte copy of the road database
+bundled in the corresponding RoadSentry build, compressed without alteration.
+
+Download: roads-9b6368d0b51f.bin.gz
+Compressed SHA-256: 9e460a58d8314f0e0b75f295de67ac31958a2f17284f48bb9678bfc5edd4ecd0
+Decompressed roads.bin SHA-256: 9b6368d0b51f1bae12ac8a5b01f499031fa00278cc88e91ca2343cfd75a8104a
+Uncompressed bytes: 18128901
+Road records: 708957
+
+This offer covers this road database only. It contains no camera records
+and does not license any separate camera database or application code.
+The adjacent reader is separately licensed under the MIT License.
+No access fee, account or application installation is required.
+The data is provided as is, without an accuracy or fitness warranty.
