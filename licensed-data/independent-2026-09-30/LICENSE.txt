@@ -1,0 +1,8 @@
+RoadSentry adapted database licensing
+
+Complete adapted cameras.json and roads.bin: ODbL 1.0 (ODbL-1.0.txt).
+OSM individual contents: DbCL 1.0 (DbCL-1.0.txt).
+Public-source original content terms and attribution: SOURCES.txt.
+Optional standalone read_roads.py: MIT (READER-LICENSE.txt).
+Read NOTICE.txt for scope, adaptations and preparation limits.
+This license index is not a legal clearance determination.
