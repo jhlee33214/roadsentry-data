@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RoadSentry 사용 설명서</title>
+<meta name="description" content="RoadSentry 설치부터 단축어 자동 시작, 테슬라 연결, 자주 묻는 질문까지 사진으로 따라 하는 사용 설명서입니다.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0B0D10">
+<style>
+:root{
+  --bg:#F3F4F6; --surface:#FFFFFF; --ink:#111317; --muted:#59606B; --line:#E1E4E9;
+  --hero:#0B0D10; --hero-ink:#F2F3F5; --cream:#E9E0D0; --cream-ink:#1B1A17;
+  --mark:#E5302A; --mark-ink:#FFFFFF; --ok:#12804A; --ok-bg:#E8F5EE; --warn:#9A4A06; --warn-bg:#FFF3E3;
+  --info:#1D4E9E; --info-bg:#EAF1FC; --chip:#ECEEF1; --shadow:0 1px 2px rgba(16,18,23,.06),0 8px 24px rgba(16,18,23,.06);
+  --font:"Pretendard","Pretendard Variable",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B0D10; --surface:#15181D; --ink:#F1F2F4; --muted:#A0A7B2; --line:#262B33;
+  --hero:#050608; --cream:#EDE3D2; --mark:#FF4B42; --ok:#4ACB86; --ok-bg:#10261B; --warn:#F3A55A; --warn-bg:#2A1D10;
+  --info:#8DB5F5; --info-bg:#132036; --chip:#1E2229; --shadow:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#0B0D10; --surface:#15181D; --ink:#F1F2F4; --muted:#A0A7B2; --line:#262B33;
+  --hero:#050608; --cream:#EDE3D2; --mark:#FF4B42; --ok:#4ACB86; --ok-bg:#10261B; --warn:#F3A55A; --warn-bg:#2A1D10;
+  --info:#8DB5F5; --info-bg:#132036; --chip:#1E2229; --shadow:none;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{color:var(--info);text-underline-offset:3px}
+b,strong{font-weight:700}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+
+/* ── 머리 */
+.hero{background:var(--hero);color:var(--hero-ink);padding:28px 0 30px}
+.brand{font-size:13px;letter-spacing:.34em;font-weight:600;color:#C9CDD3;margin:0 0 18px}
+.brand i{display:inline-block;width:7px;height:7px;border:1.5px solid #C9CDD3;border-radius:50%;margin-left:.2em;vertical-align:2px}
+.hero h1{font-size:32px;line-height:1.25;margin:0 0 10px;letter-spacing:-.02em}
+.hero p.lead{margin:0 0 18px;color:#C2C7CF;font-size:17px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.facts li{border:1px solid #2C3139;border-radius:999px;padding:6px 12px;font-size:15px;color:#E4E6EA}
+.road{height:1px;margin-top:22px;background:#2C3139}
+.ver{font-size:14px;color:#8E959F;margin-top:12px}
+
+/* ── 목차 (위에 붙음) */
+.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.toc ol{display:flex;gap:8px;margin:0 auto;padding:10px 16px;list-style:none;overflow-x:auto;scroll-snap-type:x proximity;max-width:760px;scrollbar-width:none}
+.toc ol::-webkit-scrollbar{display:none}
+.toc a{display:flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--chip);color:var(--ink);text-decoration:none;font-size:15px;font-weight:600;white-space:nowrap;scroll-snap-align:start}
+.toc a span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:12px}
+.toc a[aria-current="true"]{background:var(--ink);color:var(--bg)}
+.toc a[aria-current="true"] span{background:var(--bg);color:var(--ink)}
+
+/* ── 본문 */
+main{padding-bottom:40px}
+section{padding-top:36px}
+h2{font-size:26px;line-height:1.3;margin:0 0 6px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+h2 .no{display:inline-grid;place-items:center;flex:none;width:36px;height:36px;border-radius:10px;background:var(--ink);color:var(--bg);font-size:18px}
+.sub{color:var(--muted);margin:0 0 18px}
+h3{font-size:20px;line-height:1.4;margin:28px 0 10px}
+p{margin:0 0 12px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.must{border:2px solid var(--ink);background:var(--surface);border-radius:20px;padding:20px 18px;margin-top:22px}
+.must h2{font-size:22px}
+.must ul{margin:0;padding:0;list-style:none}
+.must li{position:relative;padding:12px 0 12px 34px;border-top:1px solid var(--line)}
+.must li:first-child{border-top:0;padding-top:4px}
+.must li::before{content:"!";position:absolute;left:0;top:13px;width:24px;height:24px;border-radius:50%;background:var(--mark);color:#fff;font-weight:800;font-size:15px;display:grid;place-items:center}
+.must li:first-child::before{top:5px}
+.must li>b:first-child{display:block;font-size:18px;line-height:1.45;margin-bottom:2px}
+
+.note{border-radius:14px;padding:14px 16px;margin:14px 0;font-size:16px}
+.note>b:first-child{display:block;margin-bottom:2px}
+.note.ok{background:var(--ok-bg);color:var(--ink)} .note.ok>b:first-child{color:var(--ok)}
+.note.warn{background:var(--warn-bg)} .note.warn>b:first-child{color:var(--warn)}
+.note.info{background:var(--info-bg)} .note.info>b:first-child{color:var(--info)}
+
+/* 단계 — 번호 동그라미가 도로 중앙선처럼 이어진다 */
+.steps{list-style:none;margin:8px 0 0;padding:0;counter-reset:s}
+.steps>li{counter-increment:s;position:relative;padding:0 0 26px 50px}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:700;font-size:17px;display:grid;place-items:center;z-index:1}
+.steps>li::after{content:"";position:absolute;left:16px;top:40px;bottom:6px;border-left:2px dashed var(--line)}
+.steps>li:last-child::after{display:none}
+.steps>li>h4{font-size:18px;line-height:1.45;margin:4px 0 4px}
+.steps>li>p{margin:0 0 10px}
+.steps .shot,.steps .diagram{margin-left:-50px;position:relative;z-index:2}
+.steps .legend{position:relative;z-index:2;background:var(--bg)}
+@media (min-width:560px){.steps .shot,.steps .diagram{margin-left:0}}
+.kbd{display:inline-block;padding:0 7px;border-radius:7px;border:1px solid var(--line);background:var(--chip);font-weight:600;white-space:nowrap}
+
+/* 그림 + 누를 곳 표시 */
+.shot{margin:12px auto 6px;max-width:min(100%,var(--mw,340px));position:relative}
+.steps .shot{max-width:min(calc(100% + 50px),var(--mw,340px))}
+@media (min-width:560px){.steps .shot{max-width:min(100%,var(--mw,340px))}}
+.frame{position:relative;border-radius:16px;box-shadow:0 0 0 1px var(--line),0 10px 26px rgba(0,0,0,.12)}
+.frame img{display:block;width:100%;border-radius:16px}
+.marks{position:absolute;inset:0;pointer-events:none}
+.mk{position:absolute;left:calc(var(--x) - 4px);top:calc(var(--y) - 4px);width:calc(var(--w) + 8px);height:calc(var(--h) + 8px);border:3px solid var(--mark);border-radius:12px;box-shadow:0 0 0 2px rgba(255,255,255,.85)}
+.mk b{position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;background:var(--mark);color:var(--mark-ink);font-size:15px;line-height:26px;text-align:center;box-shadow:0 0 0 2px #fff}
+figcaption{font-size:15px;color:var(--muted);margin-top:8px;text-align:center;line-height:1.5}
+figcaption small{display:block;font-size:14px;opacity:.85}
+.legend{list-style:none;margin:6px 0 0;padding:0}
+.legend li{display:flex;gap:10px;align-items:flex-start;padding:6px 0}
+.legend .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--mark);color:#fff;font-weight:700;font-size:15px;display:grid;place-items:center;margin-top:1px}
+
+/* 재현 그림 (iPhone 단축어 앱 모양, 밝은 화면) */
+.mock{background:#F2F2F7;color:#111;border-radius:22px;padding:14px 14px 16px;box-shadow:0 0 0 1px var(--line),0 10px 26px rgba(0,0,0,.12);font-size:16px;text-align:left}
+.m-bar{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;margin-bottom:12px}
+.m-back{width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:26px;line-height:1;color:#111}
+.m-title{text-align:center;font-weight:600}
+.m-done{justify-self:end;color:#0A7AFF;font-weight:600;font-size:15px}
+.m-bar-big{grid-template-columns:1fr 44px}
+.m-big{font-size:28px;font-weight:700}
+.m-plus{justify-self:end;width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:20px}
+.m-group{background:#fff;border-radius:14px;overflow:visible}
+.m-row{position:relative;display:flex;justify-content:space-between;align-items:center;min-height:50px;padding:0 16px;border-top:1px solid #E5E5EA}
+.m-row:first-child{border-top:0}
+.m-row em{font-style:normal;color:#8A8A8E}
+.m-tick{color:#0A7AFF;font-weight:700}
+.m-blue{color:#0A7AFF;font-weight:600}
+.m-tap{outline:3px solid #E5302A;outline-offset:-1px;border-radius:12px;box-shadow:0 0 0 5px rgba(229,48,42,.15)}
+.pin{position:absolute;left:-12px;top:-12px;width:26px;height:26px;border-radius:50%;background:#E5302A;color:#fff;font-size:15px;line-height:26px;text-align:center;box-shadow:0 0 0 2px #fff}
+.m-cap{font-size:13px;color:#8A8A8E;margin:14px 6px 6px}
+.m-dim{opacity:.55}
+.m-note{font-size:15px;color:#6C6C70;margin:10px 4px 0}
+.m-actions{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.m-actions li{display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;min-height:48px;padding:0 14px;font-weight:600}
+.m-actions i{font-style:normal;color:#0A7AFF;margin-left:auto;font-weight:600}
+.m-ic{width:22px;height:22px;border-radius:6px;flex:none}
+.m-ic-wait{background:#8E8E93}.m-ic-out{background:#FF2D55}.m-ic-vol{background:#FF9500}
+.m-auto{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px 14px;margin-top:8px}
+.m-auto b{display:block;font-size:16px}
+.m-auto span{font-size:14px;color:#6C6C70}
+.m-auto-opt{opacity:.7}
+.m-tagr{flex:none;width:30px;height:30px;border-radius:50%;background:#0A7AFF;color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+
+/* 단축어 vs 자동화 그림 */
+.diagram{margin:14px 0 6px}
+.dg-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dg-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 14px 12px}
+.dg-key{border:2px solid var(--mark)}
+.dg-kicker{font-size:15px;font-weight:700;color:var(--muted);margin:0}
+.dg-what{font-size:20px;font-weight:800;margin:2px 0 6px;line-height:1.3}
+.dg-ex{font-size:15px;color:var(--muted);margin:0 0 10px;line-height:1.45}
+.dg-yes,.dg-no{font-size:15px;font-weight:700;margin:0}
+.dg-yes{color:var(--ok)} .dg-no{color:var(--mark)}
+.dg-sum{margin:10px 0 0;padding:12px 14px;border-radius:14px;background:var(--chip);font-size:16px}
+.diagram figcaption{text-align:left}
+
+/* 자동화 세 개 요약 */
+.autos{display:grid;gap:10px;margin:14px 0}
+.auto{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px}
+.auto .tag{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:20px;background:var(--ink);color:var(--bg)}
+.auto.opt .tag{background:var(--chip);color:var(--ink);border:1px dashed var(--muted)}
+.auto h4{margin:0 0 2px;font-size:17px;line-height:1.4}
+.auto p{margin:0;font-size:16px;color:var(--muted)}
+.flow{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;margin-top:6px}
+.flow span{background:var(--chip);border-radius:8px;padding:2px 8px;font-size:15px;color:var(--ink);font-weight:600}
+.flow em{font-style:normal;color:var(--muted)}
+.badge{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.badge.req{background:var(--mark);color:#fff}.badge.opt{background:var(--chip);color:var(--muted)}
+
+/* 자주 묻는 질문 */
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin:10px 0;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;min-height:56px;padding:14px 48px 14px 16px;font-weight:700;font-size:17px;line-height:1.45;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:20px;top:50%;width:10px;height:10px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .a{padding:0 16px 16px}
+.faq .a ul,.faq .a ol{padding-left:20px;margin:6px 0 10px}
+.faq .a li{margin:4px 0}
+.checklist{list-style:none;padding:0!important}
+.checklist li{position:relative;padding-left:28px}
+.checklist li::before{content:"";position:absolute;left:2px;top:6px;width:16px;height:16px;border:2px solid var(--muted);border-radius:5px}
+
+.contact{display:grid;gap:10px;margin-top:14px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:14px;background:var(--ink);color:var(--bg);font-weight:700;text-decoration:none;padding:0 18px;text-align:center}
+.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+footer{border-top:1px solid var(--line);padding:22px 0 90px;color:var(--muted);font-size:15px}
+footer a{color:var(--muted);display:inline-block;padding:12px 4px;margin:-12px 0}
+.top{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,.2);z-index:30}
+
+@media (min-width:960px){
+  body{font-size:18px}
+  .hero h1{font-size:40px}
+}
+@media print{.toc,.top{display:none}.steps>li{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1>RoadSentry 사용 설명서</h1>
+    <p class="lead">사진을 보면서 그대로 따라 하면 돼요.<br>처음 설치부터 자동 시작까지 10분이면 끝나요.</p>
+    <div class="road" aria-hidden="true"></div>
+    <p class="ver">앱 1.0.3 기준 · 2026년 10월</p>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <ol>
+    <li><a href="#read-first"><span>!</span>먼저 읽기</a></li>
+    <li><a href="#start"><span>1</span>처음 시작</a></li>
+    <li><a href="#auto"><span>2</span>자동 시작</a></li>
+    <li><a href="#check"><span>3</span>잘 되는지 확인</a></li>
+    <li><a href="#tesla"><span>4</span>테슬라 연결</a></li>
+    <li><a href="#faq"><span>5</span>자주 묻는 질문</a></li>
+    <li><a href="#contact"><span>6</span>문의</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<!-- ───────────── 먼저 읽기 -->
+<section id="read-first">
+  <div class="must">
+    <h2>먼저 꼭 읽어 주세요</h2>
+    <ul>
+      <li><b>공유받은 단축어 링크로는 자동으로 켜지고 꺼지지 않아요.</b>
+        차에 탈 때 켜지게 하려면 <b>자동화</b>를 이 iPhone에서 직접 만들어야 해요. 아래 그림을 보세요.</li>
+      <li><b>RoadSentry 동작은 따로 받을 필요가 없어요.</b>
+        앱을 설치하면 단축어 앱 동작 목록에 ‘감시 시작’과 ‘감시 정지’가 이미 들어 있어요. 자동화를 만들 때 이걸 직접 고르는 게 가장 확실해요.</li>
+      <li><b>단축어가 실행돼도 앱 화면은 열리지 않아요.</b>
+        뒤에서 조용히 감시를 켜요. 켜졌는지는 <a href="#check">3. 잘 되는지 확인</a>에서 보는 법을 알려 드려요.</li>
+    </ul>
+    <figure class="diagram" aria-label="단축어와 자동화의 차이">
+  <div class="dg-cols">
+    <div class="dg-card">
+      <p class="dg-kicker">단축어</p>
+      <p class="dg-what">무엇을 할지</p>
+      <p class="dg-ex">예) RoadSentry ‘감시 시작’</p>
+      <p class="dg-yes"><span aria-hidden="true">✓</span> 링크로 공유돼요</p>
+    </div>
+    <div class="dg-card dg-key">
+      <p class="dg-kicker">자동화</p>
+      <p class="dg-what">언제 실행할지</p>
+      <p class="dg-ex">예) 내 차 블루투스에 연결될 때</p>
+      <p class="dg-no"><span aria-hidden="true">✕</span> 공유가 안 돼요</p>
+    </div>
+  </div>
+  <p class="dg-sum">자동으로 켜지려면 <b>‘언제’(자동화)</b>가 꼭 있어야 해요. 그래서 <b>이 iPhone에서 직접</b> 만들어야 해요.</p>
+  <figcaption>애플이 보안 때문에 자동화 공유를 막아 두었어요. 남의 iPhone에서 몰래 실행되지 않게 하려는 거예요.</figcaption>
+</figure>
+  </div>
+</section>
+
+<!-- ───────────── 1. 처음 시작 -->
+<section id="start">
+  <h2><span class="no">1</span>처음 시작하기</h2>
+  <p class="sub">설치하고 권한을 허용하는 단계예요. 한 번만 하면 돼요.</p>
+  <ol class="steps">
+    <li>
+      <h4>App Store에서 ‘RoadSentry’를 설치해요</h4>
+      <p>무료예요. 회원 가입이나 로그인은 없어요.</p>
+    </li>
+    <li>
+      <h4>약관 두 칸을 체크하고 ‘동의하고 계속’</h4>
+      <p>소개 화면에서 <span class="kbd">다음</span>을 누르다 보면 위치서비스 약관이 나와요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/start-terms.webp" width="340" height="174" alt="위치기반서비스 이용약관 동의와 만 14세 이상 두 칸에 체크하고 동의하고 계속 버튼을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:6.36%;--y:26.81%;--w:87.27%;--h:39.11%"><b>1</b></span><span class="mk" style="--x:6.36%;--y:68.59%;--w:87.27%;--h:23.85%"><b>2</b></span></span></div><figcaption>① 두 칸 모두 체크 → ② 동의하고 계속<small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+      <p>그다음 <span class="kbd">다음</span>을 두 번 누르고 마지막에 <span class="kbd">시작하기</span>를 눌러요.</p>
+    </li>
+    <li>
+      <h4>위치 권한 창에서 ‘앱을 사용하는 동안 허용’</h4>
+      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-location.webp" width="300" height="291" alt="위치 권한 창에서 앱을 사용하는 동안 허용을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:8.14%;--y:65.27%;--w:83.72%;--h:14.37%"><b>1</b></span></span></div><figcaption>‘한 번 허용’은 고르지 마세요<small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>‘주행’ 탭에서 ‘감시 시작’을 눌러요</h4>
+      <p>빨간 글씨 ‘백그라운드 위치 권한을 확인해 주세요’가 보여도 괜찮아요. 다음 단계에서 해결돼요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/start-monitor-off.webp" width="340" height="174" alt="주행 탭의 감시 시작 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:10.37%;--w:89.09%;--h:24.0%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>다음 창에서 ‘항상 허용으로 변경’</h4>
+      <p>화면이 꺼져 있어도 안내를 받으려면 꼭 필요해요.</p>
+      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-always.webp" width="300" height="397" alt="위치 권한을 항상 허용으로 바꾸는 창" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:8.14%;--y:83.33%;--w:83.72%;--h:10.53%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>알림은 원하면 ‘허용’ (선택)</h4>
+      <p>감시 시작, 폰 음량이 낮을 때 알려 줘요. 안 해도 안내 음성은 나와요.</p>
+      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-notify.webp" width="300" height="207" alt="알림 허용 창" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:51.16%;--y:68.07%;--w:40.7%;--h:20.17%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>‘감시 종료’ 버튼이 보이면 켜진 거예요</h4>
+      <p>버튼 글자가 <b>‘감시 종료’</b>면 지금 감시 중이에요. ‘감시 시작’일 때만 눌러 주세요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/start-monitor-on.webp" width="340" height="255" alt="감시 중일 때 보이는 감시 종료 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:68.94%;--w:89.09%;--h:16.06%"><b>1</b></span></span></div><figcaption>버튼을 누르면 감시가 끝나요<small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+  </ol>
+  <div class="note info">
+    <b>권한 창을 놓쳤다면</b>
+    iPhone <span class="kbd">설정</span> → <span class="kbd">앱</span> → <span class="kbd">RoadSentry</span> → <span class="kbd">위치</span>에서 <b>‘항상’</b>을 고르세요. (iOS 17 이하: <span class="kbd">설정</span> → <span class="kbd">RoadSentry</span> → <span class="kbd">위치</span>)
+  </div>
+  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/start-ios-location.webp" width="340" height="270" alt="iPhone 설정의 RoadSentry 위치 화면에서 항상을 고른 모습" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:79.81%;--w:90.91%;--h:15.24%"><b>1</b></span></span></div><figcaption>‘항상’에 체크 표시가 있으면 돼요<small>iPhone 설정 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+</section>
+
+<!-- ───────────── 2. 자동 시작 -->
+<section id="auto">
+  <h2><span class="no">2</span>자동 시작 설정</h2>
+  <p class="sub">차에 타면 저절로 켜지고, 내리면 저절로 꺼지게 해요. iPhone 기본 앱인 <b>단축어</b> 앱에서 만들어요.</p>
+
+  <div class="autos">
+    <div class="auto"><span class="tag">1</span><div>
+      <h4>차에 연결될 때 → 감시 시작<span class="badge req">필수</span></h4>
+      <p>이 자동화에는 다른 동작을 넣지 마세요.</p></div></div>
+    <div class="auto opt"><span class="tag">2</span><div>
+      <h4>안내를 폰 스피커로 듣기<span class="badge opt">선택</span></h4>
+      <p>①과 따로 만들어요. 없으면 안내는 차 스피커로 나와요.</p></div></div>
+    <div class="auto"><span class="tag">3</span><div>
+      <h4>차에서 연결 해제될 때 → 감시 정지<span class="badge req">필수</span></h4>
+      <p>앱의 ‘감시 종료’ 버튼과 같아요. 내리면 바로 끝내요.</p></div></div>
+  </div>
+
+  <div class="note warn">
+    <b>세 자동화 모두 ‘즉시 실행’</b>
+    ‘확인 후 실행’(iOS에 따라 ‘실행 전에 확인’)으로 두면 운전 중에 실행되지 않아요.
+  </div>
+
+  <h3>① 차에 연결될 때 → 감시 시작</h3>
+  <ol class="steps">
+    <li>
+      <h4>단축어 앱을 열고 ‘자동화’ → ‘새로운 자동화’</h4>
+      <p>이미 만든 자동화가 있으면 오른쪽 위 <span class="kbd">＋</span>를 눌러요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-tab.webp" width="340" height="429" alt="단축어 앱 아래 자동화 탭과 새로운 자동화 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:39.32%;--y:85.79%;--w:21.36%;--h:9.71%"><b>1</b></span><span class="mk" style="--x:35.0%;--y:30.16%;--w:30.08%;--h:9.05%"><b>2</b></span></span></div><figcaption>① 아래 ‘자동화’ 탭 → ② ‘새로운 자동화’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>목록을 조금 내려 ‘Bluetooth’를 눌러요</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-bluetooth.webp" width="340" height="232" alt="자동화 종류 목록의 Bluetooth 항목" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:57.89%;--w:90.91%;--h:19.89%"><b>1</b></span></span></div><figcaption><small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>조건을 이렇게 맞춰요</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-config.webp" width="340" height="421" alt="Bluetooth 자동화 조건 화면. 기기 선택, 연결될 때, 즉시 실행, 다음 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:22.45%;--w:90.91%;--h:9.72%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:38.59%;--w:45.45%;--h:32.48%"><b>2</b></span><span class="mk" style="--x:4.55%;--y:87.34%;--w:90.91%;--h:9.54%"><b>3</b></span><span class="mk" style="--x:82.27%;--y:2.94%;--w:12.27%;--h:6.61%"><b>4</b></span></span></div><figcaption><small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+      <ol class="legend">
+        <li><span class="n">1</span><span><b>기기</b> 옆 ‘선택’ → 내 차를 골라요 (다음 그림)</span></li>
+        <li><span class="n">2</span><span><b>연결될 때</b>에 체크</span></li>
+        <li><span class="n">3</span><span><b>즉시 실행</b>에 체크</span></li>
+        <li><span class="n">4</span><span>오른쪽 위 <b>다음</b> (기기를 골라야 눌려요)</span></li>
+      </ol>
+    </li>
+    <li>
+      <h4>기기 목록에서 내 차 이름을 골라요</h4>
+      <p>차 화면의 블루투스 메뉴에 보이는 이름과 같은 걸 고르세요. 다른 기기를 고르면 차에 타도 실행되지 않아요.</p>
+      <figure class="shot mockfig" style="--mw:300px">
+  <div class="mock" role="img" aria-label="기기 목록에서 내 차 이름을 고르는 화면 재현 그림">
+    <div class="m-bar"><span class="m-back" aria-hidden="true">‹</span><span class="m-title">기기</span><span class="m-done">완료</span></div>
+    <div class="m-group">
+      <div class="m-row">AirPods</div>
+      <div class="m-row m-tap"><span>내 차 이름 <em>(예: Model Y)</em></span><span class="m-tick" aria-hidden="true">✓</span><b class="pin">1</b></div>
+      <div class="m-row">다른 블루투스 기기</div>
+    </div>
+    <p class="m-note">이 iPhone과 한 번이라도 연결했던 기기만 보여요.</p>
+  </div>
+  <figcaption>재현 그림 · 실제 화면과 글자·모양이 조금 다를 수 있어요</figcaption>
+</figure>
+    </li>
+    <li>
+      <h4>‘새로운 빈 자동화’를 골라요</h4>
+      <p>공유받은 단축어를 고르지 말고, 빈 자동화에서 시작해요.</p>
+      <figure class="shot mockfig" style="--mw:300px">
+  <div class="mock" role="img" aria-label="새로운 빈 자동화를 고르는 화면 재현 그림">
+    <div class="m-bar"><span class="m-back" aria-hidden="true">‹</span><span class="m-title">자동화</span><span></span></div>
+    <div class="m-group">
+      <div class="m-row m-tap m-blue"><span>＋ 새로운 빈 자동화</span><b class="pin">1</b></div>
+    </div>
+    <div class="m-cap">내 단축어</div>
+    <div class="m-group m-dim">
+      <div class="m-row">공유받은 단축어 등</div>
+    </div>
+    <p class="m-note">아래 ‘내 단축어’는 고르지 마세요.</p>
+  </div>
+  <figcaption>재현 그림 · iOS 버전에 따라 이 화면 없이 바로 ‘동작 검색’이 나오기도 해요</figcaption>
+</figure>
+    </li>
+    <li>
+      <h4>동작 검색에 ‘RoadSentry’ → ‘감시 시작’</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-search.webp" width="340" height="278" alt="동작 검색 결과에 RoadSentry의 감시 시작과 감시 정지가 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:5.56%;--w:81.14%;--h:12.22%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:60.65%;--w:90.91%;--h:14.44%"><b>2</b></span></span></div><figcaption>① ‘RoadSentry’ 입력 → ② ‘감시 시작’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>‘감시 시작’ 하나만 있으면 끝</h4>
+      <p>다른 동작은 넣지 말고 오른쪽 위 <span class="kbd">완료</span>를 눌러요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-added.webp" width="340" height="116" alt="감시 시작 동작 하나만 들어간 모습" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:3.64%;--y:48.0%;--w:92.73%;--h:37.11%"><b>1</b></span></span></div><figcaption><small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+    </li>
+  </ol>
+
+  <h3>② 안내를 폰 스피커로 듣기 <span class="badge opt">선택</span></h3>
+  <p>차 스피커 대신 iPhone 스피커로 안내를 듣고 싶을 때만 만들어요. <b>①에 넣지 말고 새 자동화로</b> 만들어요. 차 음악 연결이 조금 늦게 붙어 소리를 다시 가져가기 때문이에요.</p>
+  <ol class="steps">
+    <li>
+      <h4>①의 1~5단계와 똑같이 만들어요</h4>
+      <p>Bluetooth → 내 차 → <b>연결될 때</b> → <b>즉시 실행</b> → 새로운 빈 자동화.</p>
+    </li>
+    <li>
+      <h4>동작을 이 순서대로 넣어요</h4>
+      <p><span class="kbd">대기</span> 8초 → <span class="kbd">재생 대상</span> iPhone → <span class="kbd">대기</span> 3초 → <span class="kbd">재생 대상</span> iPhone → <span class="kbd">미디어 음량</span></p>
+      <p>동작 검색에서 ‘대기’, ‘재생 대상’, ‘음량’을 찾으면 나와요. iOS 버전에 따라 이름이 ‘재생 대상 설정’ 또는 ‘재생 대상 변경’, ‘음량 설정’으로 보여요.</p>
+      <figure class="shot mockfig" style="--mw:320px">
+  <div class="mock" role="img" aria-label="소리를 iPhone으로 옮기는 자동화의 동작 순서 재현 그림">
+    <div class="m-bar"><span class="m-back" aria-hidden="true">‹</span><span class="m-title">자동화</span><span class="m-done">완료</span></div>
+    <ol class="m-actions">
+      <li><span class="m-ic m-ic-wait" aria-hidden="true"></span>대기 <i>8초</i></li>
+      <li><span class="m-ic m-ic-out" aria-hidden="true"></span>재생 대상 <i>iPhone</i></li>
+      <li><span class="m-ic m-ic-wait" aria-hidden="true"></span>대기 <i>3초</i></li>
+      <li><span class="m-ic m-ic-out" aria-hidden="true"></span>재생 대상 <i>iPhone</i></li>
+      <li><span class="m-ic m-ic-vol" aria-hidden="true"></span>미디어 음량 <i>원하는 크기</i></li>
+    </ol>
+  </div>
+  <figcaption>재현 그림 · 위에서 아래로 이 순서대로 넣어요</figcaption>
+</figure>
+    </li>
+  </ol>
+  <div class="note warn">
+    <b>②를 만들었다면 ③은 꼭 만들어요</b>
+    소리가 iPhone으로 나오면 앱이 차 연결이 끊긴 걸 알아채지 못해요. ③이 감시를 끝내 줘요.
+  </div>
+
+  <h3>③ 차에서 연결 해제될 때 → 감시 정지</h3>
+  <ol class="steps">
+    <li>
+      <h4>①처럼 Bluetooth 자동화를 하나 더 만들어요</h4>
+      <p>이번에는 <b>연결 해제될 때</b>에 체크하고, <b>즉시 실행</b>에 체크해요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-disconnect.webp" width="340" height="336" alt="연결 해제될 때와 즉시 실행에 체크한 모습" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:50.0%;--y:23.07%;--w:45.45%;--h:40.69%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:84.14%;--w:90.91%;--h:11.95%"><b>2</b></span></span></div><figcaption>① 연결 해제될 때 → ② 즉시 실행<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>동작 검색 ‘RoadSentry’ → ‘감시 정지’</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-search.webp" width="340" height="278" alt="동작 검색 결과에서 감시 정지를 고르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:5.56%;--w:81.14%;--h:12.22%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:78.98%;--w:90.91%;--h:14.44%"><b>2</b></span></span></div><figcaption>① ‘RoadSentry’ 입력 → ② ‘감시 정지’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+      <p>‘감시 정지’ 하나만 넣고 <span class="kbd">완료</span>.</p>
+    </li>
+  </ol>
+  <figure class="shot mockfig" style="--mw:320px">
+  <div class="mock" role="img" aria-label="자동화 세 개를 다 만든 뒤의 자동화 목록 재현 그림">
+    <div class="m-bar m-bar-big"><span class="m-big">자동화</span><span class="m-plus" aria-hidden="true">＋</span></div>
+    <div class="m-auto"><span class="m-tagr">1</span><div><b>내 차에 연결될 때</b><span>감시 시작</span></div></div>
+    <div class="m-auto m-auto-opt"><span class="m-tagr">2</span><div><b>내 차에 연결될 때</b><span>대기 · 재생 대상 … (선택)</span></div></div>
+    <div class="m-auto"><span class="m-tagr">3</span><div><b>내 차에서 연결 해제될 때</b><span>감시 정지</span></div></div>
+  </div>
+  <figcaption>재현 그림 · 다 만들면 ‘자동화’ 탭에 이렇게 보여요</figcaption>
+</figure>
+  <div class="note info">
+    <b>앱에도 같은 설명이 있어요</b>
+    RoadSentry <span class="kbd">설정</span> → <span class="kbd">알림</span> → 아래 ‘자동 시작 설정(단축어)’. 여기의 ‘단축어 앱 열기’는 단축어 앱 첫 화면까지만 열어요. 자동화 만들기 화면으로 바로 가는 방법은 애플이 열어 두지 않았어요.
+  </div>
+</section>
+
+<!-- ───────────── 3. 확인 -->
+<section id="check">
+  <h2><span class="no">3</span>잘 되는지 확인하기</h2>
+  <p class="sub">자동화를 만든 뒤 한 번 차에 타 보고, 앱에서 실행 기록을 확인해요.</p>
+  <ol class="steps">
+    <li>
+      <h4>RoadSentry → 설정 → 알림</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/check-settings.webp" width="340" height="355" alt="RoadSentry 설정 화면의 알림 항목" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:36.67%;--w:89.09%;--h:16.52%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>맨 아래 ‘최근 실행’ 시각을 봐요</h4>
+      <p>차에 탄 시각이 보이면 ①이 잘 실행된 거예요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/check-card.webp" width="340" height="369" alt="자동 시작 설정 카드의 감시 시작 단축어 최근 실행 시각" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:7.95%;--y:78.28%;--w:49.77%;--h:5.37%"><b>1</b></span><span class="mk" style="--x:7.77%;--y:91.77%;--w:19.47%;--h:5.79%"><b>2</b></span></span></div><figcaption>① 최근 실행 시각 · ② 단축어 앱 열기<small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>빨간 글씨가 보이면 자동화를 다시 확인해요</h4>
+      <p>최근에 운전했는데 ①이 하루 넘게 실행되지 않으면 이렇게 떠요. 새 폰으로 바꿨거나 자동화가 꺼졌을 수 있어요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/check-stale.webp" width="340" height="46" alt="자동 시작 단축어가 최근 실행되지 않았어요 경고" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:7.95%;--y:50.28%;--w:51.74%;--h:42.78%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+  </ol>
+
+  <h3>차에서는 이렇게 동작해요</h3>
+  <div class="card">
+    <p><b>테슬라 연결을 안 했을 때</b><br>차 블루투스가 연결되면 바로 감시가 켜져요. 소리 없이 켜지니, 앱을 열어 <b>‘감시 종료’</b> 버튼이 보이는지로 확인해요.</p>
+    <p style="margin:0"><b>테슬라 연결을 했을 때</b><br>타자마자 켜지지 않고, <b>출발이 GPS로 확인되면</b> “주행을 시작합니다”라고 말하며 켜져요. 차 오디오가 연결돼 있으면 약 3km/h 뒤 10km/h에서, 아니면 15km/h가 두 번 확인될 때예요. 그래서 출발 뒤 몇 초 늦을 수 있어요.</p>
+  </div>
+  <div class="note info"><b>앱 화면은 열리지 않아요</b>단축어는 뒤에서 실행돼요. 잠금화면 표시가 없으면 앱을 열어 확인해 주세요.</div>
+</section>
+
+<!-- ───────────── 4. 테슬라 -->
+<section id="tesla">
+  <h2><span class="no">4</span>테슬라 연결 <span class="badge opt" style="font-size:14px">선택</span></h2>
+  <p class="sub">안 해도 카메라 안내는 다 돼요. 연결하면 기어(D·P)로 시작·종료하고, 전비를 계산해요.</p>
+  <ol class="steps">
+    <li>
+      <h4>RoadSentry → 설정 → 차량 연결 · 전비</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/check-settings.webp" width="340" height="355" alt="설정 화면의 차량 연결 · 전비 항목" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:9.64%;--w:89.09%;--h:16.52%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>‘차량 VIN’에 17자리를 넣어요</h4>
+      <p>차 화면 → 소프트웨어, 또는 앞유리 왼쪽 아래에 있어요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/tesla-vin.webp" width="340" height="71" alt="차량 VIN 17자리 입력 칸" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:14.55%;--y:13.04%;--w:80.45%;--h:43.48%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>차 안이나 차 옆(10m 안)에서 키를 등록해요</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/tesla-key.webp" width="340" height="232" alt="차량 찾기 · 키 등록 버튼, 차에 타면 자동 연결, 기어로 시작·종료, 연결 테스트" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:6.67%;--y:9.56%;--w:34.39%;--h:12.44%"><b>1</b></span><span class="mk" style="--x:79.77%;--y:46.78%;--w:13.86%;--h:9.33%"><b>2</b></span><span class="mk" style="--x:79.77%;--y:84.11%;--w:13.86%;--h:9.33%"><b>3</b></span><span class="mk" style="--x:43.48%;--y:9.89%;--w:25.91%;--h:11.67%"><b>4</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+      <ol class="legend">
+        <li><span class="n">1</span><span><b>차량 찾기 · 키 등록</b>을 누르고, 카드키를 <b>차의 카드키 인식 부분</b>에 대요. 위치는 차종마다 달라요. 차 화면 안내를 따르세요. 차 화면에 뜬 키 추가 요청에서 ‘확인’.</span></li>
+        <li><span class="n">2</span><span><b>차에 타면 자동 연결</b> 켜기</span></li>
+        <li><span class="n">3</span><span><b>기어로 시작·종료</b> 켜기</span></li>
+        <li><span class="n">4</span><span><b>연결 테스트</b>로 잘 붙는지 확인</span></li>
+      </ol>
+    </li>
+  </ol>
+
+  <div class="note ok">
+    <b>폰 키와 같이 써도 돼요</b>
+    1.0.2부터 RoadSentry는 <b>주차 중에는 차에 연결하지 않아요.</b> 출발이 확인된 뒤에만 연결하고(1.0.3부터는 확인되는 즉시, 위치 약관 v1.7 동의 시), 주차(P)하면 바로 끊어요. 문을 열거나 잠그는 기능은 없어요.
+  </div>
+  <div class="note info">
+    <b>차 키 목록에 RoadSentry 키가 보여요</b>
+    정상이에요. 폰을 바꾸거나 앱을 지울 때는 차 화면 ‘잠금’ 메뉴의 키 목록에서 그 키를 지우고, 앱에서도 휴지통 버튼으로 등록을 해제해 주세요.
+  </div>
+
+  <h3>테슬라 연결로 더 편해지는 것</h3>
+  <div class="card">
+    <p><b>3시간 안에 다시 타면 단축어 없이도 켜져요.</b> 주차(P)하거나 오래 서 있어서 감시가 저절로 끝난 뒤 약 3시간 안에 다시 출발하면, GPS로 출발을 알아채 감시를 켜요.</p>
+    <p style="margin:0">하룻밤 주차처럼 오래 쉬었다 탈 때나, ‘감시 종료’ 버튼·‘감시 정지’ 단축어로 끝낸 뒤에는 이 기능이 동작하지 않아요. 그래서 ① 단축어는 꼭 만들어 두세요.</p>
+  </div>
+
+  <h3>안내 때 차 음악 소리 낮추기</h3>
+  <p>RoadSentry → 설정 → 소리 → <b>안내 때 차 볼륨 낮추기</b></p>
+  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/tesla-duck.webp" width="340" height="100" alt="소리 설정의 안내 때 차 볼륨 낮추기 스위치" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:12.31%;--w:89.09%;--h:35.38%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+  <p>안내가 <b>폰 스피커</b>로 나올 때(② 자동화를 만든 경우)만 차 음악을 잠깐 낮춰요. 차 키 등록이 필요해요. 안내가 차 스피커로 나오면 iPhone이 알아서 음악을 낮추니 켤 필요 없어요.</p>
+</section>
+
+<!-- ───────────── 5. 자주 묻는 질문 -->
+<section id="faq" class="faq">
+  <h2><span class="no">5</span>자주 묻는 질문</h2>
+  <p class="sub">눌러서 펼쳐 보세요.</p>
+
+  <details>
+    <summary>공유받은 단축어 링크를 추가했는데 자동으로 안 켜져요</summary>
+    <div class="a">
+      <p>링크로는 <b>단축어(무엇을 할지)</b>만 받아져요. 차에 탈 때 실행되게 하는 <b>자동화(언제 실행할지)</b>는 공유가 안 돼요. 애플이 보안 때문에 막아 두었어요.</p>
+      <figure class="diagram" aria-label="단축어와 자동화의 차이">
+  <div class="dg-cols">
+    <div class="dg-card">
+      <p class="dg-kicker">단축어</p>
+      <p class="dg-what">무엇을 할지</p>
+      <p class="dg-ex">예) RoadSentry ‘감시 시작’</p>
+      <p class="dg-yes"><span aria-hidden="true">✓</span> 링크로 공유돼요</p>
+    </div>
+    <div class="dg-card dg-key">
+      <p class="dg-kicker">자동화</p>
+      <p class="dg-what">언제 실행할지</p>
+      <p class="dg-ex">예) 내 차 블루투스에 연결될 때</p>
+      <p class="dg-no"><span aria-hidden="true">✕</span> 공유가 안 돼요</p>
+    </div>
+  </div>
+  <p class="dg-sum">자동으로 켜지려면 <b>‘언제’(자동화)</b>가 꼭 있어야 해요. 그래서 <b>이 iPhone에서 직접</b> 만들어야 해요.</p>
+  <figcaption>애플이 보안 때문에 자동화 공유를 막아 두었어요. 남의 iPhone에서 몰래 실행되지 않게 하려는 거예요.</figcaption>
+</figure>
+      <p>그래서 <a href="#auto">2. 자동 시작 설정</a>대로 이 iPhone에서 자동화를 직접 만들어 주세요. 공유받은 단축어는 지워도 돼요.</p>
+      <p>자동화를 만들었는데도 안 된다면 이 두 가지를 확인해요.</p>
+      <ul class="checklist">
+        <li>자동화의 Bluetooth 기기가 <b>내 차 이름</b>이 맞나요? (공유받은 것 안에 다른 사람 차 이름이 들어 있을 수 있어요)</li>
+        <li><b>즉시 실행</b>으로 되어 있나요? ‘확인 후 실행’(실행 전에 확인)이면 운전 중엔 실행되지 않아요.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>RoadSentry 단축어는 어디서 받나요?</summary>
+    <div class="a">
+      <p>따로 받을 필요가 없어요. 앱을 설치하면 단축어 앱 <b>동작 검색</b>에 ‘RoadSentry’를 입력했을 때 ‘감시 시작’과 ‘감시 정지’가 이미 나와요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-search.webp" width="340" height="278" alt="동작 검색에 RoadSentry를 입력하면 감시 시작과 감시 정지가 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:5.56%;--w:81.14%;--h:12.22%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:60.65%;--w:90.91%;--h:14.44%"><b>2</b></span></span></div><figcaption><small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+      <p>자동화를 만들 때 이걸 직접 고르는 게 가장 확실해요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>단축어가 실행됐는데 앱 화면이 안 열려요</summary>
+    <div class="a">
+      <p>정상이에요. 단축어는 앱을 열지 않고 뒤에서 감시를 켜요. 앱을 열면 ‘감시 종료’ 버튼이 보여요. 테슬라 연결을 했다면 출발이 확인될 때 “주행을 시작합니다”라고 알려요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>차에 탔는데 자동으로 안 켜져요</summary>
+    <div class="a">
+      <p>하나씩 확인해 보세요.</p>
+      <ul class="checklist">
+        <li>세 자동화 모두 <b>즉시 실행</b>인가요?</li>
+        <li>자동화의 기기가 <b>내 차</b>인가요? (이어폰 등 다른 기기를 고르지 않았나요?)</li>
+        <li>폰이 <b>이미 차에 연결된 채</b>였나요? 계속 연결돼 있으면 ‘새로 연결됨’이 없어서 자동화가 실행되지 않아요. 차에서 내렸다 다시 타거나, 블루투스를 껐다 켜 보세요.</li>
+        <li>위치 권한이 <b>‘항상’</b>인가요? (<a href="#start">1. 처음 시작하기</a>)</li>
+        <li>RoadSentry 설정 → 알림 → <b>‘최근 실행’</b> 시각이 바뀌었나요? (<a href="#check">3. 확인</a>)</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>‘단축어 앱 열기’를 눌렀는데 자동화 만드는 화면이 안 나와요</summary>
+    <div class="a">
+      <p>애플이 다른 앱에서 자동화 만들기 화면으로 바로 보내는 방법을 열어 두지 않았어요. 단축어 앱 첫 화면이 열리면 아래 <b>‘자동화’</b> 탭을 눌러 주세요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>단축어 없이도 켜지나요?</summary>
+    <div class="a">
+      <ul>
+        <li><b>앱을 열면 켜져요.</b> ‘앱 열면 자동 시작’이 기본으로 켜져 있어요. (설정 → 알림)</li>
+        <li><b>‘감시 시작’ 버튼</b>을 직접 눌러도 돼요.</li>
+        <li><b>테슬라 연결을 했다면</b> 주차(P)나 정차로 감시가 끝난 뒤 약 3시간 안에 다시 출발할 때 GPS로 알아채 켜져요.</li>
+      </ul>
+      <p>하룻밤 주차처럼 오래 쉬었다 탈 때는 단축어 자동화가 있어야 저절로 켜져요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>지하 주차장에서 나갈 때 늦게 켜져요</summary>
+    <div class="a">
+      <p>지하에서는 GPS가 잡히지 않아요. 밖으로 나와 GPS가 잡힌 뒤에 출발을 확인해서 조금 늦을 수 있어요. 잠시 기다리면 켜져요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>테슬라 폰 키랑 같이 써도 안전한가요?</summary>
+    <div class="a">
+      <ul>
+        <li>RoadSentry는 <b>문을 열거나 잠그는 기능이 없어요.</b></li>
+        <li>1.0.2부터 <b>주차 중에는 차에 연결하지 않아요.</b> 그래서 테슬라 앱 폰 키와 부딪히지 않아요.</li>
+        <li>출발이 확인된 뒤에만 연결해 기어·속도를 읽고, 주차(P)하면 바로 끊어요. 1.0.3부터는 출발이 확인되는 즉시 연결해요(위치 약관 v1.7 동의 시).</li>
+        <li>차 키 목록에 RoadSentry 키가 하나 보여요. 폰을 바꿀 때는 차 화면 ‘잠금’ 메뉴의 키 목록에서 지워 주세요.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>안내가 나올 때 음악 소리가 줄어요 / 안 줄어요</summary>
+    <div class="a">
+      <p>안내가 <b>차 스피커</b>로 나오면(블루투스로 폰 소리가 차에서 나오는 경우) iPhone이 알아서 음악을 잠깐 낮춰요. 앱 설정과 상관없어요.</p>
+      <p>‘안내 때 차 볼륨 낮추기’는 안내가 <b>폰 스피커</b>로 나올 때(② 자동화를 만든 경우)만 써요. 차 키 등록이 필요해요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>새 iPhone으로 바꿨어요</summary>
+    <div class="a">
+      <ul>
+        <li>새 iPhone에서 자동화가 그대로 있는지 단축어 앱 → 자동화 탭에서 확인하고, 없으면 <a href="#auto">2. 자동 시작 설정</a>대로 다시 만들어요.</li>
+        <li>테슬라 연결을 했다면 차 화면 키 목록에서 예전 RoadSentry 키를 지우고, 새 iPhone에서 키를 다시 등록해요.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>안내가 실제와 달라요 / 카메라를 놓쳤어요</summary>
+    <div class="a">
+      <p>위치·통신·제공 정보에 따라 안내가 늦거나 빠질 수 있어요. 실제 도로 표지와 제한속도를 먼저 봐 주세요. 차를 세운 뒤 <a href="#contact">진단 로그를 보내</a> 주시면 원인을 찾는 데 큰 도움이 돼요.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ───────────── 6. 문의 -->
+<section id="contact">
+  <h2><span class="no">6</span>문의하기</h2>
+  <p class="sub">문제가 생기면 진단 로그를 먼저 보내고, 받은 접수번호를 함께 알려 주세요.</p>
+  <ol class="steps">
+    <li>
+      <h4>설정 → 도움말 → 진단 로그</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/help-menu.webp" width="340" height="224" alt="도움말 화면의 진단 로그 항목" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:70.34%;--w:89.09%;--h:22.07%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>‘진단 기록 보내기’를 눌러요</h4>
+      <p>정확한 위치(좌표·진행 방향)는 지운 뒤 보내요. 목적지 이름도 빠져요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/help-send.webp" width="340" height="154" alt="진단 로그 화면의 진단 기록 보내기 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:59.17%;--w:44.09%;--h:24.0%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.3 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>접수번호와 상황을 알려 주세요</h4>
+      <p>언제, 어디쯤(대략), 무엇이 이상했는지 적어 주시면 돼요.</p>
+    </li>
+  </ol>
+  <div class="contact">
+    <a class="btn" href="mailto:ljh0327v@naver.com?subject=RoadSentry%20%EB%AC%B8%EC%9D%98">이메일 보내기 · ljh0327v@naver.com</a>
+    <a class="btn ghost" href="https://jhlee33214.github.io/roadsentry-data/support.html">지원 페이지</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://jhlee33214.github.io/roadsentry-data/support.html">지원</a> · <a href="https://jhlee33214.github.io/roadsentry-data/privacy.html">개인정보 처리방침</a> · <a href="https://jhlee33214.github.io/roadsentry-data/terms.html">위치서비스 이용약관</a></p>
+    <p>알림은 참고용이에요. 실제 도로 표지와 제한속도를 먼저 확인해 주세요.</p>
+    <p>Tesla는 Tesla, Inc.의 상표이며 이 앱은 Tesla와 무관합니다. iPhone·단축어는 Apple Inc.의 상표입니다.</p>
+  </div>
+</footer>
+<a class="top" href="#read-first" aria-label="맨 위로">↑</a>
+
+<script>
+/* 지금 보고 있는 절을 목차에 표시 (없어도 페이지는 그대로 동작) */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      links.forEach(function(a){a.removeAttribute('aria-current');});
+      var a=map[e.target.id]; if(!a) return;
+      a.setAttribute('aria-current','true');
+      try{a.scrollIntoView({block:'nearest',inline:'center'});}catch(_){}
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  Object.keys(map).forEach(function(id){var s=document.getElementById(id); if(s) io.observe(s);});
+})();
+</script>
+</body>
+</html>
