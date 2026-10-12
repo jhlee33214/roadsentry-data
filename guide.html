@@ -163,6 +163,10 @@ figcaption small{display:block;font-size:14px;opacity:.85}
 .flow em{font-style:normal;color:var(--muted)}
 .badge{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
 .badge.req{background:var(--mark);color:#fff}.badge.opt{background:var(--chip);color:var(--muted)}
+.badge.rec{background:var(--info-bg);color:var(--info);box-shadow:inset 0 0 0 1px var(--info)}
+.auto.rec .tag{background:var(--surface);color:var(--ink);border:2px solid var(--ink)}
+ul.plain{margin:0 0 10px;padding-left:20px}
+ul.plain li{margin:4px 0}
 
 /* 자주 묻는 질문 */
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin:10px 0;overflow:hidden}
@@ -221,7 +225,7 @@ footer a{color:var(--muted);display:inline-block;padding:12px 4px;margin:-12px 0
     <h2>먼저 꼭 읽어 주세요</h2>
     <ul>
       <li><b>공유받은 단축어 링크로는 자동으로 켜지고 꺼지지 않아요.</b>
-        차에 탈 때 켜지게 하려면 <b>자동화</b>를 이 iPhone에서 직접 만들어야 해요. 아래 그림을 보세요.</li>
+        차에 탈 때 켜지게 하려면 <b>자동화</b>를 이 iPhone에서 직접 만들어야 해요. 대부분은 <b>‘차에 연결될 때 → 감시 시작’ 하나</b>만 만들면 돼요. 아래 그림을 보세요.</li>
       <li><b>RoadSentry 동작은 따로 받을 필요가 없어요.</b>
         앱을 설치하면 단축어 앱 동작 목록에 ‘감시 시작’과 ‘감시 정지’가 이미 들어 있어요. 자동화를 만들 때 이걸 직접 고르는 게 가장 확실해요.</li>
       <li><b>단축어가 실행돼도 앱 화면은 열리지 않아요.</b>
@@ -298,22 +302,22 @@ footer a{color:var(--muted);display:inline-block;padding:12px 4px;margin:-12px 0
 <!-- ───────────── 2. 자동 시작 -->
 <section id="auto">
   <h2><span class="no">2</span>자동 시작 설정</h2>
-  <p class="sub">차에 타면 저절로 켜지고, 내리면 저절로 꺼지게 해요. iPhone 기본 앱인 <b>단축어</b> 앱에서 만들어요.</p>
+  <p class="sub"><b>대부분은 ① 하나만 만들면 돼요.</b> 차에 타면 저절로 켜지게 하는 자동화예요. iPhone 기본 앱인 <b>단축어</b> 앱에서 만들어요.</p>
 
   <div class="autos">
     <div class="auto"><span class="tag">1</span><div>
       <h4>차에 연결될 때 → 감시 시작<span class="badge req">필수</span></h4>
-      <p>이 자동화에는 다른 동작을 넣지 마세요.</p></div></div>
+      <p>이것 하나면 자동 시작이 돼요. 이 자동화에는 다른 동작을 넣지 마세요.</p></div></div>
+    <div class="auto rec"><span class="tag">3</span><div>
+      <h4>차에서 연결 해제될 때 → 감시 정지<span class="badge rec">권장</span></h4>
+      <p>내리면 감시를 바로 끝내요. 테슬라 연결을 했다면 P에서 바로 끝나니 없어도 돼요.</p></div></div>
     <div class="auto opt"><span class="tag">2</span><div>
       <h4>안내를 폰 스피커로 듣기<span class="badge opt">선택</span></h4>
-      <p>①과 따로 만들어요. 없으면 안내는 차 스피커로 나와요.</p></div></div>
-    <div class="auto"><span class="tag">3</span><div>
-      <h4>차에서 연결 해제될 때 → 감시 정지<span class="badge req">필수</span></h4>
-      <p>앱의 ‘감시 종료’ 버튼과 같아요. 내리면 바로 끝내요.</p></div></div>
+      <p>①과 따로 만들어요. 없으면 안내는 차 스피커로 나와요. <b>②를 만들면 ③은 필수</b>예요.</p></div></div>
   </div>
 
   <div class="note warn">
-    <b>세 자동화 모두 ‘즉시 실행’</b>
+    <b>만드는 자동화는 모두 ‘즉시 실행’</b>
     ‘확인 후 실행’(iOS에 따라 ‘실행 전에 확인’)으로 두면 운전 중에 실행되지 않아요.
   </div>
 
@@ -383,6 +387,25 @@ footer a{color:var(--muted);display:inline-block;padding:12px 4px;margin:-12px 0
     </li>
   </ol>
 
+  <h3>③ 차에서 연결 해제될 때 → 감시 정지 <span class="badge rec">권장</span></h3>
+  <p>내릴 때 감시를 바로 끝내요. 없어도 감시는 저절로 끝나요.</p>
+  <ul class="plain">
+    <li><b>테슬라 연결을 했다면</b> 기어를 P에 두면 바로 끝나서 ③이 없어도 돼요.</li>
+    <li><b>테슬라 연결을 안 했다면</b> ③이 없을 때 차를 세운 뒤 약 5분 지나야 끝나요(차 블루투스가 연결된 채 차 안에 있으면 최대 30분). 만들어 두면 좋아요.</li>
+    <li><b>②를 만들었다면 ③은 꼭 만들어요.</b></li>
+  </ul>
+  <ol class="steps">
+    <li>
+      <h4>①처럼 Bluetooth 자동화를 하나 더 만들어요</h4>
+      <p>이번에는 <b>연결 해제될 때</b>에 체크하고, <b>즉시 실행</b>에 체크해요.</p>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-disconnect.webp" width="340" height="336" alt="연결 해제될 때와 즉시 실행에 체크한 모습" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:50.0%;--y:23.07%;--w:45.45%;--h:40.69%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:84.14%;--w:90.91%;--h:11.95%"><b>2</b></span></span></div><figcaption>① 연결 해제될 때 → ② 즉시 실행<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>동작 검색 ‘RoadSentry’ → ‘감시 정지’</h4>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-search.webp" width="340" height="278" alt="동작 검색 결과에서 감시 정지를 고르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:5.56%;--w:81.14%;--h:12.22%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:78.98%;--w:90.91%;--h:14.44%"><b>2</b></span></span></div><figcaption>① ‘RoadSentry’ 입력 → ② ‘감시 정지’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+      <p>‘감시 정지’ 하나만 넣고 <span class="kbd">완료</span>.</p>
+    </li>
+  </ol>
   <h3>② 안내를 폰 스피커로 듣기 <span class="badge opt">선택</span></h3>
   <p>차 스피커 대신 iPhone 스피커로 안내를 듣고 싶을 때만 만들어요. <b>①에 넣지 말고 새 자동화로</b> 만들어요. 차 음악 연결이 조금 늦게 붙어 소리를 다시 가져가기 때문이에요.</p>
   <ol class="steps">
@@ -410,31 +433,18 @@ footer a{color:var(--muted);display:inline-block;padding:12px 4px;margin:-12px 0
     </li>
   </ol>
   <div class="note warn">
-    <b>②를 만들었다면 ③은 꼭 만들어요</b>
-    소리가 iPhone으로 나오면 앱이 차 연결이 끊긴 걸 알아채지 못해요. ③이 감시를 끝내 줘요.
+    <b>②를 만들었다면 ③은 필수예요</b>
+    소리가 iPhone으로 나오면 앱이 차에서 내린 걸 알아채지 못해요. ③이 감시를 끝내 줘요.
   </div>
 
-  <h3>③ 차에서 연결 해제될 때 → 감시 정지</h3>
-  <ol class="steps">
-    <li>
-      <h4>①처럼 Bluetooth 자동화를 하나 더 만들어요</h4>
-      <p>이번에는 <b>연결 해제될 때</b>에 체크하고, <b>즉시 실행</b>에 체크해요.</p>
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-disconnect.webp" width="340" height="336" alt="연결 해제될 때와 즉시 실행에 체크한 모습" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:50.0%;--y:23.07%;--w:45.45%;--h:40.69%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:84.14%;--w:90.91%;--h:11.95%"><b>2</b></span></span></div><figcaption>① 연결 해제될 때 → ② 즉시 실행<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
-    </li>
-    <li>
-      <h4>동작 검색 ‘RoadSentry’ → ‘감시 정지’</h4>
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sc-search.webp" width="340" height="278" alt="동작 검색 결과에서 감시 정지를 고르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:5.56%;--w:81.14%;--h:12.22%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:78.98%;--w:90.91%;--h:14.44%"><b>2</b></span></span></div><figcaption>① ‘RoadSentry’ 입력 → ② ‘감시 정지’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
-      <p>‘감시 정지’ 하나만 넣고 <span class="kbd">완료</span>.</p>
-    </li>
-  </ol>
   <figure class="shot mockfig" style="--mw:320px">
   <div class="mock" role="img" aria-label="자동화 세 개를 다 만든 뒤의 자동화 목록 재현 그림">
     <div class="m-bar m-bar-big"><span class="m-big">자동화</span><span class="m-plus" aria-hidden="true">＋</span></div>
-    <div class="m-auto"><span class="m-tagr">1</span><div><b>내 차에 연결될 때</b><span>감시 시작</span></div></div>
+    <div class="m-auto"><span class="m-tagr">1</span><div><b>내 차에 연결될 때</b><span>감시 시작 (필수)</span></div></div>
     <div class="m-auto m-auto-opt"><span class="m-tagr">2</span><div><b>내 차에 연결될 때</b><span>대기 · 재생 대상 … (선택)</span></div></div>
-    <div class="m-auto"><span class="m-tagr">3</span><div><b>내 차에서 연결 해제될 때</b><span>감시 정지</span></div></div>
+    <div class="m-auto"><span class="m-tagr">3</span><div><b>내 차에서 연결 해제될 때</b><span>감시 정지 (권장)</span></div></div>
   </div>
-  <figcaption>재현 그림 · 다 만들면 ‘자동화’ 탭에 이렇게 보여요</figcaption>
+  <figcaption>재현 그림 · 세 개를 다 만들면 ‘자동화’ 탭에 이렇게 보여요 (①만 있어도 돼요)</figcaption>
 </figure>
   <div class="note info">
     <b>앱에도 같은 설명이 있어요</b>
@@ -555,6 +565,17 @@ footer a{color:var(--muted);display:inline-block;padding:12px 4px;margin:-12px 0
   </details>
 
   <details>
+    <summary>자동화를 꼭 세 개 다 만들어야 하나요?</summary>
+    <div class="a">
+      <p>아니요. <b>① 차에 연결될 때 → 감시 시작</b> 하나만 있으면 자동으로 켜져요.</p>
+      <ul>
+        <li><b>③ 감시 정지</b>는 권장이에요. 내릴 때 바로 끝내 줘요. 테슬라 연결을 했다면 P에서 끝나니 없어도 되고, 안 했다면 없을 때 차를 세운 뒤 약 5분 지나야 끝나요.</li>
+        <li><b>② 폰 스피커로 듣기</b>는 선택이에요. ②를 만들면 ③도 꼭 만들어요.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
     <summary>RoadSentry 단축어는 어디서 받나요?</summary>
     <div class="a">
       <p>따로 받을 필요가 없어요. 앱을 설치하면 단축어 앱 <b>동작 검색</b>에 ‘RoadSentry’를 입력했을 때 ‘감시 시작’과 ‘감시 정지’가 이미 나와요.</p>
@@ -575,7 +596,7 @@ footer a{color:var(--muted);display:inline-block;padding:12px 4px;margin:-12px 0
     <div class="a">
       <p>하나씩 확인해 보세요.</p>
       <ul class="checklist">
-        <li>세 자동화 모두 <b>즉시 실행</b>인가요?</li>
+        <li>만든 자동화가 모두 <b>즉시 실행</b>인가요?</li>
         <li>자동화의 기기가 <b>내 차</b>인가요? (이어폰 등 다른 기기를 고르지 않았나요?)</li>
         <li>폰이 <b>이미 차에 연결된 채</b>였나요? 계속 연결돼 있으면 ‘새로 연결됨’이 없어서 자동화가 실행되지 않아요. 차에서 내렸다 다시 타거나, 블루투스를 껐다 켜 보세요.</li>
         <li>위치 권한이 <b>‘항상’</b>인가요? (<a href="#start">1. 처음 시작하기</a>)</li>
