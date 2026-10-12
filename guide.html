@@ -46,7 +46,7 @@ b,strong{font-weight:700}
 .ver{font-size:14px;color:#8E959F;margin-top:12px}
 
 /* ── 목차 (위에 붙음) */
-.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 97%,transparent);border-bottom:1px solid var(--line)}
 .toc ol{display:flex;gap:8px;margin:0 auto;padding:10px 16px;list-style:none;overflow-x:auto;scroll-snap-type:x proximity;max-width:760px;scrollbar-width:none}
 .toc ol::-webkit-scrollbar{display:none}
 .toc a{display:flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--chip);color:var(--ink);text-decoration:none;font-size:15px;font-weight:600;white-space:nowrap;scroll-snap-align:start}
@@ -717,7 +717,7 @@ footer a{color:var(--muted);display:inline-block;padding:12px 4px;margin:-12px 0
       links.forEach(function(a){a.removeAttribute('aria-current');});
       var a=map[e.target.id]; if(!a) return;
       a.setAttribute('aria-current','true');
-      try{a.scrollIntoView({block:'nearest',inline:'center'});}catch(_){}
+      try{var ol=a.closest('ol');if(ol){var x=a.offsetLeft-(ol.clientWidth-a.offsetWidth)/2;ol.scrollTo({left:Math.max(0,x),behavior:'smooth'});}}catch(_){}
     });
   },{rootMargin:'-45% 0px -50% 0px'});
   Object.keys(map).forEach(function(id){var s=document.getElementById(id); if(s) io.observe(s);});
