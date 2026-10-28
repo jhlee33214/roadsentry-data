@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>RoadSentry 사용 설명서</title>
-<meta name="description" content="RoadSentry 설치부터 단축어 자동 시작, 테슬라 차량 등록, Siri로 목적지 보내기, 자주 묻는 질문까지 사진으로 따라 하는 사용 설명서입니다.">
+<meta name="description" content="RoadSentry 설치부터 차에 타면 저절로 시작, 테슬라 차량 등록과 차 2대, Siri로 목적지 보내기, 자주 묻는 질문까지 사진으로 따라 하는 사용 설명서입니다.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0B0D10">
 <style>
@@ -212,9 +212,9 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
 <header class="hero">
   <div class="wrap">
     <h1>RoadSentry 사용 설명서</h1>
-    <p class="lead">사진을 보면서 그대로 따라 하면 돼요.<br>처음 설치부터 자동 시작까지 10분이면 끝나요.</p>
+    <p class="lead">사진을 보면서 그대로 따라 하면 돼요.<br>처음 설치부터 첫 출발 준비까지 금방 끝나요.</p>
     <div class="road" aria-hidden="true"></div>
-    <p class="ver">앱 1.0.6 기준 · 2026년 10월</p>
+    <p class="ver">앱 1.0.9 기준 · 2026년 10월</p>
   </div>
 </header>
 
@@ -235,40 +235,20 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
 
 <main class="wrap">
 
-<!-- ───────────── 먼저 읽기 -->
 <section id="read-first">
   <div class="must">
     <h2>먼저 꼭 읽어 주세요</h2>
     <ul>
-      <li><b>공유받은 단축어 링크로는 자동으로 켜지고 꺼지지 않아요.</b>
-        차에 탈 때 켜지게 하려면 <b>자동화</b>를 이 iPhone에서 직접 만들어야 해요. 대부분은 <b>‘차에 연결될 때 → 감시 시작’ 하나</b>만 만들면 돼요. 앱 안의 1분 안내를 따라 해도 돼요.</li>
-      <li><b>RoadSentry 동작은 따로 받을 필요가 없어요.</b>
-        앱을 설치하면 단축어 앱에 ‘감시 시작’과 ‘감시 정지’가 이미 들어 있어요. 자동화를 만들 때 이걸 직접 고르는 게 가장 확실해요.</li>
-      <li><b>단축어가 실행돼도 앱 화면은 열리지 않아요.</b>
-        뒤에서 조용히 감시를 켜요. 켜졌는지는 <a href="#check">3. 잘 되는지 확인</a>에서 보는 법을 알려 드려요.</li>
+      <li><b>차량을 등록하면 단축어 없이도 차에 타기만 하면 감시가 시작돼요.</b>
+        처음 한 번은 앱을 연 채로 출발해 주세요. 다음부터는 차에 타서 D를 넣으면 저절로 시작돼요. <a href="#auto">2. 자동 시작</a>에서 자세히 알려 드려요.</li>
+      <li><b>저절로 시작돼도 앱 화면은 열리지 않아요.</b>
+        폰이 잠겨 있어도 잠금화면에 카드가 떠요. 켜졌는지는 <a href="#check">3. 잘 되는지 확인</a>에서 보는 법을 알려 드려요.</li>
+      <li><b>차량을 등록하지 않았다면</b>
+        차량 등록을 하면 차에 타서 출발할 때 자동으로 시작돼요. <a href="#tesla">4. 차량 등록</a></li>
     </ul>
-    <figure class="diagram" aria-label="단축어와 자동화의 차이">
-  <div class="dg-cols">
-    <div class="dg-card">
-      <p class="dg-kicker">단축어</p>
-      <p class="dg-what">무엇을 할지</p>
-      <p class="dg-ex">예) RoadSentry ‘감시 시작’</p>
-      <p class="dg-yes"><span aria-hidden="true">✓</span> 링크로 공유돼요</p>
-    </div>
-    <div class="dg-card dg-key">
-      <p class="dg-kicker">자동화</p>
-      <p class="dg-what">언제 실행할지</p>
-      <p class="dg-ex">예) 내 차 블루투스에 연결될 때</p>
-      <p class="dg-no"><span aria-hidden="true">✕</span> 공유가 안 돼요</p>
-    </div>
-  </div>
-  <p class="dg-sum">자동으로 켜지려면 <b>‘언제’(자동화)</b>가 꼭 있어야 해요. 그래서 <b>이 iPhone에서 직접</b> 만들어야 해요.</p>
-  <figcaption>애플이 보안 때문에 자동화 공유를 막아 두었어요. 남의 iPhone에서 몰래 실행되지 않게 하려는 거예요.</figcaption>
-</figure>
   </div>
 </section>
 
-<!-- ───────────── 1. 처음 시작 -->
 <section id="start">
   <h2><span class="no">1</span>처음 시작하기</h2>
   <p class="sub">설치하고 권한을 허용하는 단계예요. 한 번만 하면 돼요.</p>
@@ -280,30 +260,28 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     <li>
       <h4>약관 두 칸을 체크하고 ‘동의하고 계속’</h4>
       <p>첫 화면에서 <span class="kbd">다음</span>을 누르면 위치서비스 이용약관이 나와요.</p>
-      <!-- 그림106: start-terms-106 (1.0.5 그림 start-terms-104는 약관 v1.8 글자라 다시 찍음) -->
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/start-terms-106.webp" width="340" height="143" alt="약관 두 칸을 체크하고 동의하고 계속을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:9.68%;--w:89.09%;--h:47.31%"><b>1</b></span><span class="mk" style="--x:5.45%;--y:63.44%;--w:89.09%;--h:29.03%"><b>2</b></span></span></div><figcaption>① 두 칸 체크 · ② 동의하고 계속<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/start-terms-109.webp" width="340" height="134" alt="약관 두 칸을 체크하고 동의하고 계속을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:4.02%;--w:89.09%;--h:47.7%"><b>1</b></span><span class="mk" style="--x:5.45%;--y:58.62%;--w:89.09%;--h:31.03%"><b>2</b></span></span></div><figcaption>① 두 칸 체크 · ② 동의하고 계속<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
       <p>그다음 <span class="kbd">다음</span>을 한 번 누르고 마지막 화면에서 <span class="kbd">시작하기</span>를 눌러요.</p>
     </li>
     <li>
       <h4>위치 권한 창에서 ‘앱을 사용하는 동안 허용’</h4>
       <p>‘시작하기’를 누르면 바로 감시가 켜지면서 위치 권한 창이 떠요.</p>
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-location-104.webp" width="300" height="291" alt="위치 권한 창에서 앱을 사용하는 동안 허용을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:8.14%;--y:65.27%;--w:83.72%;--h:14.37%"><b>1</b></span></span></div><figcaption>‘한 번 허용’은 고르지 마세요<small>RoadSentry 1.0.4 실제 화면</small></figcaption></figure>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-location-109.webp" width="300" height="305" alt="위치 권한 창에서 앱을 사용하는 동안 허용을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:7.14%;--y:62.57%;--w:85.71%;--h:14.04%"><b>1</b></span></span></div><figcaption>‘한 번 허용’은 고르지 마세요<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>이어서 뜨는 창에서 ‘항상 허용으로 변경’</h4>
-      <p>화면이 꺼져 있어도 안내를 받으려면 꼭 필요해요.</p>
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-always-104.webp" width="300" height="397" alt="위치 권한을 항상 허용으로 바꾸는 창" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:8.14%;--y:83.33%;--w:83.72%;--h:10.53%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.4 실제 화면</small></figcaption></figure>
+      <p>화면을 꺼 두어도 안내를 받으려면 꼭 필요해요.</p>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-always-109.webp" width="300" height="364" alt="위치 권한을 항상 허용으로 바꾸는 창" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:7.14%;--y:82.35%;--w:85.71%;--h:11.76%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>알림은 원하면 ‘허용’ (선택)</h4>
       <p>폰 음량이 낮을 때, 월간 리포트·주간 요약이 나왔을 때 알려 줘요. 안 해도 안내 음성은 나와요.</p>
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-notify-104.webp" width="300" height="207" alt="알림 허용 창" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:51.16%;--y:68.07%;--w:40.7%;--h:20.17%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.4 실제 화면</small></figcaption></figure>
+      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/start-notify-104.webp" width="300" height="207" alt="알림 허용 창" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:51.16%;--y:68.07%;--w:40.7%;--h:20.17%"><b>1</b></span></span></div><figcaption><small>RoadSentry 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>‘감시 종료’ 버튼이 보이면 켜진 거예요</h4>
       <p>버튼 글자가 <b>‘감시 종료’</b>면 지금 감시 중이에요. ‘감시 시작’일 때만 눌러 주세요. 권한 창이 뜨지 않았다면 <b>주행</b> 탭의 <span class="kbd">감시 시작</span>을 눌러 주세요.</p>
-      <!-- 그림106: 가능하면 home-monitoring-106으로 바꿈 (지금 그림은 1.0.1 앱스토어 사진) -->
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/home-monitoring-106.webp" width="340" height="232" alt="감시 중일 때 보이는 감시 종료 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:75.77%;--w:89.09%;--h:18.0%"><b>1</b></span></span></div><figcaption>① 버튼을 누르면 감시가 끝나요<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/home-monitoring-109.webp" width="340" height="232" alt="감시 중일 때 보이는 감시 종료 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:71.67%;--w:89.09%;--h:18.0%"><b>1</b></span></span></div><figcaption>① 버튼을 누르면 감시가 끝나요<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
   </ol>
   <div class="note info">
@@ -314,36 +292,91 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
   <p>차량 등록·자동 시작·소리 설정은 나중에 해도 돼요. 필요할 때 홈과 설정에서 안내해 드려요.</p>
 </section>
 
-<!-- ───────────── 2. 자동 시작 -->
 <section id="auto">
-  <h2><span class="no">2</span>자동 시작 설정</h2>
-  <p class="sub"><b>대부분은 ① 하나만 만들면 돼요.</b> 차에 타면 저절로 켜지게 하는 자동화예요. iPhone 기본 앱인 <b>단축어</b> 앱에서 만들어요.</p>
+  <h2><span class="no">2</span>자동 시작</h2>
+  <p class="sub"><b>차량을 등록하면 단축어는 만들지 않아도 돼요.</b> 차에 타서 D를 넣으면 감시가 저절로 시작돼요.</p>
 
   <div class="note ok">
-    <b>앱 안에서 1분 안내를 따라 해도 돼요</b>
-    RoadSentry <span class="kbd">설정</span> → <span class="kbd">알림</span> → 맨 아래 ‘차에 타면 자동 시작’ 카드의 <span class="kbd">1분 설정 안내 시작</span>을 누르면 5단계 그림 안내가 열려요. 안내가 단축어 앱을 열어 주고, 돌아오면 다음 단계를 보여 줘요.
-  </div>
-  <!-- 그림106: autostart-flow-106 -->
-  <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/autostart-flow-106.webp" width="300" height="382" alt="자동 시작 설정 1분 안내의 첫 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>안내를 따라 하면 단축어 앱에서 자동화 하나를 만들어요<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
-
-  <div class="autos">
-    <div class="auto"><span class="tag">1</span><div>
-      <h4>차에 연결될 때 → 감시 시작<span class="badge req">필수</span></h4>
-      <p>이것 하나면 자동 시작이 돼요. 이 자동화에는 다른 동작을 넣지 마세요.</p></div></div>
-    <div class="auto rec"><span class="tag">2</span><div>
-      <h4>차에서 연결 해제될 때 → 감시 정지<span class="badge rec">권장</span></h4>
-      <p>내리면 감시를 바로 끝내요. 차량 등록을 했다면 P에서 바로 끝나니 없어도 돼요.</p></div></div>
-    <div class="auto opt"><span class="tag">3</span><div>
-      <h4>안내를 폰 스피커로 듣기<span class="badge opt">선택</span></h4>
-      <p>①과 따로 만들어요. 없으면 안내는 차 스피커로 나와요. <b>③을 만들면 ②는 필수</b>예요.</p></div></div>
+    <b>처음 한 번만 앱을 연 채로 출발해 주세요</b>
+    그다음부터는 차에 타서 D를 넣기만 하면 시작돼요. 앱 화면은 열리지 않아요. 차 안에서 쉬다가 다시 출발해도 대부분 D를 넣으면 바로 다시 시작돼요.
   </div>
 
+  <h3>준비물</h3>
+  <ul class="plain">
+    <li><b>차량 등록</b>을 마쳤어요. (<a href="#tesla">4. 차량 등록</a>)</li>
+    <li>설정 → 차량 연결 · 전비에서 <b>‘차에 타면 자동 연결’</b>과 <b>‘기어로 시작·종료’</b>가 켜져 있어요. (기본 켬)</li>
+    <li>위치 접근이 <b>‘항상’</b>과 <b>‘정확한 위치’</b>예요. (<a href="#start">1. 처음 시작하기</a>)</li>
+    <li>위치서비스 이용약관 <b>1.11</b>에 동의했어요. (<a href="#terms-111">7. 그 밖의 기능</a>) 동의하기 전에는 차에 타면 저절로 시작하는 기능만 꺼져 있어요.</li>
+  </ul>
+
+  <h3>이렇게 시작돼요</h3>
+  <ol class="steps">
+    <li>
+      <h4>차량을 등록해요</h4>
+      <p>등록을 마치면 화면에 ‘처음 한 번은 앱을 연 채로 출발해 주세요’가 보여요. 등록 방법은 <a href="#tesla">4장</a>에 있어요.</p>
+    </li>
+    <li>
+      <h4>처음 한 번은 앱을 연 채로 출발해요</h4>
+      <p>차에 타서 RoadSentry 화면을 켜 둔 채로 D를 넣고 출발해요. 이때 설정 → 알림 → 맨 아래 ‘차에 타면 자동 시작’ 카드에는 <b>‘준비 중’</b>이 보여요.</p>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/auto-card-learning-109.webp" width="340" height="230" alt="자동 시작 카드에 준비 중이 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:79.33%;--y:17.39%;--w:14.9%;--h:11.36%"><b>1</b></span><span class="mk" style="--x:15.38%;--y:27.44%;--w:55.12%;--h:15.26%"><b>2</b></span></span></div><figcaption>① 준비 중 · ② 처음 한 번은 앱을 연 채로 출발해 주세요<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>다음부터는 차에 타서 D만 넣어요</h4>
+      <p>“주행을 시작합니다”라고 말하며 감시가 켜져요. 앱 화면은 열리지 않아요. 폰이 잠겨 있어도 잠금화면에 카드가 떠요.</p>
+    </li>
+    <li>
+      <h4>카드에 <b>‘준비됨’</b>이 보이면 다 된 거예요</h4>
+      <p>카드 아래에 ‘최근 5번 중 4번 저절로 시작했어요.’처럼 저절로 시작한 횟수가 보여요.</p>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/auto-card-ready-109.webp" width="340" height="214" alt="자동 시작 카드에 준비됨이 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:79.98%;--y:18.72%;--w:14.25%;--h:12.23%"><b>1</b></span><span class="mk" style="--x:15.5%;--y:40.89%;--w:45.12%;--h:8.29%"><b>2</b></span></span></div><figcaption>① 준비됨 · ② 저절로 시작한 횟수<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+    </li>
+  </ol>
+
+  <h3>카드가 알려 주는 상태</h3>
+  <ul class="plain">
+    <li><b>준비됨</b>: 차에 타서 출발하면 자동으로 시작돼요. 업데이트한 직후에는 ‘다음에 차에 타면 확인돼요.’가 보여요.</li>
+    <li><b>준비 중</b>: 처음 한 번은 앱을 연 채로 출발해 주세요. 다음부터는 차에 타면 자동으로 시작돼요.</li>
+    <li><b>확인 필요</b>: 카드 아래 한 줄대로 해 주세요. <span class="kbd">설정 열기</span>를 누르면 iPhone 설정이 바로 열려요.
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/auto-card-fix-109.webp" width="340" height="282" alt="자동 시작 카드에 확인 필요와 설정 열기 버튼이 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:76.85%;--y:14.2%;--w:17.38%;--h:9.28%"><b>1</b></span><span class="mk" style="--x:6.73%;--y:46.67%;--w:86.54%;--h:13.91%"><b>2</b></span></span></div><figcaption>① 확인 필요 · ② 설정 열기<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+    </li>
+    <li><b>설정 전</b>: 차량 등록 전이면 <span class="kbd">차량 등록하기</span>를 눌러 등록을 먼저 하고, 등록했다면 두 스위치와 약관 1.11 동의를 확인해 주세요.</li>
+  </ul>
+  <p>‘확인 필요’ 카드 아래 한 줄은 이런 말이에요.</p>
+  <ul class="plain">
+    <li>“위치 접근을 ‘항상’과 ‘정확한 위치’로 두면 차에 타기만 해도 시작돼요.”</li>
+    <li>“자동 시작을 아직 준비하지 못했어요. 앱을 연 채로 한 번 출발해 주시면 다시 확인해요.”</li>
+  </ul>
+
+  <h3>잠금화면 카드</h3>
+  <p>폰이 잠긴 채 감시가 시작돼도 잠금화면에 안내 카드가 바로 떠요. 처음 한 번은 카드 아래 <span class="kbd">허용</span>을 눌러야 할 수 있어요.</p>
+  <ul class="plain">
+    <li>카드가 바로 뜨지 못하면 ‘감시를 시작했어요’ 알림이 떠요. 눌러서 앱을 열면 잠금화면에 안내 카드가 떠요.</li>
+    <li>카드를 원하지 않으면 iPhone 설정 → RoadSentry → 실시간 현황을 꺼 주세요.</li>
+  </ul>
+
+  <h3>내리면 저절로 정리해요</h3>
+  <p>P를 넣으면 감시가 바로 끝나요. 차에서 내린 뒤의 정리도 앱이 스스로 해요. 그래서 ‘감시 정지’ 단축어는 필요 없어요.</p>
+
+  <h3>저절로 시작을 끄고 싶을 때</h3>
+  <p>설정 → 차량 연결 · 전비에서 <b>‘차에 타면 자동 연결’</b>이나 <b>‘기어로 시작·종료’</b> 중 하나를 끄거나, 위치 접근을 ‘항상’이 아닌 것으로 바꾸면 저절로 시작이 멈춰요. 다시 켜면 처음처럼 한 번 앱을 연 채로 출발한 뒤부터 다시 저절로 시작돼요.</p>
+  <ul class="plain">
+    <li>‘차에 타면 자동 연결’을 끄면 D를 넣을 때 바로 시작하기와 <a href="#send">차로 보내기</a> 예약도 함께 꺼져요.</li>
+    <li>두 스위치(‘차에 타면 자동 연결’, ‘기어로 시작·종료’)를 모두 켜야 차에 타면 자동 시작이 돼요. 하나라도 끄면 저절로 시작이 꺼져요. 위치 접근이 ‘항상’이 아니어도 마찬가지예요. 자세한 내용은 <a href="#tesla">4장</a>이에요.</li>
+  </ul>
+
+  <div class="note info">
+    <b>단축어를 쓰고 계셨나요?</b>
+    이제 단축어 없이도 차에 타면 자동으로 시작돼요. <b>스피커로 듣는 분만 그 단축어를 남기고, 단축어 앱 ‘자동화’ 탭의 ‘감시 시작’·‘감시 정지’ 단축어는 지워도 돼요.</b> 남겨 둬도 두 번 시작되지는 않아요. 단축어를 쓰던 분은 준비가 끝나면 앱 홈에 ‘이제 단축어 없이도 차에 타면 자동으로 시작돼요.’가 한 번 보여요. 설정 → 알림 → 자동 시작 카드의 ‘단축어 정리 안내 ›’에서 다시 볼 수 있어요.
+  </div>
+  <p><b>차량을 등록하지 않았다면</b> 차량 등록을 하면 차에 타서 출발할 때 자동으로 시작돼요. (<a href="#tesla">4. 차량 등록</a>)</p>
+
+  <h3 id="speaker">안내를 iPhone 스피커로 듣기 <span class="badge opt">선택</span></h3>
+  <p>안내는 차 스피커로 나와요. <b>iPhone 스피커로 듣고 싶을 때만</b> 단축어 자동화를 하나 만들어요. 앱 안에서는 설정 → 알림 → 맨 아래 ‘차에 타면 자동 시작’ 카드의 <span class="kbd">스피커로 듣기(선택) ›</span>에 같은 설명이 있어요.</p>
+    <figure class="shot" style="--mw:320px"><div class="frame"><img src="guide-assets/auto-speaker-109.webp" width="320" height="190" alt="안내를 iPhone 스피커로 듣기 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>설정 → 알림 → ‘스피커로 듣기(선택) ›’<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+  <p>이 자동화는 안내 소리를 iPhone으로 옮기기만 해요. 감시를 시작하지는 않아요. 차 음악 연결이 조금 늦게 붙어 소리를 다시 가져가기 때문에 대기 시간을 두고 두 번 옮겨요.</p>
   <div class="note warn">
-    <b>만드는 자동화는 모두 ‘실행 전에 확인’을 꺼요</b>
-    ‘실행 전에 확인’을 켜 두면 알림을 눌러야만 실행돼요. 운전 중엔 놓치기 쉬워요. ‘자동화’ 탭에서 만들 때는 같은 뜻으로 ‘즉시 실행’을 골라요.
+    <b>만드는 자동화는 ‘실행 전에 확인’을 꺼요</b>
+    ‘확인 후 실행’을 고르거나 ‘실행 전에 확인’을 켜 두면 알림을 눌러야만 실행돼요. 운전 중엔 놓치기 쉬워요. ‘자동화’ 탭에서 만들 때는 ‘확인 후 실행’ 대신 ‘즉시 실행’을 골라요.
   </div>
-
-  <h3>① 차에 연결될 때 → 감시 시작</h3>
   <ol class="steps">
     <li>
       <h4>단축어 앱을 열고 오른쪽 위 ＋를 눌러요</h4>
@@ -352,63 +385,23 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     <li>
       <h4>‘blue’를 입력하고 ‘자동화’ 아래 ‘Bluetooth’ → ‘＋ 추가’</h4>
       <p>위쪽 ‘Bluetooth 설정’이 아니라 <b>‘자동화’</b> 제목 아래의 <b>Bluetooth</b>를 눌러요. 설명 창이 뜨면 <span class="kbd">＋ 추가</span>를 눌러요.</p>
-      <!-- 그림106: sc-auto-bt-106 (소유자 iPhone, iOS 26) -->
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-auto-bt-106.webp" width="300" height="593" alt="단축어 앱 검색에 blue를 입력해 자동화 아래 Bluetooth를 누르고 설명 창의 추가 버튼을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk bl" style="--x:5.2%;--y:28.93%;--w:89.6%;--h:7.84%"><b>1</b></span><span class="mk" style="--x:52.0%;--y:89.59%;--w:40.3%;--h:6.96%"><b>2</b></span></span></div><figcaption>① ‘자동화’ 아래 ‘Bluetooth’ → ② ‘＋ 추가’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-auto-bt-106.webp" width="300" height="593" alt="단축어 앱 검색에 blue를 입력해 자동화 아래 Bluetooth를 누르고 설명 창의 추가 버튼을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk bl" style="--x:5.2%;--y:28.93%;--w:89.6%;--h:7.84%"><b>1</b></span><span class="mk" style="--x:52.0%;--y:89.59%;--w:40.3%;--h:6.96%"><b>2</b></span></span></div><figcaption>① ‘자동화’ 아래 ‘Bluetooth’ → ② ‘＋ 추가’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
     </li>
     <li>
       <h4>‘기기 중 아무거나’를 눌러 내 차를 골라요</h4>
-      <p>‘기기 중 아무거나 이(가) 연결 될 때’가 들어가요. <b>‘기기 중 아무거나’</b>를 누르고, 목록에서 내 차 이름에 체크한 뒤 오른쪽 위 <span class="kbd">✓</span>를 눌러요. 차 화면의 블루투스 메뉴에 보이는 이름과 같은 걸 고르세요. 이어폰 같은 다른 기기를 고르면 차에 타도 실행되지 않아요.</p>
-      <!-- 그림106: sc-auto-device-106 (아래쪽 다른 기기 줄은 잘라 냄) -->
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-auto-device-106.webp" width="300" height="214" alt="기기 목록에서 내 차 이름에 체크하고 오른쪽 위 체크 단추를 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk bl" style="--x:3.25%;--y:66.01%;--w:92.63%;--h:18.21%"><b>1</b></span><span class="mk" style="--x:84.72%;--y:5.31%;--w:11.16%;--h:15.63%"><b>2</b></span></span></div><figcaption>① 내 차 이름에 체크 → ② 오른쪽 위 ✓<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
+      <p>‘기기 중 아무거나 이(가) 연결 될 때’가 들어가요. <b>‘기기 중 아무거나’</b>를 누르고, 목록에서 내 차 이름에 체크한 뒤 오른쪽 위 <span class="kbd">✓</span>를 눌러요. 차 화면의 연결 메뉴에 보이는 이름과 같은 걸 고르세요. 이어폰 같은 다른 기기를 고르면 차에 타도 실행되지 않아요.</p>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-auto-device-106.webp" width="300" height="214" alt="기기 목록에서 내 차 이름에 체크하고 오른쪽 위 체크 단추를 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk bl" style="--x:3.25%;--y:66.01%;--w:92.63%;--h:18.21%"><b>1</b></span><span class="mk" style="--x:84.72%;--y:5.31%;--w:11.16%;--h:15.63%"><b>2</b></span></span></div><figcaption>① 내 차 이름에 체크 → ② 오른쪽 위 ✓<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
     </li>
     <li>
-      <h4>‘실행 전에 확인’을 꺼요</h4>
+      <h4>‘연결 될 때’로 두고 ‘실행 전에 확인’을 꺼요</h4>
       <p>‘내 차 이(가) 연결 될 때’ 끝의 동그란 화살표를 누르면 아래에 <b>‘자동화’</b>와 <b>‘실행 전에 확인’</b>이 나와요. ‘자동화’는 켜 둔 채로, <b>‘실행 전에 확인’은 꺼요.</b> ‘연결’은 그대로 둬요.</p>
-      <!-- 그림106: sc-auto-confirm-106 -->
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-auto-confirm-106.webp" width="300" height="166" alt="내 차가 연결될 때 아래에 자동화 켬과 실행 전에 확인 끔이 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk br" style="--x:21.24%;--y:23.92%;--w:8.88%;--h:15.29%"><b>1</b></span><span class="mk br" style="--x:76.27%;--y:68.04%;--w:16.25%;--h:13.33%"><b>2</b></span></span></div><figcaption>① 화살표를 눌러 펼치기 → ② ‘실행 전에 확인’ 끄기<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
-    </li>
-    <li>
-      <h4>아래 ‘검색’에 RoadSentry를 입력하고 ‘감시 시작’을 눌러요</h4>
-      <p>RoadSentry 동작이 나오면 <b>‘감시 시작’</b> 하나만 넣어요. 다른 동작은 넣지 마세요. 다 되면 왼쪽 위 <span class="kbd">‹</span>를 눌러 나와요.</p>
-      <!-- 그림106: sc-app-tile-106 (소유자 iPhone, iOS 26) -->
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-app-tile-106.webp" width="300" height="259" alt="동작 검색에 roadsentry를 입력하면 RoadSentry의 감시 시작과 감시 정지가 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.09%;--y:4.89%;--w:75.95%;--h:12.91%"><b>1</b></span><span class="mk" style="--x:5.09%;--y:63.28%;--w:89.82%;--h:15.16%"><b>2</b></span></span></div><figcaption>① ‘RoadSentry’ 입력 → ② ‘감시 시작’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
-    </li>
-  </ol>
-  <div class="note info">
-    <b>‘자동화’ 탭에서 만들어도 돼요</b>
-    단축어 앱 아래 <span class="kbd">자동화</span> 탭 → ‘새로운 자동화’ → ‘Bluetooth’ → ‘기기’에서 내 차 선택 → ‘연결될 때’ → ‘즉시 실행’ → ‘다음’ → RoadSentry → ‘감시 시작’ 순서예요. 앱 안 1분 안내는 이 순서로 보여 줘요. 목록에 RoadSentry가 안 보이면 ‘새로운 빈 자동화’를 고르고 아래 ‘검색’에 RoadSentry를 입력해요.
-  </div>
-
-  <h3>② 차에서 연결 해제될 때 → 감시 정지 <span class="badge rec">권장</span></h3>
-  <p>내릴 때 감시를 바로 끝내요. 없어도 감시는 저절로 끝나요.</p>
-  <ul class="plain">
-    <li><b>차량 등록을 했다면</b> 기어를 P에 두면 바로 끝나서 ②가 없어도 돼요.</li>
-    <li><b>그래도 만들어 두면 좋은 이유</b>: 차량 등록을 하면 P로 감시가 끝난 뒤에도 약 3시간 동안 GPS로 다시 출발하는지 지켜봐요. ②가 있으면 내려서 블루투스가 끊기는 순간 이 확인을 확실히 끝내서 배터리를 아끼고, 그사이 택시·버스 같은 다른 차를 탔을 때 잘못 켜지는 일도 막아 줘요.</li>
-    <li><b>차량 등록을 안 했다면</b> ②가 없을 때 차를 세운 뒤 약 5분 지나야 끝나요(차 블루투스가 연결된 채 차 안에 있으면 최대 30분). 만들어 두면 좋아요.</li>
-    <li><b>③을 만들었다면 ②는 꼭 만들어요.</b></li>
-  </ul>
-  <ol class="steps">
-    <li>
-      <h4>①처럼 Bluetooth 자동화를 하나 더 만들어요</h4>
-      <p>내 차를 고른 뒤 <b>‘연결’</b>을 눌러 <b>‘연결 해제’</b>로 바꿔요. ‘실행 전에 확인’은 ①처럼 꺼요. (‘자동화’ 탭에서 만들 때는 ‘연결 해제될 때’와 ‘즉시 실행’에 체크해요.)</p>
-    </li>
-    <li>
-      <h4>RoadSentry → ‘감시 정지’</h4>
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-app-tile-106.webp" width="300" height="259" alt="동작 검색 결과에서 감시 정지를 고르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.09%;--y:4.89%;--w:75.95%;--h:12.91%"><b>1</b></span><span class="mk" style="--x:5.09%;--y:82.71%;--w:89.82%;--h:15.16%"><b>2</b></span></span></div><figcaption>① ‘RoadSentry’ 입력 → ② ‘감시 정지’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
-      <p>‘감시 정지’는 앱의 ‘감시 종료’와 같아요. 이것 하나만 넣어요.</p>
-    </li>
-  </ol>
-  <h3>③ 안내를 폰 스피커로 듣기 <span class="badge opt">선택</span></h3>
-  <p>차 스피커 대신 iPhone 스피커로 안내를 듣고 싶을 때만 만들어요. <b>①에 넣지 말고 새 자동화로</b> 만들어요. 차 음악 연결이 조금 늦게 붙어 소리를 다시 가져가기 때문이에요.</p>
-  <ol class="steps">
-    <li>
-      <h4>①의 1~4단계와 똑같이 만들어요</h4>
-      <p>Bluetooth → 내 차 → <b>연결 될 때</b> → <b>‘실행 전에 확인’ 끄기</b>. 그다음 ‘감시 시작’ 대신 아래 동작을 넣어요. (‘자동화’ 탭에서 만들 때는 ‘즉시 실행’ → ‘다음’ → ‘새로운 빈 자동화’를 골라요.)</p>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-auto-confirm-106.webp" width="300" height="166" alt="내 차가 연결될 때 아래에 자동화 켬과 실행 전에 확인 끔이 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk br" style="--x:21.24%;--y:23.92%;--w:8.88%;--h:15.29%"><b>1</b></span><span class="mk br" style="--x:76.27%;--y:68.04%;--w:16.25%;--h:13.33%"><b>2</b></span></span></div><figcaption>① 화살표를 눌러 펼치기 → ② ‘실행 전에 확인’ 끄기<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
     </li>
     <li>
       <h4>동작을 이 순서대로 넣어요</h4>
-      <p><span class="kbd">대기</span> 8초 → <span class="kbd">재생 대상</span> iPhone → <span class="kbd">대기</span> 3초 → <span class="kbd">재생 대상</span> iPhone → <span class="kbd">음량 설정</span></p>
-      <p>동작 검색에서 ‘대기’, ‘재생 대상’, ‘음량’을 찾으면 나와요. iOS 버전에 따라 ‘재생 대상 설정’ 또는 ‘재생 대상 변경’으로 보여요.</p>
+      <p>아래 ‘검색’에서 동작을 찾아 위에서부터 차례로 넣어요. 다 되면 왼쪽 위 <span class="kbd">‹</span>를 눌러 나와요.</p>
+      <p><span class="kbd">대기</span> 8초 → <span class="kbd">재생 대상 변경</span> iPhone → <span class="kbd">대기</span> 3초 → <span class="kbd">재생 대상 변경</span> iPhone → <span class="kbd">음량 설정</span></p>
+      <p>동작 검색에서 ‘대기’, ‘재생 대상’, ‘음량’을 찾으면 나와요. iOS에 따라 ‘재생 대상 변경’이 ‘재생 대상 설정’으로 보여요.</p>
       <figure class="shot mockfig" style="--mw:320px">
   <div class="mock" role="img" aria-label="소리를 iPhone으로 옮기는 자동화의 동작 순서 재현 그림">
     <div class="m-bar"><span class="m-back" aria-hidden="true">‹</span><span class="m-title">자동화</span><span class="m-done">완료</span></div>
@@ -424,92 +417,66 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
 </figure>
     </li>
   </ol>
-  <div class="note warn">
-    <b>③을 만들었다면 ②는 필수예요</b>
-    소리가 iPhone으로 나오면 앱이 차에서 내린 걸 알아채지 못해요. ②가 감시를 끝내 줘요.
-  </div>
-
-  <figure class="shot mockfig" style="--mw:320px">
-  <div class="mock" role="img" aria-label="자동화 세 개를 다 만든 뒤의 자동화 목록 재현 그림">
-    <div class="m-bar m-bar-big"><span class="m-big">자동화</span><span class="m-plus" aria-hidden="true">＋</span></div>
-    <div class="m-auto"><span class="m-tagr">1</span><div><b>내 차에 연결될 때</b><span>감시 시작 (필수)</span></div></div>
-    <div class="m-auto"><span class="m-tagr">2</span><div><b>내 차에서 연결 해제될 때</b><span>감시 정지 (권장)</span></div></div>
-    <div class="m-auto m-auto-opt"><span class="m-tagr">3</span><div><b>내 차에 연결될 때</b><span>대기 · 재생 대상 … (선택)</span></div></div>
-  </div>
-  <figcaption>재현 그림 · 세 개를 다 만들면 ‘자동화’ 탭에 이렇게 보여요 (①만 있어도 돼요)</figcaption>
-</figure>
-  <div class="note info">
-    <b>앱에도 같은 설명이 있어요</b>
-    RoadSentry <span class="kbd">설정</span> → <span class="kbd">알림</span> → 맨 아래 ‘차에 타면 자동 시작’ 카드의 <span class="kbd">자세히 알아보기 ›</span>. 앱의 ‘단축어 앱 열기’는 단축어 앱을 열어 주기만 해요. 자동화 만들기 화면으로 바로 가는 방법은 애플이 열어 두지 않았어요.
-  </div>
+  <p>‘자동화’ 탭에서 만들어도 돼요. 단축어 앱 아래 <span class="kbd">자동화</span> 탭 → ‘새로운 자동화’ → ‘Bluetooth’ → ‘기기’에서 내 차 선택 → ‘연결될 때’ → ‘즉시 실행’ → ‘다음’ → ‘새로운 빈 자동화’ 순서예요.</p>
 </section>
 
-<!-- ───────────── 3. 확인 -->
 <section id="check">
   <h2><span class="no">3</span>잘 되는지 확인하기</h2>
-  <p class="sub">자동화를 만든 뒤 한 번 차에 타 보고, 앱에서 실행 기록을 확인해요.</p>
+  <p class="sub">한 번 차에 타 보고, 앱에서 상태를 확인해요.</p>
   <ol class="steps">
     <li>
-      <h4>RoadSentry → 설정 → 알림 → 맨 아래 ‘자동 시작’</h4>
-      <!-- 그림106: settings-main-106 (4장 첫 단계와 같은 그림) -->
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/settings-main-106.webp" width="340" height="517" alt="설정 첫 화면에서 알림을 누르는 모습" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:38.61%;--w:89.09%;--h:11.34%"><b>1</b></span></span></div><figcaption>① 알림<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <h4>RoadSentry → 설정 → 알림 → 맨 아래 ‘차에 타면 자동 시작’</h4>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/settings-main-109.webp" width="340" height="517" alt="설정 첫 화면에서 알림을 누르는 모습" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:38.61%;--w:89.09%;--h:11.34%"><b>1</b></span></span></div><figcaption>① 알림<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
     <li>
-      <h4>‘차에 타면 자동 시작’ 카드에 <b>‘정상’</b>이 보이면 돼요</h4>
-      <p>카드 아래에 <b>‘감시 시작’ 단축어 최근 실행: 오늘 08:31</b>처럼 차에 탄 시각이 보이면 ①이 잘 실행된 거예요.</p>
-      <!-- 그림106: check-card-106 -->
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/check-card-106.webp" width="340" height="208" alt="차에 타면 자동 시작 카드의 정상 표시와 최근 실행 시각" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:83.21%;--y:8.12%;--w:12.01%;--h:12.8%"><b>1</b></span><span class="mk" style="--x:14.58%;--y:38.92%;--w:53.01%;--h:9.48%"><b>2</b></span></span></div><figcaption>① 정상 · ② 최근 실행 시각<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <h4>카드에 <b>‘준비됨’</b>이 보이면 돼요</h4>
+      <p>‘준비 중’이면 처음 한 번 앱을 연 채로 출발해 주세요. ‘확인 필요’면 카드 아래 한 줄대로 해 주세요. (<a href="#auto">2. 자동 시작</a>)</p>
     </li>
     <li>
-      <h4>‘확인 필요’가 보이면 자동화를 다시 확인해요</h4>
-      <p>최근에 운전했는데 ①이 하루 넘게 실행되지 않으면 ‘주행은 있었는데 자동 시작 단축어가 최근 실행되지 않았어요.’가 떠요. 새 폰으로 바꿨거나 자동화가 꺼졌을 수 있어요. <span class="kbd">자동화 다시 확인하기</span>를 누르면 안내가 다시 열려요.</p>
-      <!-- 그림106: check-stale-106 -->
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/check-stale-106.webp" width="340" height="208" alt="확인 필요 표시와 자동화 다시 확인하기 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:77.5%;--y:8.28%;--w:17.72%;--h:12.8%"><b>1</b></span><span class="mk" style="--x:5.93%;--y:53.08%;--w:88.31%;--h:19.2%"><b>2</b></span></span></div><figcaption>① 확인 필요 · ② 자동화 다시 확인하기<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <h4>차에 타서 D를 넣어 보세요</h4>
+      <p>“주행을 시작합니다”라고 말하면 켜진 거예요. 앱을 열면 <b>‘감시 종료’</b> 버튼이 보여요. 폰이 잠겨 있다면 잠금화면 카드가 떠요.</p>
     </li>
   </ol>
+  <p>카드가 ‘설정 전’이라면, 차량 등록 전에는 등록을 먼저 하고 등록했다면 두 스위치와 약관 1.11 동의를 확인해 주세요. 차량 등록을 하면 차에 타서 출발할 때 자동으로 시작돼요.</p>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/auto-card-register-109.webp" width="340" height="282" alt="차량을 등록하지 않았을 때의 자동 시작 카드" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:79.33%;--y:14.2%;--w:14.9%;--h:9.28%"><b>1</b></span><span class="mk" style="--x:6.73%;--y:46.67%;--w:86.54%;--h:13.91%"><b>2</b></span></span></div><figcaption>① 설정 전 · ② 차량 등록하기<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
 
   <h3>차에서는 이렇게 동작해요</h3>
   <div class="card">
-    <p><b>차량 등록을 안 했을 때</b><br>차 블루투스가 연결되면 바로 감시가 켜져요. 소리 없이 켜지니, 앱을 열어 <b>‘감시 종료’</b> 버튼이 보이는지로 확인해요.</p>
-    <p style="margin:0"><b>차량 등록을 했을 때</b><br><b>기어를 D에 넣으면 바로</b> “주행을 시작합니다”라고 말하며 켜져요. <b>P를 넣으면 바로 끝나요.</b> (설정 → 차량 연결 · 전비의 ‘차에 타면 자동 연결’과 ‘기어로 시작·종료’가 켜져 있을 때예요. 지하 주차장에서도 마찬가지예요.)</p>
+    <p><b>차량 등록을 했을 때</b><br>차에 타서 <b>D를 넣으면 바로</b> “주행을 시작합니다”라고 말하며 켜져요. <b>P를 넣으면 바로 끝나요.</b> (설정 → 차량 연결 · 전비의 ‘차에 타면 자동 연결’과 ‘기어로 시작·종료’가 켜져 있을 때예요. 지하 주차장에서도 마찬가지예요.) 처음 한 번은 앱을 연 채로 출발해야 해요.</p>
+    <p style="margin:0"><b>차량 등록을 안 했을 때</b><br>앱을 열면 켜져요. 앱을 열어 <b>‘감시 종료’</b> 버튼이 보이는지로 확인해요. 차량 등록을 하면 차에 타서 출발할 때 자동으로 시작돼요.</p>
   </div>
-  <div class="note info"><b>앱 화면은 열리지 않아요</b>단축어는 뒤에서 실행돼요. 잠금화면 표시가 없으면 앱을 열어 확인해 주세요.</div>
+  <div class="note info"><b>앱 화면은 열리지 않아요</b>저절로 시작돼도 앱 화면은 열리지 않아요. 잠금화면 표시가 없으면 앱을 열어 확인해 주세요.</div>
 </section>
 
-<!-- ───────────── 4. 차량 등록 -->
 <section id="tesla">
   <h2><span class="no">4</span>차량 등록 (테슬라) <span class="badge opt" style="font-size:14px">선택</span></h2>
-  <p class="sub">안 해도 카메라 안내는 다 돼요. 등록하면 기어를 D에 넣으면 바로 시작하고 P에 넣으면 바로 끝나요. 전비를 계산하고, <a href="#send">목적지를 차로 보낼</a> 수 있어요.</p>
+  <p class="sub">안 해도 카메라 안내는 다 돼요. 등록하면 단축어 없이 <a href="#auto">차에 타기만 해도 저절로 시작</a>되고, 기어를 D에 넣으면 바로 시작하고 P에 넣으면 바로 끝나요. 전비를 계산하고, <a href="#send">목적지를 차로 보낼</a> 수 있어요.</p>
   <p>차 안이나 차 옆(10m 안)에서, 카드키를 손에 들고 시작해요. 차 안에서 하면 3분이면 끝나요.</p>
   <ol class="steps">
     <li>
       <h4>홈의 <span class="kbd">차량 등록</span>을 눌러요</h4>
       <p>등록 전이면 홈에 ‘차량을 등록해 주세요’가 보여요. ‘나중에 하기’를 눌렀다면 홈 위쪽의 작은 ‘차량 등록’ 버튼을 눌러요.</p>
-      <!-- 그림106: reg-home-106 -->
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/reg-home-106.webp" width="340" height="193" alt="홈의 차량을 등록해 주세요 패널" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:27.73%;--y:57.32%;--w:44.55%;--h:19.2%"><b>1</b></span></span></div><figcaption>① 차량 등록<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/reg-home-109.webp" width="340" height="193" alt="홈의 차량을 등록해 주세요 패널" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:27.73%;--y:57.32%;--w:44.55%;--h:19.2%"><b>1</b></span></span></div><figcaption>① 차량 등록<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>‘등록 전에 이것만 준비해 주세요’를 보고 ‘다음’</h4>
-      <p>차가 잠들어 있으면 문을 한 번 열어 깨워 두세요. 더 빨리 찾아요.</p>
+      <p>차가 잠들어 있으면 문을 한 번 열었다 닫아 두세요. 더 빨리 찾아요.</p>
     </li>
     <li>
       <h4>차량 VIN 17자리를 넣고 ‘차 찾기’</h4>
-      <p>차 화면 → 소프트웨어에 나와요. 앞유리 왼쪽 아래에도 적혀 있어요. 복사해 둔 VIN이 있으면 ‘붙여넣기’를 눌러요. 처음이면 ‘차 찾기’를 누를 때 블루투스 허용 창이 떠요. ‘허용’을 눌러 주세요.</p>
-      <!-- 그림106: reg-vin-106 -->
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/reg-vin-106.webp" width="300" height="570" alt="차량 VIN을 넣는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:27.95%;--w:89.09%;--h:8.13%"><b>1</b></span><span class="mk" style="--x:35.98%;--y:91.39%;--w:58.57%;--h:6.46%"><b>2</b></span></span></div><figcaption>① VIN 칸 · ② 차 찾기 (그림의 VIN은 예시)<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <p>차 화면 → 소프트웨어에 나와요. 앞유리 왼쪽 아래에도 적혀 있어요. 복사해 둔 VIN이 있으면 ‘붙여넣기’를 눌러요. 처음이면 ‘차 찾기’를 누를 때 허용 창이 떠요. ‘허용’을 눌러 주세요.</p>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/reg-vin-109.webp" width="300" height="570" alt="차량 VIN을 넣는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:27.95%;--w:89.09%;--h:8.13%"><b>1</b></span><span class="mk" style="--x:35.98%;--y:91.39%;--w:58.57%;--h:6.46%"><b>2</b></span></span></div><figcaption>① VIN 칸 · ② 차 찾기 (그림의 VIN은 예시)<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>카드키를 대고 차 화면에서 ‘확인’</h4>
       <p>카드키를 대면 차 화면에 키를 추가할지 묻는 창이 떠요. ‘확인’을 눌러 주세요. 카드키 인식 위치는 차종마다 달라요. 보통 센터 콘솔의 <b>무선 충전 패드</b>에 있어요(모델 Y 주니퍼는 패드 왼쪽, 예전 모델 3는 컵홀더 뒤쪽). 차 화면 안내를 따르세요.</p>
-      <!-- 그림106: reg-card-106 -->
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/reg-card-106.webp" width="300" height="477" alt="카드키를 대 주세요 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.34%;--y:41.1%;--w:89.2%;--h:3.96%"><b>1</b></span></span></div><figcaption>① 남은 시간<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/reg-card-109.webp" width="300" height="477" alt="카드키를 대 주세요 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.34%;--y:41.1%;--w:89.2%;--h:3.96%"><b>1</b></span></span></div><figcaption>① 남은 시간<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
       <p>창을 닫아도 등록은 계속 진행돼요.</p>
     </li>
     <li>
       <h4>‘등록됐어요’가 보이면 끝</h4>
-      <p><span class="kbd">테스트</span>로 차와 실제로 연결되는지 확인할 수 있어요. ‘다음 할 일’에서 자동 시작 안내로 바로 갈 수 있어요.</p>
-      <!-- 그림106: reg-done-106 -->
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/reg-done-106.webp" width="300" height="570" alt="등록됐어요 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:77.2%;--y:37.92%;--w:14.61%;--h:5.26%"><b>1</b></span><span class="mk" style="--x:5.45%;--y:91.39%;--w:89.09%;--h:6.46%"><b>2</b></span></span></div><figcaption>① 연결 테스트 · ② 완료<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <p>‘등록됐어요’ 아래에 첫 출발 안내가 나와요. 처음 한 번은 앱을 연 채로 출발해 주세요. <span class="kbd">테스트</span>로 차와 실제로 연결되는지 확인할 수 있고, ‘다음 할 일’에서 ‘기어로 시작·종료’가 켜져 있는지 보여요.</p>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/reg-done-109.webp" width="300" height="570" alt="등록됐어요 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:77.2%;--y:43.18%;--w:14.61%;--h:5.26%"><b>1</b></span><span class="mk" style="--x:5.45%;--y:91.39%;--w:89.09%;--h:6.46%"><b>2</b></span></span></div><figcaption>① 연결 테스트 · ② 완료 (스위치 설정에 따라 윗글이 조금 달라요)<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
   </ol>
   <div class="note warn">
@@ -519,38 +486,64 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
 
   <h3>등록한 뒤 설정</h3>
   <p>설정 → <b>차량 연결 · 전비</b>에서 바꿔요.</p>
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/tesla-key-104.webp" width="340" height="232" alt="차량 찾기 · 키 등록 버튼, 차에 타면 자동 연결, 기어로 시작·종료, 연결 테스트" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:6.67%;--y:9.44%;--w:34.39%;--h:12.44%"><b>1</b></span><span class="mk" style="--x:79.77%;--y:46.67%;--w:13.86%;--h:9.33%"><b>2</b></span><span class="mk" style="--x:79.77%;--y:84.0%;--w:13.86%;--h:9.33%"><b>3</b></span><span class="mk" style="--x:43.48%;--y:9.78%;--w:25.91%;--h:11.67%"><b>4</b></span></span></div><figcaption><small>RoadSentry 1.0.4 실제 화면</small></figcaption></figure>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/tesla-key-109.webp" width="340" height="278" alt="차량 찾기 · 키 등록 버튼, 차에 타면 자동 연결, 기어로 시작·종료, 연결 테스트" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:6.36%;--y:8.06%;--w:23.48%;--h:10.64%"><b>1</b></span><span class="mk" style="--x:79.77%;--y:34.81%;--w:13.86%;--h:7.78%"><b>2</b></span><span class="mk" style="--x:79.77%;--y:74.64%;--w:13.86%;--h:7.78%"><b>3</b></span><span class="mk" style="--x:32.11%;--y:8.53%;--w:25.91%;--h:9.72%"><b>4</b></span></span></div><figcaption><small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <ol class="legend">
-    <li><span class="n">1</span><span>등록·다시 등록 버튼 (등록 해제는 옆 휴지통)</span></li>
+    <li><span class="n">1</span><span>등록·다시 등록 버튼 (등록 해제: 1대일 때 옆 휴지통, 2대면 차 목록에서 ‘이 차 등록 해제’)</span></li>
     <li><span class="n">2</span><span><b>차에 타면 자동 연결</b> 켜기 (기본 켬)</span></li>
     <li><span class="n">3</span><span><b>기어로 시작·종료</b> 켜기 (기본 켬). D를 넣으면 바로 시작하고, P를 넣으면 바로 끝나요</span></li>
     <li><span class="n">4</span><span><b>연결 테스트</b>로 잘 붙는지 확인</span></li>
   </ol>
 
   <div class="note ok">
-    <b>폰 키와 같이 써도 돼요</b>
-    RoadSentry는 주차 중에는 <b>차에 탄 뒤 한 번에 최대 10분 동안 차가 알려 주는 기어 값만 읽고</b>, 차에 명령을 보내지 않아요. 목적지를 차로 보내는 것도 D를 넣은 뒤에만 해요. 주차(P)하면 바로 끊어요. 문을 열거나 잠그는 기능은 없어요.
+    <b>차 키와 같이 써도 돼요</b>
+    RoadSentry에는 문을 열거나 잠그는 기능이 없어요. 목적지를 차로 보내는 것도 D를 넣은 뒤에만 해요.
   </div>
   <div class="note info">
     <b>차 키 목록에 RoadSentry 키가 보여요</b>
-    정상이에요. 폰을 바꾸거나 앱을 지울 때는 앱에서 휴지통 버튼으로 등록을 해제하고, 원하면 차 화면 ‘잠금’ 메뉴의 키 목록에서 그 키를 지워 주세요.
+    정상이에요. 폰을 바꾸거나 앱을 지울 때는 앱에서 등록을 해제하고(1대일 때 옆 휴지통, 2대면 차 목록에서 ‘이 차 등록 해제’), 원하면 차 화면 ‘잠금’ 메뉴의 키 목록에서 그 키를 지워 주세요.
   </div>
+
+  <h3 id="two-cars">차 2대 등록하기 <span class="badge new">1.0.9</span></h3>
+  <p>차를 <b>2대까지</b> 등록할 수 있어요. 설정 → 차량 연결 · 전비의 <b>‘차량 등록’</b> 아래 <b>차 목록</b>(앱 안내에서는 ‘내 차’라고 불러요)에서 관리해요. 앱이 어느 차에 탔는지 구분해서 주행·충전 기록에 남겨요.</p>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/cars-list-109.webp" width="340" height="164" alt="차 목록에 차 한 대와 차 추가 줄이 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:6.36%;--y:23.47%;--w:87.27%;--h:33.33%"><b>1</b></span><span class="mk" style="--x:6.36%;--y:57.14%;--w:87.27%;--h:30.05%"><b>2</b></span></span></div><figcaption>① 차 목록 · ② 차 추가 (차가 1대일 때)<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+  <ol class="steps">
+    <li>
+      <h4>차 이름을 눌러 이름을 붙여요</h4>
+      <p>‘차 이름 바꾸기’ 창에서 <b>‘차 이름(선택)’</b>에 이름을 적고(예: 내 모델 Y) <span class="kbd">저장</span>을 눌러요. 12자까지 쓸 수 있어요. 비워 두면 ‘모델 3 · 0000’처럼 자동 이름으로 보여요. 이름을 붙인 뒤에는 <span class="kbd">자동 이름으로 되돌리기</span>로 이름을 지울 수도 있어요.</p>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/car-name-109.webp" width="300" height="320" alt="차 이름 바꾸기 창에서 이름을 적고 저장을 누르는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:7.07%;--y:28.02%;--w:85.84%;--h:12.13%"><b>1</b></span><span class="mk" style="--x:7.07%;--y:53.77%;--w:85.84%;--h:11.06%"><b>2</b></span></span></div><figcaption>① 차 이름 · ② 저장<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>두 번째 차는 ‘차 추가’로 등록해요</h4>
+      <p>차가 1대일 때는 차 목록 아래에 <b>‘차 추가’</b> 줄이 있어요. 누르면 차량 등록이 처음부터 시작돼요(<a href="#tesla">위 단계</a>와 같아요). 주행 중에는 ‘주행이 끝난 뒤 다시 해 주세요.’가 보여요. 2대가 되면 ‘차 추가’ 줄은 없어져요.</p>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/cars-two-109.webp" width="340" height="157" alt="차 두 대가 등록된 내 차 목록" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:6.36%;--y:24.51%;--w:87.27%;--h:69.95%"><b>1</b></span></span></div><figcaption>① 두 대 · 지금 차 표시<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+      <p>2대일 때는 차 이름 창에서 <span class="kbd">지금 차로 정하기</span>로 ‘지금 차’를 바꾸거나 <span class="kbd">이 차 등록 해제</span>로 지울 수 있어요. 지워도 지난 기록은 그 이름 그대로 남아요.</p>
+    </li>
+    <li>
+      <h4>두 번째 차는 그 차에 탄 채로 ‘다시 찾기’를 눌러요</h4>
+      <p>두 번째 차는 ‘앱을 연 채로 출발’로는 준비되지 않아요. <b>이 차에 탄 채로</b> 설정 → 차량 연결 · 전비 → ‘차량 등록’ 아래 차 목록에서 그 차를 누르고 <span class="kbd">다시 찾기</span>를 눌러 주세요. 찾는 중에는 이 화면을 잠시 열어 두세요. 그러면 ‘준비됐어요. 다음부터 이 차에 타면 자동으로 시작돼요.’가 보이면 끝이에요. ‘찾지 못했어요. 이 차에 탄 채로 다시 눌러 주세요.’가 보이면 다시 눌러요. 차를 등록하는 동안 그 차에 타서 등록 화면을 잠시 열어 두어도 같아요.</p>
+    </li>
+  </ol>
+  <ul class="plain">
+    <li>기록 탭에서 차를 골라 그 차의 기록만 볼 수 있어요. (<a href="#records-cars">6. 기록 탭에서 차 고르기</a>)</li>
+    <li>엑셀·구글 시트에는 ‘차’ 칸이 생겨요. (<a href="#money">6. 충전·통행료·기록</a>)</li>
+    <li>차는 2대까지예요. 다른 차를 등록하려면 먼저 한 대를 지워 주세요.</li>
+  </ul>
 
   <h3>차량 등록으로 더 편해지는 것</h3>
   <div class="card">
+    <p><b>차에 타기만 해도 저절로 시작</b>: 단축어 없이 차에 타서 D를 넣으면 감시가 켜져요. 처음 한 번만 앱을 연 채로 출발해요. (<a href="#auto">2. 자동 시작</a>)</p>
     <p><b>기어로 바로 시작·종료</b>: D를 넣으면 바로 감시가 켜지고(지하 주차장 포함), P를 넣으면 바로 끝나요.</p>
-    <p><b>3시간 안에 다시 타면 단축어 없이도 켜져요.</b> 주차(P)하거나 오래 서 있어서 감시가 저절로 끝난 뒤 약 3시간 안에 다시 출발하면, GPS로 출발을 알아채 감시를 켜요.</p>
-    <p style="margin:0">하룻밤 주차처럼 오래 쉬었다 탈 때나, ‘감시 종료’ 버튼·‘감시 정지’ 단축어로 끝낸 뒤에는 이 기능이 동작하지 않아요. 그래서 ① 단축어는 꼭 만들어 두세요.</p>
+    <p><b>차 안에서 쉬다가 다시 출발해도</b> 대부분 D를 넣으면 바로 다시 시작돼요.</p>
+    <p style="margin:0"><b>전비·충전 기록, 목적지 보내기</b>도 차량 등록을 마친 분이 쓸 수 있어요.</p>
   </div>
 </section>
 
-<!-- ───────────── 5. 목적지 보내기 -->
 <section id="send">
   <h2><span class="no">5</span>테슬라로 목적지 보내기</h2>
   <p class="sub">Siri에게 말하거나 앱에서 고른 목적지를 테슬라 내비로 보내요. <b>차량 등록(4장)을 마친 분</b>이 쓸 수 있어요.</p>
 
   <div class="card">
-    <p><b>차에 타기 전에 보냈다면</b><br>앱이 기억해 두었다가 차에 타서 <b>D를 넣는 순간</b> 보내요. 보낸 뒤 2시간 안에 출발하면 돼요.</p>
+    <p><b>차에 타기 전에 보냈다면</b><br>앱이 기억해 두었다가 차에 타서 <b>D를 넣는 순간</b> 보내요. 보낸 뒤 <b>12시간 안</b>에 출발하면 돼요. 위치서비스 이용약관 버전 1.10 이상에 동의하지 않았다면 2시간 안이에요.</p>
     <p style="margin:0"><b>달리는 중이나 신호 대기 중에 보냈다면</b><br>바로 보내요. 보낸 뒤 “차 화면에서 목적지를 눌러 주세요”라고 한 번 알려 드려요. <b>차 화면에 뜬 목적지를 한 번 누르면</b> 안내가 시작돼요.</p>
   </div>
 
@@ -569,7 +562,7 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     </li>
     <li>
       <h4>동네와 함께 장소를 말해요</h4>
-      <p class="say">“김포 풍무동 스타벅스”</p>
+      <p class="say">“김포 풍무동 행정복지센터”</p>
       <p>가게나 건물 이름은 동네와 함께 말하면 더 정확해요.</p>
     </li>
     <li>
@@ -583,8 +576,7 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
       <p>같은 이름이 여러 곳이면 목록(최대 4곳)이 나와요. 맞는 곳을 고르고, 없으면 <b>‘다른 곳’</b>을 골라 동네와 함께 다시 말해요.</p>
     </li>
   </ol>
-  <!-- 그림106: siri-guide-106 -->
-  <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/siri-guide-106.webp" width="300" height="349" alt="Siri로 목적지 보내기 도움말 화면 위쪽" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>설정 → 도움말 → Siri로 목적지 보내기<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+    <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/siri-guide-107.webp" width="300" height="349" alt="Siri로 목적지 보내기 도움말 화면 위쪽" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>설정 → 도움말 → Siri로 목적지 보내기<small>RoadSentry 실제 화면</small></figcaption></figure>
 
   <div class="tipbox" id="siri-tip">
     <p class="tip-kicker">Siri 단축어 꿀팁</p>
@@ -596,19 +588,17 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
       <li><h4>단축어 앱을 열고 오른쪽 위 ＋를 눌러요</h4>
         <p>‘자동화’ 탭이 아니라 ‘단축어’ 탭에서 만들어요.</p></li>
       <li><h4>‘동작 검색’에서 RoadSentry를 찾아 ‘저장한 장소로 안내’를 골라요</h4>
-        <!-- 그림106: sc-saved-place-106 (소유자 iPhone, 즐겨찾기 이름은 흐리게) -->
-        <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-saved-place-106.webp" width="300" height="451" alt="동작 검색에 roadsentry를 입력하면 장소로 안내와 저장한 장소로 안내가 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.09%;--y:69.81%;--w:89.82%;--h:27.09%"><b>1</b></span><span class="mk" style="--x:5.09%;--y:58.72%;--w:89.82%;--h:8.72%"><b>2</b></span></span></div><figcaption>① ‘저장한 장소로 안내’(이번 단계) · ② ‘장소로 안내’(아래 2번에서 써요)<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure></li>
+                <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-saved-place-106.webp" width="300" height="451" alt="동작 검색에 roadsentry를 입력하면 장소로 안내와 저장한 장소로 안내가 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.09%;--y:69.81%;--w:89.82%;--h:27.09%"><b>1</b></span><span class="mk" style="--x:5.09%;--y:58.72%;--w:89.82%;--h:8.72%"><b>2</b></span></span></div><figcaption>① ‘저장한 장소로 안내’(이번 단계) · ② ‘장소로 안내’(아래 2번에서 써요)<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure></li>
       <li><h4>동작 안의 ‘장소’를 눌러 즐겨찾기에서 장소를 골라요</h4></li>
       <li><h4>단축어 이름을 ‘퇴근’으로 저장해요</h4>
         <p>위쪽 이름을 눌러 바꿔요. 단축어 안에서 고른 장소가 ‘우리집’이어도 괜찮아요. 아래 3번 요령은 <b>단축어 이름</b>에 대한 이야기예요.</p>
-        <!-- 그림106: sc-shortcut-done-106 -->
-        <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-shortcut-done-106.webp" width="300" height="112" alt="이름이 퇴근이고 우리집 안내 동작 하나가 들어간 단축어 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:38.35%;--y:15.61%;--w:22.54%;--h:18.5%"><b>1</b></span></span></div><figcaption>① 단축어 이름: ‘퇴근’ · 안의 동작: ‘우리집 안내’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure></li>
+                <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-shortcut-done-106.webp" width="300" height="112" alt="이름이 퇴근이고 우리집 안내 동작 하나가 들어간 단축어 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:38.35%;--y:15.61%;--w:22.54%;--h:18.5%"><b>1</b></span></span></div><figcaption>① 단축어 이름: ‘퇴근’ · 안의 동작: ‘우리집 안내’<small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure></li>
     </ol>
     <p>그다음부터는 <b>“시리야, 퇴근”</b> 한마디면 돼요. 출근, 헬스장처럼 자주 가는 곳마다 하나씩 만들어 두면 편해요.</p>
 
     <h4 class="h4">2. 처음 가는 곳도 내 말로 부르기</h4>
     <p>같은 방법으로 <b>‘장소로 안내’</b> 동작을 넣고, ‘장소’는 비워 둔 채 이름을 ‘테슬라 길안내’처럼 부르기 쉬운 말로 저장해요.</p>
-    <p class="say">“시리야, 테슬라 길안내” → “어디로 안내할까요?” → “김포 풍무동 스타벅스”</p>
+    <p class="say">“시리야, 테슬라 길안내” → “어디로 안내할까요?” → “김포 풍무동 행정복지센터”</p>
     <p>Siri가 ‘로드센트리’를 잘 못 알아들을 때 가장 확실한 방법이에요.</p>
 
     <h4 class="h4">3. 단축어 이름 고르는 요령</h4>
@@ -625,45 +615,58 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     <li><b>잠겨 있을 때 안 되면</b> iPhone 설정 앱 → Siri에서 <b>‘잠겨 있는 동안 Siri 허용’</b>을 켜 주세요.</li>
     <li><b>말하는 도중에 Siri가 끊으면</b> 설정 앱 → 손쉬운 사용 → Siri에서 <b>‘Siri 일시 정지 시간’</b>을 <b>‘늘리기’</b>로 바꿔 주세요.</li>
     <li><b>Siri가 알아들은 말을 보려면</b> 설정 앱 → Siri → Siri 응답에서 <b>‘요청 내용 항상 표시’</b>를 켜 주세요.</li>
-    <li>차를 먼저 등록해야 보낼 수 있어요. 등록 전이면 Siri가 “앱에서 차를 먼저 등록해 주세요”라고 답해요.</li>
+    <li>차를 먼저 등록해야 보낼 수 있어요. 등록 전이면 Siri가 “앱에서 차를 먼저 등록해 주세요”라고 답해요. 그 밖에 보낼 수 없는 까닭이 있으면 Siri도 앱과 같은 말로 알려 줘요(<a href="#send-blocked">보낼 수 없을 때</a>).</li>
   </ul>
   <p>앱 안에도 같은 설명이 있어요. RoadSentry → 설정 → 도움말 → <b>Siri로 목적지 보내기</b></p>
 
   <h3>[차로 보내기] 버튼 <span class="badge new">1.0.6</span></h3>
-  <p>목적지 검색 결과, 즐겨찾기, 최근 목적지 줄 오른쪽의 <span class="kbd">차로 보내기</span>를 누르면 돼요. 예전처럼 공유 창에서 Tesla 앱을 고를 필요가 없어요.</p>
-  <!-- 그림106: send-button-106 -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/send-button-106.webp" width="340" height="255" alt="즐겨찾기 줄마다 보이는 차로 보내기 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:56.98%;--y:37.97%;--w:21.66%;--h:13.33%"><b>1</b></span></span></div><figcaption>① 차로 보내기 (장소 이름은 예시)<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+  <p>목적지 검색 결과, 즐겨찾기, 최근 목적지 줄 오른쪽의 <span class="kbd">차로 보내기</span>를 누르면 돼요. 예전처럼 공유 창에서 Tesla 앱을 고를 필요가 없어요. 즐겨찾기는 <b>주행</b> 탭의 ‘목적지 선택’에서 열어요. 장소를 더하려면 목록 <b>맨 위의 ‘장소 추가’</b>를 눌러 장소를 찾은 뒤 별표를 눌러요.</p>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/send-button-109.webp" width="340" height="324" alt="즐겨찾기 맨 위의 장소 추가와 줄마다 보이는 차로 보내기 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:56.98%;--y:54.83%;--w:21.66%;--h:10.48%"><b>1</b></span></span></div><figcaption>① 차로 보내기 (장소 이름은 예시)<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <ul class="plain">
-    <li>차에 타기 전에 누르면 버튼이 <b>‘예약됨’</b>으로 바뀌고 ‘D 넣을 때 차로 보낼게요’가 보여요.</li>
+        <li>차에 타기 전에 누르면 버튼이 <b>‘예약됨’</b>으로 바뀌고 ‘D를 넣으면 차로 보낼게요(12시간 안)’가 보여요. 약관 버전 1.10 이상에 동의하지 않았다면 ‘(2시간 안)’으로 보여요.</li>
     <li>보낸 뒤 차 화면에서 목적지를 누르면 ‘차 목적지를 바꿨어요’가 보여요. 1분 안에 바뀌지 않으면 ‘목적지는 그대로예요’와 함께 버튼이 <span class="kbd">다시 보내기</span>로 바뀌어요.</li>
+    <li>지금 있는 곳에서 아주 먼 곳이면 ‘약 ○○km 떨어진 곳이에요. 맞으면 한 번 더 눌러 주세요’가 보이고 버튼이 <span class="kbd">다시 눌러 보내기</span>로 바뀌어요. 맞으면 한 번 더 눌러요.</li>
     <li>운전 중에는 동승자가 누르거나, 신호 대기로 멈췄을 때 눌러 주세요.</li>
     <li>보내지 못했을 때는 <span class="kbd">테슬라 앱으로 보내기</span>가 보여요. 누르고 공유 창에서 Tesla를 고르면 돼요.</li>
   </ul>
-  <!-- 그림106: send-reserved-106 -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/send-reserved-106.webp" width="340" height="324" alt="D 넣을 때 차로 보낼게요 상태 줄과 예약 취소 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:11.36%;--y:4.76%;--w:37.73%;--h:5.64%"><b>1</b></span><span class="mk" style="--x:12.5%;--y:10.88%;--w:15.68%;--h:10.48%"><b>2</b></span></span></div><figcaption>① 보낼 곳 · ② 예약 취소<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/send-reserved-109.webp" width="340" height="324" alt="D를 넣으면 차로 보낼게요 상태 줄과 예약 취소 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:13.18%;--y:4.76%;--w:53.64%;--h:5.64%"><b>1</b></span><span class="mk" style="--x:14.32%;--y:10.88%;--w:15.68%;--h:10.48%"><b>2</b></span></span></div><figcaption>① 보낼 곳 · ② 예약 취소<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+
+  <h3 id="send-blocked">보낼 수 없을 때 <span class="badge new">1.0.7</span></h3>
+  <p>예약을 지킬 수 없는 상태면 예약하지 않고, 까닭을 한 줄로 알려 드려요. 대부분 그 아래 버튼으로 바로 고칠 수 있어요. Siri로 말했을 때도 같은 말로 답해요.</p>
+  <ul class="plain">
+    <li><b>차량을 등록하지 않았을 때</b>: ‘차량 등록 후 쓸 수 있어요’와 <span class="kbd">차량 등록</span></li>
+    <li><b>‘차에 타면 자동 연결’이나 ‘기어로 시작·종료’가 꺼져 있을 때</b>: 예) “‘차에 타면 자동 연결’을 켜야 차로 보낼 수 있어요”와 <span class="kbd">설정 열기</span>(차량 연결 · 전비 설정)</li>
+    <li><b>위치서비스 이용약관에 동의하지 않았을 때</b>: ‘위치서비스 이용약관에 동의해야 차로 보낼 수 있어요’. 동의는 설정 → 도움말 → 위치서비스 이용약관에서 해요.</li>
+    <li><b>위치 권한이 꺼져 있을 때</b>: ‘위치 권한을 켜야 차로 보낼 수 있어요’와 <span class="kbd">설정 열기</span>(iPhone 설정)</li>
+    <li><b>차가 이 iPhone의 키를 모를 때</b>: ‘차가 이 iPhone의 키를 몰라요. 다시 등록해야 차로 보낼 수 있어요’와 <span class="kbd">설정 열기</span>(차량 연결 · 전비 설정)</li>
+  </ul>
+  <p>이때도 <span class="kbd">테슬라 앱으로 보내기</span>로 보낼 수 있어요.</p>
+  <div class="note warn">
+    <b>위치 권한이 ‘앱을 사용하는 동안’이면</b>
+    예약은 돼요. 다만 예약 줄 아래에 “위치 권한이 ‘항상’이 아니면 화면이 꺼진 뒤에는 보내지 못할 수 있어요”가 보여요. <span class="kbd">설정 열기</span>를 눌러 위치를 <b>‘항상’</b>으로 바꾸면 이 줄이 사라져요. 위치 권한을 아직 정하지 않았다면 “‘감시 시작’을 눌러 위치 권한을 허용해야 화면이 꺼진 뒤에도 보낼 수 있어요”가 보여요.
+  </div>
+  <p>예약한 뒤에 스위치를 끄거나 위치 권한을 끄는 등 보낼 수 없게 되면 예약을 바로 취소하고 ‘예약을 취소했어요.’ 뒤에 까닭을 붙여 알려 드려요. 앱 목적지는 그대로 둬요.</p>
 
   <h3>[예약 취소]</h3>
   <p>차에 타기 전에 보낸 예약은 상태 줄 아래 <span class="kbd">예약 취소</span>로 지울 수 있어요. 그 예약으로 정한 앱 목적지도 함께 지워지고 ‘차로 보내기 예약과 목적지를 지웠어요’가 보여요. 그사이 다른 목적지로 바꿨다면 예약만 지워요.</p>
+  <p>예약 시간(12시간, 약관 버전 1.10 이상에 동의하지 않았다면 2시간)이 지나면 ‘예약 시간이 지나 취소했어요’가 보여요. 이때 앱 목적지는 그대로 둬요.</p>
 </section>
-<!-- ───────────── 6. 충전·통행료·기록 -->
 <section id="money">
   <h2><span class="no">6</span>충전·통행료·기록</h2>
-  <p class="sub">충전 요금과 통행료를 주행 기록에 함께 모아 보여 드려요. 계산은 모두 이 iPhone 안에서 해요.</p>
+  <p class="sub">충전 요금과 통행료를 주행 기록에 함께 모아 보여 드려요. 계산은 모두 이 iPhone 안에서 해요. 차가 2대여도 차마다 나눠 볼 수 있어요.</p>
 
   <h3>자주 충전하는 곳 (최대 3곳) <span class="badge new">1.0.6</span></h3>
   <p>설정 → 차량 연결 · 전비 → 충전 요금 → <b>자주 충전하는 곳</b>에서 정해요. 회사, 아파트 충전기처럼 자주 가는 곳을 3곳까지 넣을 수 있어요.</p>
   <ol class="steps">
     <li>
       <h4>‘충전 장소 추가’를 눌러요</h4>
-      <p>오른쪽의 <b>0/3</b>은 지금까지 정한 곳의 수예요.</p>
-      <!-- 그림106: charge-sites-106 -->
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/charge-sites-106.webp" width="340" height="239" alt="자주 충전하는 곳 목록과 충전 장소 추가" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:6.36%;--y:60.87%;--w:87.27%;--h:14.19%"><b>1</b></span></span></div><figcaption>① 충전 장소 추가<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <p>오른쪽 숫자는 지금까지 정한 곳의 수예요.</p>
+                  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/charge-sites-109.webp" width="340" height="247" alt="자주 충전하는 곳 목록과 충전 장소 추가" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:6.36%;--y:52.5%;--w:87.27%;--h:13.75%"><b>1</b></span></span></div><figcaption>① 충전 장소 추가<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>‘즐겨찾기에서 고르기’ 또는 ‘지도에서 핀으로 정하기’</h4>
       <p>지도에서 정할 때는 지도를 움직여 핀 끝을 충전하는 자리에 맞추고, 이름을 넣은 뒤 <span class="kbd">이 위치로 정하기</span>를 눌러요. 이름과 위치는 이 기기에만 저장돼요.</p>
-      <!-- 그림106: charge-pin-106 -->
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/charge-pin-106.webp" width="300" height="559" alt="지도에서 핀으로 정하기 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:83.87%;--w:90.91%;--h:5.37%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:90.7%;--w:90.91%;--h:5.85%"><b>2</b></span></span></div><figcaption>① 이름 · ② 이 위치로 정하기<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/charge-pin-109.webp" width="300" height="559" alt="지도에서 핀으로 정하기 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:83.87%;--w:90.91%;--h:5.37%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:90.7%;--w:90.91%;--h:5.85%"><b>2</b></span></span></div><figcaption>① 이름 · ② 이 위치로 정하기<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>단가를 넣어요 (선택)</h4>
@@ -671,10 +674,34 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     </li>
   </ol>
   <ul class="plain">
-    <li>정해 둔 곳 <b>300m 안</b>에 세워 둔 동안 한 충전은 완속·급속 모두 그곳 단가로 계산해요. 차가 슈퍼차저로 알려 준 충전은 슈퍼차저 단가로 계산해요.</li>
-    <li>잘못 나뉘었으면 충전 기록에서 <span class="kbd">변경</span>을 눌러 종류를 직접 바꿀 수 있어요.</li>
-    <li>지우려면 그 줄의 휴지통을 누르고 <span class="kbd">지우기</span>를 눌러요. 이곳 단가로 계산한 지난 충전은 충전기 종류 단가로 다시 계산돼요.</li>
-    <li>위치서비스 이용약관 1.9에 동의해야 자동으로 나눠요. 동의하지 않아도 충전 기록에서 곳을 직접 고를 수는 있어요.</li>
+    <li>정해 둔 곳에서 <b>300m 안</b>에 차를 세워 두고 한 충전은 완속·급속 모두 그곳 단가로 계산해요. 차가 슈퍼차저로 알려 준 충전은 슈퍼차저 단가로 계산해요.</li>
+    <li>잘못 나뉘었으면 충전 기록에서 <span class="kbd">변경</span>을 눌러 종류를 직접 바꾸거나, <a href="#charge-manual">금액이나 단가를 직접 넣을</a> 수 있어요.</li>
+    <li>지우려면 그 줄의 휴지통을 누르고 <span class="kbd">지우기</span>를 눌러요. 이곳 단가로 계산한 지난 충전은 충전기 종류별 단가로 다시 계산돼요.</li>
+    <li>위치서비스 이용약관 버전 1.9 이상에 동의해야 자동으로 나눠요. 동의하지 않아도 충전 기록에서 충전 장소를 직접 고를 수는 있어요.</li>
+    <li><span class="badge new">1.0.9</span> 주차가 제대로 기록되지 않아 충전 기록이 끊기던 경우를 줄였어요. 지하 주차장에서도 자주 충전하는 곳을 더 잘 알아봐요. 따로 할 일은 없어요.</li>
+  </ul>
+  <h3 id="charge-manual">충전 금액 직접 넣기 · 이름 붙이기 <span class="badge new">1.0.9</span></h3>
+  <p>영수증 금액이 앱 계산과 다르면 그 충전의 금액이나 1 kWh당 단가를 직접 넣을 수 있어요. 기록 → 달력 아래 <b>충전 요금</b> 카드를 누르면 충전 기록이 보여요.</p>
+  <ol class="steps">
+    <li>
+      <h4>충전 기록 줄의 ‘종류 선택’이나 ‘변경’을 누르고 ‘직접 입력’을 골라요</h4>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/manual-picker-109.webp" width="340" height="159" alt="충전 기록의 종류 고르기 아래 직접 입력 줄" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:8.45%;--y:63.59%;--w:83.25%;--h:21.36%"><b>1</b></span></span></div><figcaption>① 직접 입력 (기록과 금액은 예시)<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>금액(원)이나 단가(원/kWh)를 넣고, 원하면 이름도 적어요</h4>
+      <p>넣는 동안 바로 계산한 한 줄이 보여요. 예를 들어 금액을 넣으면 ‘17.5 kWh · 1 kWh당 약 257원’처럼 보여요. 아래 <b>‘이름(선택)’</b>에 ‘회사 충전기’처럼 이름을 적으면 그 충전에 이름이 붙어요. 다 되면 ‘적용’을 눌러요. 키보드의 <span class="kbd">완료</span>도 ‘적용’과 같아요.</p>
+            <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/manual-editor-109.webp" width="300" height="347" alt="금액과 단가 중 하나를 골라 숫자를 넣고 이름을 적는 칸" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:8.41%;--y:54.18%;--w:41.59%;--h:6.33%"><b>1</b></span><span class="mk" style="--x:25.41%;--y:78.24%;--w:67.2%;--h:7.39%"><b>2</b></span><span class="mk" style="--x:50.95%;--y:88.24%;--w:40.75%;--h:8.63%"><b>3</b></span></span></div><figcaption>① 금액(원) · 단가(원/kWh) 고르기 · ② 이름(선택) · ③ 적용<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+    </li>
+    <li>
+      <h4>이름이 붙은 충전 줄을 확인해요</h4>
+      <p>충전 기록 줄에 이름이 보이고, 맨 위 요약에도 ‘회사 충전기 1회’처럼 이름으로 모여요.</p>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/manual-row-109.webp" width="340" height="116" alt="이름을 적은 뒤 충전 기록 줄에 이름이 붙은 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:7.32%;--y:31.33%;--w:16.89%;--h:19.53%"><b>1</b></span></span></div><figcaption>① 이름 표시<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+    </li>
+  </ol>
+  <ul class="plain">
+    <li>넣은 값은 충전 요금, 주간·월간 이동 비용, 엑셀·구글 시트에 그대로 들어가요. 기록 줄에는 적은 이름이 붙어요. 이름을 적지 않으면 ‘직접 입력’ 표시가 붙어요.</li>
+    <li>이름은 나중에 같은 곳에서 다시 열어 고칠 수 있어요. 엑셀·구글 시트에는 ‘직접 입력 이름’ 칸으로 들어가요.</li>
+    <li>다시 자동으로 계산하려면 같은 곳에서 다른 종류나 충전 장소를 고르면 돼요.</li>
   </ul>
   <div class="note info">
     <b>1.0.5에서 ‘회사 완속’을 쓰셨다면</b>
@@ -683,19 +710,19 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
 
   <h3>예상 통행료 <span class="badge new">1.0.6</span></h3>
   <p>주행이 끝나면 주행 카드에 지나온 유료도로의 예상 통행료가 한 줄로 보여요.</p>
-  <!-- 그림106: toll-card-106 -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/toll-card-106.webp" width="340" height="483" alt="주행 카드의 예상 통행료 줄과 세부 주행 기록" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:3.5%;--y:78.12%;--w:54.75%;--h:4.35%"><b>1</b></span><span class="mk" style="--x:76.42%;--y:14.74%;--w:18.07%;--h:4.1%"><b>2</b></span></span></div><figcaption>① 예상 통행료 · ② 세부 주행 기록 (금액·요금소는 예시 기록)<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/toll-card-109.webp" width="340" height="530" alt="주행 카드의 예상 통행료 줄과 세부 주행 기록" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:3.25%;--y:93.35%;--w:53.75%;--h:3.89%"><b>1</b></span><span class="mk" style="--x:3.2%;--y:46.88%;--w:19.5%;--h:3.89%"><b>2</b></span></span></div><figcaption>① 예상 통행료 · ② 세부 주행 기록 (금액·요금소는 예시 기록)<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <ul class="plain">
     <li>요금은 <b>2026년 10월 기준</b>이고, 일반 승용차 요금으로 계산해요.</li>
     <li>설·추석 연휴 면제는 저절로 반영해요. 출퇴근 할인은 반영하지 않아요.</li>
-    <li>일부 구간을 확인하지 못하면 ‘확인 필요’, 요금 자료가 없는 도로는 ‘요금 정보 없음’으로 보여요.</li>
+    <li>일부 구간을 확인하지 못하면 ‘일부 구간 확인 필요’, 요금 자료가 없는 도로가 있으면 ‘일부 도로 요금 정보 없음’으로 보여요.</li>
+    <li>요금소를 나가기 전에 주행이 끝나면 ‘통행료는 다음 주행에 넣어요’가 보여요.</li>
     <li>카드 위쪽 <b>세부 주행 기록 ›</b>을 누르면 요금소를 지난 시각이 ‘요금소 통과’ 줄로 함께 보여요.</li>
+    <li><span class="badge new">1.0.8</span> 폰이 잠긴 채 앱이 시작된 날도 예상 통행료가 보여요.</li>
   </ul>
 
   <h3>통행료 감면 설정</h3>
   <p>설정 → 차량 연결 · 전비 → <b>통행료</b>에서 내 상황에 맞게 골라요.</p>
-  <!-- 그림106: toll-settings-106 -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/toll-settings-106.webp" width="340" height="533" alt="통행료 설정 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:79.77%;--y:5.51%;--w:13.86%;--h:4.06%"><b>1</b></span><span class="mk" style="--x:79.77%;--y:21.7%;--w:13.86%;--h:4.06%"><b>2</b></span><span class="mk" style="--x:79.77%;--y:40.14%;--w:13.86%;--h:4.06%"><b>3</b></span><span class="mk" style="--x:83.41%;--y:56.23%;--w:11.14%;--h:4.3%"><b>4</b></span><span class="mk" style="--x:83.41%;--y:72.22%;--w:11.14%;--h:4.74%"><b>5</b></span></span></div><figcaption>① 통행료 표시 · ② 하이패스 사용 · ③ 전기차 감면 하이패스 단말기 사용 · ④ 감면 대상 · ⑤ 거주지·등록지<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/toll-settings-109.webp" width="340" height="533" alt="통행료 설정 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:79.77%;--y:5.51%;--w:13.86%;--h:4.06%"><b>1</b></span><span class="mk" style="--x:79.77%;--y:21.7%;--w:13.86%;--h:4.06%"><b>2</b></span><span class="mk" style="--x:79.77%;--y:40.19%;--w:13.86%;--h:4.06%"><b>3</b></span><span class="mk" style="--x:83.93%;--y:56.28%;--w:10.61%;--h:4.3%"><b>4</b></span><span class="mk" style="--x:83.93%;--y:72.28%;--w:10.61%;--h:4.74%"><b>5</b></span></span></div><figcaption>① 통행료 표시 · ② 하이패스 사용 · ③ 전기차 감면 하이패스 단말기 사용 · ④ 감면 대상 · ⑤ 거주지·등록지<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <ol class="legend">
     <li><span class="n">1</span><span><b>통행료 표시</b>: 끄면 주행 카드와 요약에서만 숨겨요. 엑셀·구글 시트 기록은 그대로예요.</span></li>
     <li><span class="n">2</span><span><b>하이패스 사용</b>: 끄면 하이패스가 있어야 받는 감면을 빼고 계산해요.</span></li>
@@ -705,20 +732,48 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
   </ol>
   <p>감면 대상과 거주지는 이 기기에만 저장해요. 백업과 기록 내보내기에는 들어가지 않고 금액에만 반영돼요. 통행료는 예상 금액이라 실제 청구 금액과 다를 수 있어요.</p>
 
-  <h3>기록 탭: 달력 · 주간 · 월간 <span class="badge new">1.0.6</span></h3>
-  <p><b>기록</b> 탭 위에서 <span class="kbd">달력</span> <span class="kbd">주간</span> <span class="kbd">월간</span>을 골라요. 예전의 ‘목록’ 칸은 없어지고 달력으로 열려요.</p>
-  <!-- 그림106: records-weekly-106 -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/records-weekly-106.webp" width="340" height="494" alt="기록 탭의 주간 칸" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>아래로 밀면 자주 다닌 길 · 이동 비용 · 평균 전비가 이어져요<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+  <h3>기록 탭: 달력 · 주간 · 월간 <span class="badge new">1.0.9</span></h3>
+  <p><b>기록</b> 탭 위에서 <span class="kbd">달력</span> <span class="kbd">주간</span> <span class="kbd">월간</span>을 골라요. 주간·월간 요약을 새로 단장했어요.</p>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/records-top-109.webp" width="340" height="131" alt="기록 탭 위쪽의 차 이름 칩과 달력·주간·월간 단추" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:33.71%;--w:40.98%;--h:25.88%"><b>1</b></span><span class="mk" style="--x:4.09%;--y:70.18%;--w:91.82%;--h:20.59%"><b>2</b></span></span></div><figcaption>① 차 이름 칩 · ② 달력 · 주간 · 월간<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <ul class="plain">
     <li><b>달력</b>: 날짜를 누르면 그날 주행 카드가 보여요.</li>
-    <li><b>주간</b>: 주간 운전, 안전 운전, 자주 다닌 길, 이동 비용(충전 요금과 예상 통행료), 평균 전비를 지난주와 비교해 보여 줘요. 주가 끝나지 않았으면 지난주 같은 요일까지와 비교해요.</li>
-    <li><b>월간</b>: 이달의 운전, 평균 전비, 주별 주행 거리, 이동 비용, 가장 많이 간 곳을 한 장으로 보여 줘요. <span class="kbd">사진 저장</span> · <span class="kbd">공유</span>도 돼요. 공유 이미지에는 장소 이름이 들어가지 않아요.</li>
+    <li><b>주간</b>: 맨 위 ‘주간 운전’ 카드에 요일 7칸이 둥근 타일로 보여요. 칸마다 그날 달린 거리가 있고, 칸 아래 ↑↓는 지난주 같은 요일보다 어땠는지를, 빨간 점은 초과 경고가 있던 주행을 알려 줘요. 아래로 안전 운전, 자주 다닌 길, 이동 비용(충전 요금과 예상 통행료), 평균 전비가 이어져요. 주가 끝나지 않았으면 ‘지난주 월~수요일과 비교해요’처럼 지난주 같은 요일까지와 비교해요.</li>
+    <li><b>월간</b>: ‘이달의 운전’ 카드에 달린 거리와 날마다의 막대가 보이고, 초과 경고 횟수, 무결점 주행만 한 날, 최고 연속도 보여요. 아래로 평균 전비, 주별 주행 거리, 이동 비용, 가장 많이 간 곳이 이어져요. <span class="kbd">사진 저장</span> · <span class="kbd">공유</span>도 돼요. 공유 이미지에는 장소 이름이 들어가지 않아요.</li>
   </ul>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/records-weekly-109.webp" width="340" height="251" alt="기록 탭 주간 맨 위의 주간 운전 요일 타일" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>요일 7칸 둥근 타일 · 아래로 밀면 안전 운전 · 자주 다닌 길 · 이동 비용이 이어져요<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/records-monthly-109.webp" width="340" height="402" alt="기록 탭 월간 맨 위의 이달의 운전 카드" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>월간 · 이달의 운전<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+
+  <h3 id="records-cars">기록 탭에서 차 고르기 <span class="badge new">1.0.9</span></h3>
+  <p>차를 2대 등록했다면 기록 탭 위쪽(무결점 배지 카드 아래)에 <b>차 이름 칩</b>이 나와요. 하나를 고르면 그 차의 달력·주간·월간만 보여요. 차가 1대면 칩이 없어요.</p>
+  <ul class="plain">
+    <li>어느 차인지 확실하지 않은 기록은 <b>‘확인 필요’</b> 칩으로 따로 모여요. 누르면 “이 주행은 어느 차였나요?”라고 물어요. 고르면 그 차 기록에 더해지고, <span class="kbd">모두 한 차로 옮기기</span>로 한꺼번에 옮길 수도 있어요. 확인 필요 기록은 합계에 넣지 않아요.</li>
+    <li>고른 차 이름이 큰 글씨로 보여서 어느 차의 기록인지 알 수 있어요.</li>
+    <li>엑셀·구글 시트의 주행·충전 시트에는 ‘차’ 칸이 생겨요.</li>
+  </ul>
+
+  <h3>차 누적 주행거리 <span class="badge new">1.0.9</span></h3>
+  <p>기록 탭 위쪽 <b>‘내 차 누적 주행거리’</b> 줄에 ‘13,688 km · 10월 26일 기준’처럼 차 계기판의 누적 주행거리와 그 값을 읽은 날이 보여요. 차에서 읽은 값이 아직 없으면 이 줄이 보이지 않아요. 차가 2대면 고른 차 기록의 값이에요.</p>
+
+  <h3 id="eco-basis">전비 표시 기준 <span class="badge new">1.0.9</span></h3>
+  <p>전비 숫자 옆의 말이 그 숫자를 어떻게 구했는지 알려 줘요. 전비 줄을 누르면 근거를 볼 수 있어요.</p>
+  <ul class="plain">
+    <li><b>‘차량 기록 기준’</b>: 차에서 받은 기록이 거의 빠짐없이 있는 주행이에요.</li>
+    <li><b>‘일부 기록만 있어요(참고용)’</b>: 차 기록이 빠진 구간이 있어서 전체 주행의 전비와 다를 수 있어요.</li>
+    <li><b>‘주행 가능 거리로 추정’</b> · <b>‘설정 전비로 추정’</b>: 차에서 측정한 전비가 아니라 추정한 값이에요.</li>
+    <li>주차(P) 중에 쓴 전력(캠핑·센트리)은 전비에 넣지 않고 ‘주차 중 소모’로 따로 보여요.</li>
+  </ul>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/eco-basis-109.webp" width="340" height="262" alt="이번 주행 전비 화면의 차량 기록 기준과 평소와 비교" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:10.14%;--y:30.59%;--w:14.89%;--h:4.06%"><b>1</b></span><span class="mk" style="--x:10.14%;--y:73.94%;--w:15.05%;--h:5.09%"><b>2</b></span></span></div><figcaption>① 이번 주행 전비 · ② 평소와 비교<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
 
   <h3>주간 요약 알림 <span class="badge new">1.0.6</span></h3>
   <p>매주 월요일 아침에 ‘지난주 운전 요약이 나왔어요’ 알림이 와요. 누르면 기록 탭 주간 칸이 바로 열려요. 지난주에 주행이 없으면 보내지 않아요.</p>
   <p>설정 → 알림 → <b>‘주간 요약 알림’</b>에서 끌 수 있어요(기본 켬, 알림을 허용한 경우에만).</p>
 
+  <h3>엑셀·구글 시트의 새 칸 <span class="badge new">1.0.9</span></h3>
+  <ul class="plain">
+    <li>차를 2대 이상 등록했다면 주행 시트와 충전 시트에 <b>‘차’</b> 칸이 생겨요. 그때 차 이름이 들어가고, 어느 차인지 모르는 기록은 ‘확인 필요’로 들어가요.</li>
+    <li>충전 시트에 <b>‘직접 입력 이름’</b> 칸이 생겨요. 직접 입력한 충전에 붙인 이름이 들어가요.</li>
+    <li>두 칸 모두 ‘기록 번호’ 바로 앞에 들어가요. 예상 통행료 칸(1.0.6)도 같아요.</li>
+  </ul>
   <h3>엑셀·구글 시트에 예상 통행료 열 <span class="badge new">1.0.6</span></h3>
   <ul class="plain">
     <li>주행 시트에 <b>‘예상 통행료(원)’</b> 열이 더해졌어요. ‘기록 번호’ 바로 앞이에요. 확인하지 못한 주행은 ‘확인 필요’처럼 글로 적혀요.</li>
@@ -728,27 +783,25 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
 </section>
 
 
-<!-- ───────────── 7. 그 밖의 기능 -->
 <section id="new">
   <h2><span class="no">7</span>그 밖의 기능</h2>
-  <p class="sub">1.0.6에서 바뀐 것부터 적었어요. 따로 켜지 않아도 되는 건 업데이트만 하면 바로 써요.</p>
+  <p class="sub">1.0.9·1.0.7·1.0.6에서 바뀐 것부터 적었어요. 따로 켜지 않아도 되는 건 업데이트만 하면 바로 써요.</p>
 
-  <h3>업데이트 뒤 처음 한 번: 약관 1.9 동의 <span class="badge new">1.0.6</span></h3>
-  <p>1.0.5 이하에서 업데이트하면 앱을 열 때 <b>‘위치서비스 이용약관이 바뀌었어요’</b> 화면이 한 번 떠요. 두 칸을 체크하고 <span class="kbd">동의하고 계속</span>을 누르면 돼요.</p>
-  <!-- 그림106: terms-update-106 -->
-  <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/terms-update-106.webp" width="300" height="555" alt="위치서비스 이용약관이 바뀌었어요 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:62.42%;--w:89.09%;--h:11.29%"><b>1</b></span><span class="mk" style="--x:5.45%;--y:75.67%;--w:89.09%;--h:6.17%"><b>2</b></span></span></div><figcaption>① 두 칸 체크 · ② 동의하고 계속<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+  <h3 id="terms-111">업데이트 뒤 처음 한 번: 약관 1.11 동의 <span class="badge new">1.0.9</span></h3>
+  <p>1.0.8 이하에서 업데이트하면 앱을 열 때 <b>‘위치서비스 이용약관이 바뀌었어요’</b> 화면이 한 번 떠요. 바뀐 내용을 읽고 두 칸을 체크한 뒤 <span class="kbd">동의하고 계속</span>을 누르면 돼요.</p>
+    <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/terms-update-109.webp" width="300" height="538" alt="위치서비스 이용약관이 바뀌었어요 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:70.76%;--w:89.09%;--h:11.65%"><b>1</b></span><span class="mk" style="--x:5.45%;--y:84.43%;--w:89.09%;--h:6.37%"><b>2</b></span></span></div><figcaption>① 두 칸 체크 · ② 동의하고 계속<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <ul class="plain">
-    <li>바뀐 내용은 <a href="#money">자주 충전하는 곳</a>으로 충전 요금을 나누는 기능이에요. 판단은 기기 안에서만 하고, 위치는 저장하거나 보내지 않아요.</li>
-    <li><span class="kbd">나중에</span>를 눌러도 카메라 안내·경로·날씨는 그대로 쓸 수 있어요. 자주 충전하는 곳으로 나누는 기능만 동의한 뒤에 켜져요.</li>
+    <li>버전 1.11에서 바뀐 내용은 <b>차를 등록하고 차에 타면 저절로 시작</b>하는 기능, <b>차 2대</b> 등록, <b>잠금화면 실시간 현황</b>이에요. 저절로 시작하는 기능에는 새로 동의가 필요해요.</li>
+    <li><span class="kbd">나중에</span>를 눌러도 카메라 안내·경로·날씨는 그대로 쓸 수 있어요. 차에 타면 저절로 시작하는 기능만 꺼져 있어요. 그동안은 지금처럼 앱을 열거나 단축어로 시작해요.</li>
     <li>나중에 동의하려면 설정 → 도움말 → <b>위치서비스 이용약관</b>에서 해요.</li>
+    <li>1.0.7 이전 버전에서 바로 올라왔다면 중간에 바뀐 내용(차로 보내기 예약 12시간 · 자주 충전하는 곳 충전 요금 분류와 장소 찾기의 위치 이용)도 함께 보여요. 충전 장소 판단은 기기 안에서만 하고 그때 쓴 위치는 저장하거나 보내지 않아요. 장소를 찾을 때는 가까운 같은 이름 지점을 고르려고 현재 위치를 장소 검색(카카오·Apple)에 보낼 수 있어요.</li>
   </ul>
 
   <h3>잠금화면 새 디자인 <span class="badge new">1.0.6</span></h3>
   <p>감시 중 잠금화면 카드의 바탕을 메인 화면과 같은 짙은 회색으로 바꿨어요. 속도 숫자와 제한속도 표지판, 아래 안내 글이 더 또렷하게 보여요. 과속할 때 붉게 알려 드리는 것은 그대로예요.</p>
-  <!-- 그림106: lock-card-106 (1.0.5 그림 lock-gauge-104는 예전 사진 바탕) -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/lock-card-106.webp" width="340" height="124" alt="잠금화면 카드와 카메라까지 남은 거리 막대" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk bl" style="--x:5.34%;--y:54.33%;--w:89.32%;--h:6.0%"><b>1</b></span></span></div><figcaption>① 카메라까지 남은 거리 막대<small>RoadSentry 1.0.6 잠금화면 실제 화면</small></figcaption></figure>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/lock-card-107.webp" width="340" height="125" alt="잠금화면 카드와 카메라까지 남은 거리 막대" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk bl" style="--x:5.34%;--y:54.28%;--w:89.32%;--h:5.92%"><b>1</b></span></span></div><figcaption>① 카메라까지 남은 거리 막대<small>RoadSentry 잠금화면 실제 화면</small></figcaption></figure>
   <ul class="plain">
-    <li>위: 지금 속도와 제한속도, 한 줄 안내</li>
+    <li>위: 지금 속도와 제한속도, 한 줄 안내. 카메라가 있으면 ‘전방 450m · 제한 80’처럼 남은 거리와 제한속도를 보여요. <span class="badge new">1.0.7</span> 1.0.6까지는 ‘과속 80’으로 적었어요. 홈·지도·가로 계기판·Apple Watch도 같아요. 안내 음성은 그대로예요.</li>
     <li>아래 네 칸: 제한 · 전방 카메라 · 구간단속(구간 안에서는 구간 평균) · 기어와 배터리(차량 등록을 안 했다면 감시 상태)</li>
     <li>카메라가 600m 안으로 가까워지면 남은 거리가 막대로 보여요. 과속 중이면 빨간색이에요.</li>
     <li>‘업데이트 지연 · 앱에서 확인’이 보이면 앱을 한 번 열어 주세요.</li>
@@ -761,29 +814,38 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     <li><b>차 블루투스로 들을 때 최대 음량</b>(기본 켬): CarPlay나 차 블루투스로 들을 때는 ‘안내 음량’과 관계없이 가장 크게 들려요.</li>
     <li>차 스피커 음량이 작거나 꺼져 있으면 주행 화면에 <b>‘차 스피커 음량이 작아요’</b>가 떠요. 운전대 스크롤 휠이나 iPhone 옆 버튼으로 올려 주세요.</li>
   </ul>
-  <!-- 그림106: sound-settings-106 (1.0.5 그림 sound-duck-104는 줄 하나만 보임) -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sound-settings-106.webp" width="340" height="502" alt="설정 소리 화면 위쪽" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:80.68%;--y:34.57%;--w:13.86%;--h:4.31%"><b>1</b></span><span class="mk" style="--x:80.68%;--y:51.74%;--w:13.86%;--h:4.31%"><b>2</b></span><span class="mk" style="--x:80.68%;--y:68.97%;--w:13.86%;--h:4.31%"><b>3</b></span><span class="mk" style="--x:80.68%;--y:86.15%;--w:13.86%;--h:4.31%"><b>4</b></span></span></div><figcaption>① 차 블루투스로 들을 때 최대 음량 · ② 안내 시 음악 소리 줄이기 · ③ 통화 중에도 소리로 안내 · ④ 차 스피커에서만 소리로 안내<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sound-settings-109.webp" width="340" height="502" alt="설정 소리 화면 위쪽" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:80.68%;--y:34.57%;--w:13.86%;--h:4.31%"><b>1</b></span><span class="mk" style="--x:80.68%;--y:51.74%;--w:13.86%;--h:4.31%"><b>2</b></span><span class="mk" style="--x:80.68%;--y:68.97%;--w:13.86%;--h:4.31%"><b>3</b></span><span class="mk" style="--x:80.68%;--y:86.15%;--w:13.86%;--h:4.31%"><b>4</b></span></span></div><figcaption>① 차 블루투스로 들을 때 최대 음량 · ② 안내 시 음악 소리 줄이기 · ③ 통화 중에도 소리로 안내 · ④ 차 스피커에서만 소리로 안내<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
 
-  <h3>통화 중 안내</h3>
-  <p>기본으로는 통화 중에 안내 소리를 내지 않아요. ‘Apple Watch로 알림’ 설정에 따라 워치로 알려요.</p>
+  <h3>알림 목소리 미리 듣기 <span class="badge new">1.0.9</span></h3>
+  <p>설정 → 소리 → <b>‘알림 목소리’</b>의 <span class="kbd">미리 듣기</span>와 <span class="kbd">선택</span> 단추를 다른 소리 설정과 같은 모양으로 바꿨어요. 아래 ‘반복 초과음 · 계속 빠를 때’, ‘통과음 · 지나갔을 때’ 줄과 같은 방식으로 써요.</p>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sound-voice-109.webp" width="340" height="136" alt="소리 설정의 알림 목소리와 미리 듣기·선택 단추" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:14.55%;--y:10.23%;--w:19.48%;--h:16.08%"><b>1</b></span><span class="mk" style="--x:15.36%;--y:42.95%;--w:36.23%;--h:26.02%"><b>2</b></span></span></div><figcaption>① 알림 목소리 · ② 미리 듣기 · 선택<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
+
+  <h3>새 효과음 <span class="badge new">1.0.7</span></h3>
+  <p>설정 → 소리에서 효과음 줄의 <b>선택</b>을 누르면 소리 목록이 열려요. 초과음으로 쓰기 좋은 <b>벨 콜</b>, <b>우드 더블</b>, <b>브론즈 탭</b>을 목록 끝에 더했어요. 왼쪽 재생 단추로 미리 들어 보고 이름을 누르면 골라져요.</p>
+    <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sound-picker-109.webp" width="300" height="507" alt="효과음 목록 아래쪽의 새 소리 세 개" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:75.4%;--w:89.09%;--h:22.18%"><b>1</b></span></span></div><figcaption>① 벨 콜 · 우드 더블 · 브론즈 탭<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <ul class="plain">
-    <li>설정 → 소리 → <b>‘통화 중에도 소리로 안내’</b>(기본 끔)를 켜면 통화 중에도 카메라, 구간단속, 과속 안내만 소리로 알려요. 통화 소리는 줄이지 않아요. 기기에 따라 작게 들리거나 들리지 않을 수 있어요.</li>
-    <li>이 설정을 켰을 때 <b>iPhone으로 통화하면</b>(수화기·스피커폰) 상대에게 방해되지 않게 소리 대신 <b>화면과 진동</b>으로 알려요.</li>
-    <li>설정 → 소리 → <b>‘차 스피커에서만 소리로 안내’</b>(기본 끔): 두 사람이 같은 차를 타면 차 블루투스에 연결된 폰만 소리로 안내하고, 다른 폰은 화면과 워치로만 알려요. 함께 타는 분 모두 켜 두면 안내가 겹치지 않아요.</li>
+    <li>‘블립’은 목록에서 뺐어요. 블립을 쓰고 있었다면 업데이트 뒤 기본 소리로 바뀌어요.</li>
   </ul>
 
-  <h3>사용방법 소개 6장 <span class="badge new">1.0.6</span></h3>
-  <p>설정 → 도움말 → <b>사용방법 소개</b>에서 앱 사용법을 6장으로 넘겨 볼 수 있어요. 장마다 그 설정으로 바로 가는 버튼이 있어요.</p>
+  <h3>통화 중 안내 <span class="badge new">1.0.7</span></h3>
+  <p>기본으로는 통화 중에 안내 소리를 내지 않아요. ‘Apple Watch로 알림’을 켜 두면 Apple Watch로 알려요.</p>
+  <ul class="plain">
+    <li><b>휴대폰 스피커로 통화할 때도</b> 통화로 알아채 안내 소리를 내지 않아요. 1.0.6까지는 스피커폰 통화 중에 안내가 iPhone 스피커로 나올 수 있었어요. ‘Apple Watch로 알림’이 ‘통화 중에만’이면 이때도 워치로 알려요.</li>
+    <li>설정 → 소리 → <b>‘통화 중에도 소리로 안내’</b>(기본 끔)를 켜면 통화 중에도 카메라, 구간단속, 과속 안내만 소리로 알려요. 통화 소리는 줄이지 않아요. 기기에 따라 작게 들리거나 들리지 않을 수 있어요.</li>
+    <li>이 설정을 켰을 때 <b>iPhone으로 통화하면</b>(수화기·스피커폰) 상대에게 방해되지 않게 소리 대신 <b>화면과 진동</b>으로 알려요.</li>
+    <li>설정 → 소리 → <b>‘차 스피커에서만 소리로 안내’</b>(기본 끔): 두 사람이 같은 차를 타면 차에 연결된 폰만 소리로 안내하고, 다른 폰은 소리 없이 화면으로 알려요. 함께 타는 분 모두 켜 두면 안내가 겹치지 않아요.</li>
+  </ul>
+
+  <h3>사용방법 소개 6장 <span class="badge new">1.0.9</span></h3>
+  <p>설정 → 도움말 → <b>사용방법 소개</b>에서 앱 사용법을 6장으로 넘겨 볼 수 있어요. 장마다 그 설정으로 바로 가는 버튼이 있어요. 3장은 차량을 등록하면 단축어 만들기 안내 대신 ‘차에 타면 자동으로 시작돼요’로 바뀌어요.</p>
   <ol class="legend">
     <li><span class="n">1</span><span>감시: 감시 시작 한 번이면 돼요</span></li>
-    <li><span class="n">2</span><span>기어로 시작: <span class="kbd">차량 등록하기</span></span></li>
-    <li><span class="n">3</span><span>자동 시작: <span class="kbd">1분 설정 안내 시작</span></span></li>
+    <li><span class="n">2</span><span>기어로 시작: 차를 등록하면 D로 시작해요 · <span class="kbd">차량 등록하기</span> (등록한 뒤에는 <span class="kbd">차량 설정 보기</span>)</span></li>
+    <li><span class="n">3</span><span>자동 시작: 차에 타면 자동으로 시작돼요 · <span class="kbd">설정에서 보기</span> (차량을 등록하기 전에는 등록을 안내해요)</span></li>
     <li><span class="n">4</span><span>안내 소리: <span class="kbd">소리 설정 열기</span></span></li>
     <li><span class="n">5</span><span>기록·요약: <span class="kbd">기록 보기</span></span></li>
     <li><span class="n">6</span><span>그 밖에: 필요할 때 쓰는 기능</span></li>
   </ol>
-  <!-- 그림106: usage-guide-106 -->
-  <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/usage-guide-106.webp" width="300" height="463" alt="사용방법 소개 2장" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:90.19%;--w:89.09%;--h:7.06%"><b>1</b></span></span></div><figcaption>① 차량 등록하기<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
 
   <h3>가로 계기판 <span class="badge opt">1.0.5</span></h3>
   <p>감시 중에 폰을 <b>가로로 돌리면</b> 속도, 제한속도, 카메라까지 남은 거리를 큰 화면으로 보여 드려요. <b>주행</b> 탭의 <span class="kbd">계기판 모드</span>를 눌러도 열려요.</p>
@@ -821,23 +883,19 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
   <h3>새 버전 알림 <span class="badge opt">1.0.5</span></h3>
   <p>App Store에 새 버전이 나오면 앱을 열 때 한 번 알려 드려요. <span class="kbd">나중에</span>를 누르면 그 버전은 다시 묻지 않아요.</p>
 
-  <h3>월간 리포트 <span class="badge opt">1.0.4</span></h3>
-  <p>매달 1일, 지난달 운전을 한 장으로 정리해 드려요. <b>기록</b> 탭 달력 위 ‘N월 운전 리포트가 나왔어요’ 배너를 누르거나 <span class="kbd">월간</span>을 누르면 열려요.</p>
-  <!-- 그림106: report-banner-106 (1.0.5 그림 report-banner-104는 예전 ‘목록 | 달력’ 위쪽) -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/report-banner-106.webp" width="340" height="116" alt="기록 탭 위쪽의 리포트 배너" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:40.2%;--w:90.91%;--h:52.0%"><b>1</b></span></span></div><figcaption>① N월 운전 리포트가 나왔어요<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/report-top-104.webp" width="340" height="255" alt="월간 리포트 화면의 이달의 운전 요약" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>달린 거리·무결점 날·배지·전비·충전 요금을 한눈에<small>RoadSentry 1.0.4 실제 화면</small></figcaption></figure>
+  <h3>월간 리포트 <span class="badge opt">1.0.4 · 1.0.9에서 새 모양</span></h3>
+  <p>매달 1일, 지난달 운전을 한 장으로 정리해 드려요. <b>기록</b> 탭 달력 위 ‘N월 운전 리포트가 나왔어요’ 배너를 누르거나 <span class="kbd">월간</span>을 누르면 열려요. 달이 끝나기 전에는 달력 아래 ‘N월 리포트’ 줄에서 지금까지의 기록을 볼 수 있어요.</p>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/report-top-109.webp" width="340" height="255" alt="월간 리포트 화면의 이달의 운전 요약" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"></span></div><figcaption>달린 거리·무결점 날·배지·전비·이동 비용을 한눈에<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <p>매달 1일 아침 알림은 설정 → 알림 → ‘월간 리포트 알림’에서 끄고 켤 수 있어요(기본 켬, 알림을 허용한 경우에만).</p>
 
   <h3>에코 코칭 <span class="badge opt">1.0.4</span></h3>
   <p>주행마다 평소보다 전기를 더 썼는지, 덜 썼는지 한 줄로 알려 드려요. 차량 등록을 하고 달린 주행에서 보여요.</p>
-  <!-- 그림106: eco-card-106 (주행 카드에 통행료 줄·세부 주행 기록 ›이 더해져 다시 찍음. 6장 toll-card-106과 같은 카드로 찍어도 됨) -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/eco-card-106.webp" width="340" height="102" alt="주행 카드의 평소와 비교 한 줄" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:11.25%;--y:75.0%;--w:50.08%;--h:20.25%"><b>1</b></span></span></div><figcaption>① 평소와 비교한 한 줄<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/eco-card-109.webp" width="340" height="150" alt="주행 카드의 평소와 비교 한 줄" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.95%;--y:70.24%;--w:53.19%;--h:14.64%"><b>1</b></span></span></div><figcaption>① 평소와 비교한 한 줄<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <p>전비 줄을 누르면 왜 그랬는지 보여 드려요.</p>
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/eco-sheet-104.webp" width="340" height="357" alt="이번 주행 전비 화면의 평소와 비교와 이렇게 영향을 줬어요" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:3.25%;--w:90.91%;--h:40.19%"><b>1</b></span><span class="mk" style="--x:4.55%;--y:50.5%;--w:90.91%;--h:46.47%"><b>2</b></span></span></div><figcaption>① 평소와 비교 · ② 무엇이 영향을 줬는지<small>RoadSentry 1.0.4 실제 화면</small></figcaption></figure>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/eco-sheet-109.webp" width="340" height="255" alt="이번 주행 전비 화면의 평소와 비교와 운전 부드러움" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:7.27%;--y:4.03%;--w:18.34%;--h:9.09%"><b>1</b></span><span class="mk" style="--x:7.27%;--y:62.73%;--w:21.3%;--h:9.09%"><b>2</b></span></span></div><figcaption>① 평소와 비교 · ② 운전 부드러움<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
 
   <h3>설정 → 알림의 알림 항목</h3>
-  <!-- 그림106: alerts-rows-106 (1.0.5 그림 alerts-new-104는 ‘애플워치로 알림’ 옛 이름, 주간 요약 알림 없음) -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/alerts-rows-106.webp" width="340" height="318" alt="설정 알림의 새 항목" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:80.8%;--y:4.3%;--w:13.86%;--h:6.8%"><b>1</b></span><span class="mk" style="--x:67.32%;--y:26.38%;--w:27.8%;--h:9.3%"><b>2</b></span><span class="mk" style="--x:80.8%;--y:50.97%;--w:13.86%;--h:6.8%"><b>3</b></span><span class="mk" style="--x:80.8%;--y:78.08%;--w:13.86%;--h:6.8%"><b>4</b></span></span></div><figcaption>① 과속방지턱 알림 · ② Apple Watch로 알림 · ③ 월간 리포트 알림 · ④ 주간 요약 알림<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/alerts-rows-109.webp" width="340" height="318" alt="설정 알림의 새 항목" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:80.68%;--y:4.2%;--w:13.86%;--h:6.8%"><b>1</b></span><span class="mk" style="--x:75.61%;--y:25.17%;--w:20.23%;--h:11.65%"><b>2</b></span><span class="mk" style="--x:80.68%;--y:50.9%;--w:13.86%;--h:6.8%"><b>3</b></span><span class="mk" style="--x:80.68%;--y:78.08%;--w:13.86%;--h:6.8%"><b>4</b></span></span></div><figcaption>① 과속방지턱 알림 · ② Apple Watch로 알림 · ③ 월간 리포트 알림 · ④ 주간 요약 알림<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <ol class="legend">
     <li><span class="n">1</span><span><b>과속방지턱 알림</b>: 켜면 과속방지턱 약 150m 앞에서 알려 드려요. 기본은 꺼져 있어요.</span></li>
     <li><span class="n">2</span><span><b>Apple Watch로 알림</b>: 끔 / 통화 중에만(기본) / 항상 중에서 골라요.</span></li>
@@ -855,22 +913,85 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
 
   <h3>안내 시 음악 소리 줄이기 <span class="badge opt">1.0.4</span></h3>
   <p>RoadSentry → 설정 → 소리 → <b>안내 시 음악 소리 줄이기</b> (기본 켬)</p>
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sound-duck-104.webp" width="340" height="100" alt="소리 설정의 안내 시 음악 소리 줄이기 스위치" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:12.31%;--w:89.09%;--h:35.38%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.4 실제 화면</small></figcaption></figure>
+  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/sound-duck-109.webp" width="340" height="73" alt="소리 설정의 안내 시 음악 소리 줄이기 스위치" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:80.68%;--y:10.53%;--w:13.86%;--h:29.47%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
   <p>안내가 나오는 동안 음악 소리를 잠깐 줄여요. 끄면 음악은 그대로 두고 안내만 함께 들려요.</p>
 
   <h3>앱 안에서 이 설명서 보기</h3>
   <p>RoadSentry → 설정 → 도움말 → 맨 위 <b>사용 설명서 보기</b></p>
-  <!-- 그림106: help-menu-106 (도움말 화면. 9장 진단 로그 단계와 같은 그림) -->
-  <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/help-menu-106.webp" width="340" height="317" alt="도움말 화면의 사용 설명서 보기" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:18.29%;--w:89.09%;--h:15.61%"><b>1</b></span></span></div><figcaption>① 사용 설명서 보기<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+    <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/help-menu-109.webp" width="340" height="317" alt="도움말 화면의 사용 설명서 보기" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:15.45%;--y:24.22%;--w:22.34%;--h:4.39%"><b>1</b></span></span></div><figcaption>① 사용 설명서 보기<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
 </section>
 
-<!-- ───────────── 8. 자주 묻는 질문 -->
 <section id="faq" class="faq">
   <h2><span class="no">8</span>자주 묻는 질문</h2>
   <p class="sub">눌러서 펼쳐 보세요.</p>
 
   <details>
-    <summary>공유받은 단축어 링크를 추가했는데 자동으로 안 켜져요</summary>
+    <summary>단축어를 꼭 만들어야 하나요?</summary>
+    <div class="a">
+      <p><b>아니요.</b> 차량을 등록하면 단축어 없이도 차에 타서 D를 넣으면 감시가 시작돼요. 처음 한 번만 앱을 연 채로 출발해 주세요. (<a href="#auto">2. 자동 시작</a>)</p>
+      <ul>
+        <li>스피커로 듣는 분만 그 단축어를 남기고, 예전에 만든 ‘감시 시작’·‘감시 정지’ 단축어는 지워도 돼요. 남겨 둬도 두 번 시작되지는 않아요.</li>
+        <li>‘안내를 iPhone 스피커로 듣기’ 자동화는 선택이에요. 스피커로 듣고 싶을 때만 만들어요. (<a href="#speaker">만드는 방법</a>)</li>
+        <li>차량을 등록하지 않았다면 차량 등록을 하면 차에 타서 출발할 때 자동으로 시작돼요. (<a href="#tesla">4. 차량 등록</a>)</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>차에 탔는데 자동으로 안 켜져요</summary>
+    <div class="a">
+      <p>먼저 설정 → 알림 → 맨 아래 <b>‘차에 타면 자동 시작’</b> 카드를 열어 보세요.</p>
+      <ul class="checklist">
+        <li><b>‘확인 필요’</b>가 보이나요? 카드 아래 한 줄대로 해 주세요. <span class="kbd">설정 열기</span>를 누르면 iPhone 설정이 열려요.</li>
+        <li><b>‘준비 중’</b>이 보이나요? 처음 한 번은 앱을 연 채로 출발해 주세요.</li>
+        <li><b>‘설정 전’</b>이 보이나요? 차량 등록 전이면 등록을 먼저 하고(<a href="#tesla">4. 차량 등록</a>), 등록했다면 두 스위치와 약관 1.11 동의를 확인해 주세요.</li>
+        <li>설정 → 차량 연결 · 전비에서 <b>‘차에 타면 자동 연결’</b>과 <b>‘기어로 시작·종료’</b>가 둘 다 켜져 있나요?</li>
+        <li>위치 접근이 <b>‘항상’</b>과 <b>‘정확한 위치’</b>인가요? (<a href="#start">1. 처음 시작하기</a>)</li>
+        <li>위치서비스 이용약관 <b>1.11</b>에 동의했나요? 동의하기 전에는 저절로 시작하는 기능이 꺼져 있어요. (<a href="#terms-111">7장</a>)</li>
+        <li>차가 2대라면, 그 차에 탄 채로 설정 → 차량 연결 · 전비 → ‘차량 등록’ 아래 차 목록에서 그 차를 누르고 <b>‘다시 찾기’</b>를 눌러 보세요.</li>
+      </ul>
+      <p>그래도 안 켜지면 <a href="#contact">진단 기록을 보내</a> 주세요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>저절로 시작됐는데 앱 화면이 안 열려요</summary>
+    <div class="a">
+      <p>정상이에요. 저절로 시작돼도 앱 화면은 열리지 않아요. 앱을 열면 ‘감시 종료’ 버튼이 보여요. 차량 등록을 했다면 기어를 D에 넣을 때 “주행을 시작합니다”라고 알려요. 폰이 잠겨 있으면 잠금화면에 카드가 떠요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>저절로 시작을 끄고 싶어요</summary>
+    <div class="a">
+      <p>설정 → 차량 연결 · 전비에서 <b>‘차에 타면 자동 연결’</b>이나 <b>‘기어로 시작·종료’</b> 중 하나를 끄거나, 위치 접근을 ‘항상’이 아닌 것으로 바꾸면 저절로 시작이 멈춰요. 다시 켜면 처음처럼 한 번 앱을 연 채로 출발한 뒤부터 다시 저절로 시작돼요. ‘차에 타면 자동 연결’을 끄면 D를 넣을 때 바로 시작하기와 ‘차로 보내기’ 예약도 함께 꺼져요.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>잠금화면 카드가 안 떠요 / 카드를 끄고 싶어요</summary>
+    <div class="a">
+      <ul>
+        <li>처음 한 번은 카드 아래 <b>‘허용’</b>을 눌러야 할 수 있어요.</li>
+        <li>카드가 바로 뜨지 못하면 ‘감시를 시작했어요’ 알림이 떠요. 눌러서 앱을 열면 카드가 떠요.</li>
+        <li>카드를 원하지 않으면 iPhone 설정 → RoadSentry → 실시간 현황을 꺼 주세요. 감시와 안내는 그대로예요.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>차가 2대인데 어떻게 쓰나요?</summary>
+    <div class="a">
+      <ul>
+        <li>설정 → 차량 연결 · 전비 → ‘차량 등록’ 아래 차 목록에서 ‘차 추가’로 2대까지 등록하고, 차마다 이름을 붙여요. (<a href="#two-cars">4장</a>)</li>
+        <li>두 번째 차는 <b>그 차에 탄 채로</b> 설정 → 차량 연결 · 전비 → ‘차량 등록’ 아래 차 목록에서 그 차를 누르고 <b>‘다시 찾기’</b>를 눌러 주세요.</li>
+        <li>기록 탭 위쪽에서 차를 고르면 그 차의 기록만 보여요. 어느 차인지 확실하지 않은 기록은 ‘확인 필요’로 따로 보여요. (<a href="#records-cars">6장</a>)</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>공유받은 단축어 링크를 추가했는데 스피커로 듣기가 안 돼요</summary>
     <div class="a">
       <p>링크로는 <b>단축어(무엇을 할지)</b>만 받아져요. 차에 탈 때 실행되게 하는 <b>자동화(언제 실행할지)</b>는 공유가 안 돼요. 애플이 보안 때문에 막아 두었어요.</p>
       <figure class="diagram" aria-label="단축어와 자동화의 차이">
@@ -878,20 +999,20 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     <div class="dg-card">
       <p class="dg-kicker">단축어</p>
       <p class="dg-what">무엇을 할지</p>
-      <p class="dg-ex">예) RoadSentry ‘감시 시작’</p>
+      <p class="dg-ex">예) 안내 소리를 iPhone으로 옮기기</p>
       <p class="dg-yes"><span aria-hidden="true">✓</span> 링크로 공유돼요</p>
     </div>
     <div class="dg-card dg-key">
       <p class="dg-kicker">자동화</p>
       <p class="dg-what">언제 실행할지</p>
-      <p class="dg-ex">예) 내 차 블루투스에 연결될 때</p>
+      <p class="dg-ex">예) 내 차에 연결될&nbsp;때</p>
       <p class="dg-no"><span aria-hidden="true">✕</span> 공유가 안 돼요</p>
     </div>
   </div>
   <p class="dg-sum">자동으로 켜지려면 <b>‘언제’(자동화)</b>가 꼭 있어야 해요. 그래서 <b>이 iPhone에서 직접</b> 만들어야 해요.</p>
   <figcaption>애플이 보안 때문에 자동화 공유를 막아 두었어요. 남의 iPhone에서 몰래 실행되지 않게 하려는 거예요.</figcaption>
 </figure>
-      <p>그래서 <a href="#auto">2. 자동 시작 설정</a>대로 이 iPhone에서 자동화를 직접 만들어 주세요. 공유받은 단축어는 지워도 돼요.</p>
+      <p>스피커로 듣고 싶다면 <a href="#speaker">안내를 iPhone 스피커로 듣기</a>대로 이 iPhone에서 자동화를 직접 만들어 주세요. 공유받은 단축어는 지워도 돼요.</p>
       <p>자동화를 만들었는데도 안 된다면 이 두 가지를 확인해요.</p>
       <ul class="checklist">
         <li>자동화의 Bluetooth 기기가 <b>내 차 이름</b>이 맞나요? (공유받은 것 안에 다른 사람 차 이름이 들어 있을 수 있어요)</li>
@@ -901,76 +1022,25 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
   </details>
 
   <details>
-    <summary>자동화를 꼭 세 개 다 만들어야 하나요?</summary>
-    <div class="a">
-      <p>아니요. <b>① 차에 연결될 때 → 감시 시작</b> 하나만 있으면 자동으로 켜져요.</p>
-      <ul>
-        <li><b>② 감시 정지</b>는 권장이에요. 내릴 때 바로 끝내 줘요. 차량 등록을 했다면 P에서 끝나니 없어도 되고, 안 했다면 없을 때 차를 세운 뒤 약 5분 지나야 끝나요.</li>
-        <li><b>③ 폰 스피커로 듣기</b>는 선택이에요. ③을 만들면 ②도 꼭 만들어요.</li>
-      </ul>
-    </div>
-  </details>
-
-  <details>
-    <summary>RoadSentry 단축어는 어디서 받나요?</summary>
-    <div class="a">
-      <p>따로 받을 필요가 없어요. 앱을 설치하면 단축어 앱에서 ‘RoadSentry’를 찾았을 때 ‘감시 시작’, ‘감시 정지’ 같은 동작이 이미 나와요.</p>
-      <figure class="shot" style="--mw:300px"><div class="frame"><img src="guide-assets/sc-app-tile-106.webp" width="300" height="259" alt="동작 검색에 RoadSentry를 입력하면 감시 시작과 감시 정지가 보이는 화면" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.09%;--y:4.89%;--w:75.95%;--h:12.91%"><b>1</b></span><span class="mk" style="--x:5.09%;--y:63.28%;--w:89.82%;--h:15.16%"><b>2</b></span></span></div><figcaption><small>iPhone 단축어 앱 실제 화면 (iOS 26)</small></figcaption></figure>
-      <p>자동화를 만들 때 이걸 직접 고르는 게 가장 확실해요.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>단축어가 실행됐는데 앱 화면이 안 열려요</summary>
-    <div class="a">
-      <p>정상이에요. 단축어는 앱을 열지 않고 뒤에서 감시를 켜요. 앱을 열면 ‘감시 종료’ 버튼이 보여요. 차량 등록을 했다면 기어를 D에 넣을 때 “주행을 시작합니다”라고 알려요.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>차에 탔는데 자동으로 안 켜져요</summary>
-    <div class="a">
-      <p>하나씩 확인해 보세요.</p>
-      <ul class="checklist">
-        <li>만든 자동화가 모두 <b>‘실행 전에 확인’ 꺼짐</b>(‘자동화’ 탭에서 만들었다면 <b>즉시 실행</b>)인가요?</li>
-        <li>자동화의 기기가 <b>내 차</b>인가요? (이어폰 등 다른 기기를 고르지 않았나요?)</li>
-        <li>폰이 <b>이미 차에 연결된 채</b>였나요? 계속 연결돼 있으면 ‘새로 연결됨’이 없어서 자동화가 실행되지 않아요. 차에서 내렸다 다시 타거나, 블루투스를 껐다 켜 보세요.</li>
-        <li>위치 권한이 <b>‘항상’</b>인가요? (<a href="#start">1. 처음 시작하기</a>)</li>
-        <li>RoadSentry 설정 → 알림 → 맨 아래 <b>‘차에 타면 자동 시작’</b> 카드의 최근 실행 시각이 바뀌었나요? (<a href="#check">3. 확인</a>)</li>
-      </ul>
-    </div>
-  </details>
-
-  <details>
-    <summary>‘단축어 앱 열기’를 눌렀는데 자동화 만드는 화면이 안 나와요</summary>
-    <div class="a">
-      <p>애플이 다른 앱에서 자동화 만들기 화면으로 바로 보내는 방법을 열어 두지 않았어요. 다른 화면이 열리면 아래 <b>‘자동화’</b> 탭에서 ‘새로운 자동화’를 눌러 주세요.</p>
-    </div>
-  </details>
-
-  <details>
     <summary>단축어 없이도 켜지나요?</summary>
     <div class="a">
       <ul>
-        <li><b>앱을 열면 켜져요.</b> ‘앱 열면 자동 시작’이 기본으로 켜져 있어요. (설정 → 알림)</li>
+        <li><b>차량 등록을 했다면</b> 차에 타서 D를 넣으면 저절로 켜져요. 처음 한 번은 앱을 연 채로 출발해 주세요.</li>
+        <li><b>앱을 열면 켜져요.</b> ‘앱을 열면 자동 시작’이 기본으로 켜져 있어요. (설정 → 알림)</li>
         <li><b>차량 등록을 했다면</b> 주차 중에 앱을 열었을 때 바로 켜지지 않고 ‘D를 넣으면 자동으로 시작돼요’가 보여요. 그대로 D를 넣고 출발하면 켜져요.</li>
         <li><b>‘감시 시작’ 버튼</b>을 직접 눌러도 돼요.</li>
-        <li><b>차량 등록을 했다면</b> 주차(P)나 정차로 감시가 끝난 뒤 약 3시간 안에 다시 출발할 때 GPS로 알아채 켜져요.</li>
       </ul>
-      <p>하룻밤 주차처럼 오래 쉬었다 탈 때는 단축어 자동화가 있어야 저절로 켜져요.</p>
     </div>
   </details>
 
   <details>
     <summary>주행하지 않을 때도 배터리를 쓰는 것 같아요</summary>
     <div class="a">
-      <!-- 반장 확정본 (10-19 밤). 소스 대조 결과는 2026-10-19-guide-106/README.md 3절 5번 -->
-      <p>차량 등록을 하셨다면, 주차 중에 앱을 열 때 바로 출발하실 수 있도록 위치를 확인하며 출발을 기다려요.</p>
-      <p>차량 등록을 하지 않으셨다면 앱을 열면 바로 감시를 시작하고, 5분 안에 출발하지 않거나 주행 뒤 차를 약 5분 세워 두면 스스로 멈춰요(차 블루투스가 연결된 채 차 안에 있으면 최대 30분).</p>
+      <p>차량 등록을 하셨다면, 주차 중에 앱을 열 때 바로 출발하실 수 있도록 위치를 확인하며 출발을 기다려요. 출발하지 않으면 스스로 멈춰요.</p>
+      <p>차량 등록을 하지 않으셨다면 앱을 열면 바로 감시를 시작하고, 출발하지 않거나 주행 뒤 차를 세워 두면 스스로 멈춰요.</p>
       <ul>
-        <li><b>차 블루투스에 연결되면 ‘감시 시작’이 실행되는 자동화를 쓰고 계시면</b>: 앱을 연 뒤 15분 안에 출발하지 않으면 위치 확인을 멈춰요. 걸어서 이동하는 중이거나 앱 화면을 켜 두면 계속 기다리고, 길어도 3시간이 지나면 멈춰요.</li>
-        <li><b>이 자동화가 없으면</b>: 앱을 연 뒤 최대 3시간까지 출발을 기다려요. 자동화를 만들어 두시면 배터리를 아낄 수 있어요(설정 › 알림 › 자동 시작).</li>
-        <li>위치 확인을 멈춘 뒤에도 차에 타면 자동화가 감시를 켜 드려요.</li>
+        <li>걸어서 이동하는 중이거나 앱 화면을 켜 두면 더 오래 기다려요.</li>
+        <li>차량 등록을 하셨다면 멈춘 뒤에도 차에 타면 저절로 감시가 켜져요.</li>
       </ul>
     </div>
   </details>
@@ -978,7 +1048,7 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
   <details>
     <summary>Siri가 엉뚱한 곳을 물어봐요</summary>
     <div class="a">
-      <p>“이곳이 맞나요?”에 <b>“아니”</b>라고 대답하면 Siri가 “동네와 함께 다시 말해 주세요”라고 다시 물어요. 이때 <b>“김포 풍무동 스타벅스”</b>처럼 동네를 넣어 말해 주세요. “아니, 여의도에 있어”처럼 한 번에 말해도 돼요.</p>
+      <p>“이곳이 맞나요?”에 <b>“아니”</b>라고 대답하면 Siri가 “동네와 함께 다시 말해 주세요”라고 다시 물어요. 이때 <b>“김포 풍무동 행정복지센터”</b>처럼 동네를 넣어 말해 주세요. “아니, 여의도에 있어”처럼 한 번에 말해도 돼요.</p>
       <ul>
         <li>같은 이름이 여러 곳이면 목록이 나와요. 맞는 곳이 없으면 ‘다른 곳’을 골라요.</li>
         <li>자주 가는 곳은 앱에서 <b>즐겨찾기</b>에 저장해 두면 이름만 말해도 바로 보내요.</li>
@@ -1005,10 +1075,21 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     <div class="a">
       <p>보낸 목적지는 차 화면에 뜨고, <b>차 화면에서 목적지를 한 번 눌러야</b> 안내가 시작돼요.</p>
       <ul>
-        <li>차에 타기 전에 보냈다면 <b>D를 넣는 순간</b> 보내요. 보낸 뒤 2시간이 지나면 예약이 취소돼요.</li>
-        <li>차량 등록을 해야 보낼 수 있어요. ‘차에 타면 자동 연결’도 켜 두세요.</li>
-        <li>차 화면에 충전 경유가 있으면 지워질 수 있어서, 앱이 그래도 보낼지 먼저 물어봐요.</li>
+        <li>차에 타기 전에 보냈다면 <b>D를 넣는 순간</b> 보내요. 보낸 뒤 12시간(약관 버전 1.10 이상에 동의하지 않았다면 2시간)이 지나면 예약이 취소돼요.</li>
+        <li>차량 등록과 위치서비스 이용약관 동의가 필요하고, ‘차에 타면 자동 연결’과 ‘기어로 시작·종료’를 켜 두어야 해요. 위치 권한은 ‘항상’으로 해 주세요. 하나라도 빠지면 앱이 까닭을 알려 드려요(<a href="#send-blocked">보낼 수 없을 때</a>).</li>
+        <li>차 화면에 충전 경유지가 있으면 지워질 수 있어서, 앱이 그래도 보낼지 먼저 물어봐요.</li>
         <li>보내지 못했다면 <span class="kbd">테슬라 앱으로 보내기</span>를 눌러 공유 창에서 Tesla를 골라요.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>차로 보내기 예약이 저절로 취소됐어요</summary>
+    <div class="a">
+      <ul>
+        <li><b>‘예약 시간이 지나 취소했어요’</b>: 예약한 뒤 12시간(약관 버전 1.10 이상에 동의하지 않았다면 2시간) 안에 D를 넣지 않았어요. 앱 목적지는 그대로 남아요.</li>
+        <li><b>‘예약을 취소했어요.’ 뒤에 까닭이 붙어 있다면</b>: 예약한 뒤 ‘차에 타면 자동 연결’이나 ‘기어로 시작·종료’를 끄거나, 위치 권한을 끄는 등 보낼 수 없게 된 경우예요. 까닭 아래 <span class="kbd">설정 열기</span>로 고친 뒤 다시 보내 주세요.</li>
+        <li>위치 권한이 ‘앱을 사용하는 동안’일 때는 예약을 취소하지 않아요. 다만 화면이 꺼진 뒤에는 보내지 못할 수 있으니 ‘항상’으로 바꿔 주세요.</li>
       </ul>
     </div>
   </details>
@@ -1016,19 +1097,17 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
   <details>
     <summary>지하 주차장에서 나갈 때 늦게 켜져요</summary>
     <div class="a">
-      <p><b>차량 등록을 했다면</b> 1.0.5부터는 지하에서도 기어를 D로 넣으면 바로 켜져요(‘차에 타면 자동 연결’과 ‘기어로 시작·종료’를 켠 경우). 차에 탄 뒤 10분 넘게 머물다 D를 넣었다면, 밖으로 나와 GPS가 잡힌 뒤에 켜질 수 있어요.</p>
+      <p><b>차량 등록을 했다면</b> 지하에서도 기어를 D로 넣으면 바로 켜져요(‘차에 타면 자동 연결’과 ‘기어로 시작·종료’를 켠 경우). 오래 머물다 D를 넣었다면, 밖으로 나와 GPS가 잡힌 뒤에 켜질 수 있어요.</p>
       <p><b>차량 등록을 안 했다면</b> 지하에서는 GPS가 잡히지 않아요. 밖으로 나와 GPS가 잡힌 뒤에 출발을 확인해서 조금 늦을 수 있어요. 잠시 기다리면 켜져요.</p>
     </div>
   </details>
 
   <details>
-    <summary>테슬라 폰 키랑 같이 써도 안전한가요?</summary>
+    <summary>차 키와 같이 써도 안전한가요?</summary>
     <div class="a">
       <ul>
-        <li>RoadSentry는 <b>문을 열거나 잠그는 기능이 없어요.</b></li>
-        <li>주차 중에는 <b>차에 탄 뒤 한 번에 최대 10분 동안 차가 알려 주는 기어 값만 읽고</b>, 차에 명령을 보내지 않아요. 주차(P)하면 바로 끊어요.</li>
+        <li>RoadSentry에는 <b>문을 열거나 잠그는 기능이 없어요.</b></li>
         <li>목적지를 차로 보내는 것은 D를 넣은 뒤에만 해요. 주차 중에 Siri로 말하거나 [차로 보내기]를 누르면 앱이 기억만 해 두고, 그때는 차에 아무것도 보내지 않아요.</li>
-        <li>1.0.4와 1.0.5에서 테슬라 폰 키와 함께 쓸 때 더 안정적으로 동작하도록 개선했어요.</li>
         <li>차 키 목록에 RoadSentry 키가 하나 보여요. 폰을 바꿀 때는 차 화면 ‘잠금’ 메뉴의 키 목록에서 지워 주세요.</li>
       </ul>
     </div>
@@ -1038,7 +1117,7 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     <summary>안내 소리가 작아요 / 음악 소리가 줄어요</summary>
     <div class="a">
       <ul>
-        <li>안내 소리는 iPhone 음량을 따라요. 제어 센터나 iPhone 옆 버튼으로 음량을 올려 주세요. 차 블루투스로 듣는다면 차 음량도 확인해 주세요.</li>
+        <li>안내 소리는 iPhone 음량을 따라요. 제어 센터나 iPhone 옆 버튼으로 음량을 올려 주세요. 차 스피커로 듣는다면 차 음량도 확인해 주세요.</li>
         <li>설정 → 소리 → ‘안내 음량’으로 RoadSentry 안내만 더 크게 할 수 있어요.</li>
         <li>설정 → 소리 → <b>‘안내 시 음악 소리 줄이기’</b>(기본 켬)를 켜 두면 안내가 나오는 동안 음악 소리를 잠깐 줄이고, 끄면 음악은 그대로 두고 안내만 함께 들려요.</li>
       </ul>
@@ -1049,8 +1128,8 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
     <summary>새 iPhone으로 바꿨어요</summary>
     <div class="a">
       <ul>
-        <li>새 iPhone에서 자동화가 그대로 있는지 단축어 앱 → 자동화 탭에서 확인하고, 없으면 <a href="#auto">2. 자동 시작 설정</a>대로 다시 만들어요.</li>
-        <li>차량 등록을 했다면 차 화면 키 목록에서 예전 RoadSentry 키를 지우고, 새 iPhone에서 차량을 다시 등록해요.</li>
+        <li>차량 등록을 했다면 차 화면 키 목록에서 예전 RoadSentry 키를 지우고, 새 iPhone에서 차량을 다시 등록해요. 처음 한 번은 앱을 연 채로 출발해 주세요.</li>
+        <li>스피커로 듣는 단축어를 쓰셨다면 새 iPhone의 단축어 앱 → 자동화 탭에 그대로 있는지 확인하고, 없으면 <a href="#speaker">안내를 iPhone 스피커로 듣기</a>대로 다시 만들어요. ‘감시 시작’·‘감시 정지’ 단축어는 다시 만들 필요가 없어요.</li>
         <li>Siri용으로 만든 단축어(‘퇴근’ 등)도 새 iPhone에 있는지 확인해 주세요.</li>
       </ul>
     </div>
@@ -1059,25 +1138,23 @@ h4.h4{font-size:18px;line-height:1.45;margin:20px 0 6px}
   <details>
     <summary>안내가 실제와 달라요 / 카메라를 놓쳤어요</summary>
     <div class="a">
-      <p>위치·통신·제공 정보에 따라 안내가 늦거나 빠질 수 있어요. 실제 도로 표지와 제한속도를 먼저 봐 주세요. 차를 세운 뒤 <a href="#contact">진단 로그를 보내</a> 주시면 원인을 찾는 데 큰 도움이 돼요.</p>
+      <p>위치·통신·제공 정보에 따라 안내가 늦거나 빠질 수 있어요. 실제 도로 표지와 제한속도를 먼저 봐 주세요. 차를 세운 뒤 <a href="#contact">진단 기록을 보내</a> 주시면 원인을 찾는 데 큰 도움이 돼요.</p>
     </div>
   </details>
 </section>
 
-<!-- ───────────── 9. 문의 -->
 <section id="contact">
   <h2><span class="no">9</span>문의하기</h2>
-  <p class="sub">문제가 생기면 진단 로그를 먼저 보내고, 받은 접수번호를 함께 알려 주세요.</p>
+  <p class="sub">문제가 생기면 진단 기록을 먼저 보내고, 받은 접수번호를 함께 알려 주세요.</p>
   <ol class="steps">
     <li>
       <h4>설정 → 도움말 → 진단 로그</h4>
-      <!-- 그림106: help-menu-106 (7장 끝과 같은 그림, 진단 로그 표시) -->
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/help-menu-106.webp" width="340" height="317" alt="도움말 화면의 진단 로그" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:81.22%;--w:89.09%;--h:15.61%"><b>1</b></span></span></div><figcaption>① 진단 로그<small>RoadSentry 1.0.6 실제 화면</small></figcaption></figure>
+            <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/help-menu-109.webp" width="340" height="317" alt="도움말 화면의 진단 로그" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:5.45%;--y:81.22%;--w:89.09%;--h:15.61%"><b>1</b></span></span></div><figcaption>① 진단 로그<small>RoadSentry 1.0.9 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>‘진단 기록 보내기’를 눌러요</h4>
       <p>정확한 위치(좌표·진행 방향)는 지운 뒤 보내요. 목적지 이름도 빠져요.</p>
-      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/help-send-104.webp" width="340" height="52" alt="진단 로그 화면의 진단 기록 보내기 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:15.2%;--w:44.09%;--h:70.59%"><b>1</b></span></span></div><figcaption><small>RoadSentry 1.0.4 실제 화면</small></figcaption></figure>
+      <figure class="shot" style="--mw:340px"><div class="frame"><img src="guide-assets/help-send-104.webp" width="340" height="52" alt="진단 로그 화면의 진단 기록 보내기 버튼" loading="lazy" decoding="async"><span class="marks" aria-hidden="true"><span class="mk" style="--x:4.55%;--y:15.2%;--w:44.09%;--h:70.59%"><b>1</b></span></span></div><figcaption><small>RoadSentry 실제 화면</small></figcaption></figure>
     </li>
     <li>
       <h4>접수번호와 상황을 알려 주세요</h4>
